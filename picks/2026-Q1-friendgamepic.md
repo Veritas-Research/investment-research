@@ -6,11 +6,11 @@
 
 ## The Setup
 
-Playing a stock-picking game with friends—best 3 stocks for 2026, winner takes bragging rights. 
+Playing a stock-picking game with friends, best 3 stocks for 2026, winner takes bragging rights. 
 
 On a Friday afternoon (January 16, 2026), before the deadline, I spent a few hours researching based on some investment themes I'd been thinking about. You can read the full thesis here once I write it up.
 
-**Full disclosure:** I originally chose these on January 16, but I can't prove it (no screenshots, no text receipts). So for this portfolio tracker, I'm using **January 24, 2026 prices**—the day I actually started documenting this properly on GitHub.
+**Full disclosure:** I originally chose these on January 16, but I can't prove it (no screenshots, no text receipts). So for this portfolio tracker, I'm using **January 24, 2026 prices**, the day I actually started documenting this properly on GitHub.
 
 ---
 
@@ -31,7 +31,7 @@ On a Friday afternoon (January 16, 2026), before the deadline, I spent a few hou
 This is a friendly competition, not my actual portfolio allocation. I bought **1 share of each** just to have skin in the game. 
 
 If this were a real portfolio with meaningful capital, I'd weight them differently:
-- **Zscaler:** 35% (highest conviction—defense + AI cybersecurity)
+- **Zscaler:** 35% (highest conviction, defense + AI cybersecurity)
 - **Snowflake:** 35% (proven execution, enterprise AI infrastructure)
 - **UiPath:** 30% (asymmetric upside, cheapest valuation)
 
@@ -43,11 +43,11 @@ But for this game? Equal shares. Keep it simple.
 
 **Core thesis:** AI + Defense = Cybersecurity dominance, with enterprise AI transformation as the second derivative play.
 
-1. **Zscaler (ZS)** — Defense + AI cybersecurity. Zero Trust architecture is becoming the DoD/government standard. Fastest-growing revenue among major cybersecurity names. Clean exposure to both AI security and defense spending.
+1. **Zscaler (ZS)** - Defense + AI cybersecurity. Zero Trust architecture is becoming the DoD/government standard. Fastest-growing revenue among major cybersecurity names. Clean exposure to both AI security and defense spending.
 
-2. **Snowflake (SNOW)** — Enterprise AI data infrastructure. Growing 32% YoY with 50% of new customers influenced by AI use cases. Trading at 14.3x P/S—half of Palantir's 67.5x P/S for similar growth profile. Every AI deployment needs a data warehouse.
+2. **Snowflake (SNOW)** - Enterprise AI data infrastructure. Growing 32% YoY with 50% of new customers influenced by AI use cases. Trading at 14.3x P/S, half of Palantir's 67.5x P/S for similar growth profile. Every AI deployment needs a data warehouse.
 
-3. **UiPath (PATH)** — Agentic AI asymmetric bet. $8.2B market cap at 4-5x P/S (cheapest valuation of all enterprise AI plays). Customers include Microsoft, OpenAI, Alphabet. RPA is the foundation for agentic workflows. If agentic AI explodes in 2026, this has 2-3x upside.
+3. **UiPath (PATH)** - Agentic AI asymmetric bet. $8.2B market cap at 4-5x P/S (cheapest valuation of all enterprise AI plays). Customers include Microsoft, OpenAI, Alphabet. RPA is the foundation for agentic workflows. If agentic AI explodes in 2026, this has 2-3x upside.
 
 **Full research:** *(Thesis document coming soon)*
 
@@ -59,7 +59,7 @@ But for this game? Equal shares. Keep it simple.
 
 **Expected returns:** Honestly? I don't know. 
 
-If I'm right about AI + defense cyber being the mega-theme of 2026, these could be up 30-60% by year-end. If AI spending slows or there's a recession, they could be down 20-30% (or worse—remember, high P/S stocks get murdered in corrections).
+If I'm right about AI + defense cyber being the mega-theme of 2026, these could be up 30-60% by year-end. If AI spending slows or there's a recession, they could be down 20-30% (or worse, remember, high P/S stocks get murdered in corrections).
 
 This isn't about precision. It's about:
 - Picking a clear thesis (AI + defense + cybersecurity)
