@@ -1,6 +1,6 @@
-# Q1 2026 Stock Picks
+# Q1 2026 Stock Picks as a friendly game
 
-**File:** `picks/2026-Q1-picks.md`
+**File:** `picks/2026-Q1-friendgamepic.md`
 
 ---
 
