@@ -96,7 +96,7 @@ Tariffs on Korean chips (10/60/20/10% probability distribution across severity l
 
 [Rebalancing Plan](#rebalancing-plan)
 
-[Conviction Level](# Conviction Levell)
+[Conviction Level](#conviction-level)
 
 
 ---
