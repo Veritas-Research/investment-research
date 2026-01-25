@@ -712,8 +712,50 @@ Blended Return (60% SK / 40% MU):
 - (0.60 × 19.0%) + (0.40 × 12.9%)
 - = 11.4% + 5.16%
 - = **+16.3% CAGR**
+#### Why P/E Expansion Is Likely (And What Could Stop It)
 
-Over 5 years: $10,000 → $21,154 (111% total return)
+My return projections assume P/E multiples expand from current levels (SK hynix 8x, Micron 12.3x forward) to cycle-peak levels (15-20x). This isn't speculation. It's how cyclical stocks behave, and memory is textbook cyclical.
+
+Here's the mechanism: At cycle troughs (like 2024-2025), investors price in depressed earnings and oversupply fears. P/E multiples compress to 6-8x because the market assumes "this business destroys value in downturns." As the cycle turns (2026-2027), three things happen simultaneously. First, earnings explode (SK hynix operating profit forecasted to grow 5x from 2018 peak). Second, the narrative shifts from "commodity in oversupply" to "strategic asset in shortage" (HBM is now critical infrastructure, not generic DRAM). Third, supply constraints become obvious (sold out through 2027, only 3 suppliers globally), which gives pricing power and margin expansion. The combination causes P/E re-rating.
+
+Historical precedent supports this. In the 2016-2018 memory cycle, SK hynix went from 6-8x P/E (2016 trough) to 15-18x P/E (2018 peak) as DRAM and NAND shifted from oversupply to tight supply. Micron followed a similar pattern, peaking at 5-6x P/S (roughly 20x P/E) in early 2018. This cycle has additional tailwinds that didn't exist in 2016-2018: AI makes memory a strategic national asset (governments subsidizing domestic production), HBM has only 3 suppliers vs dozens for commodity DRAM, and switching costs are massive (you can't just swap HBM suppliers mid-design). If anything, peak multiples could exceed 2018 levels.
+
+**What prevents P/E expansion:** If the cycle peaks early (new capacity comes online in 2027 instead of 2028), multiples compress before reaching peak. If tariffs destroy SK hynix margins (100% tariff scenario), the stock re-rates as "structurally disadvantaged" and stays at 6-8x even as earnings grow. If AI spending slows (hyperscalers cut capex by 25%+), the "strategic asset" narrative breaks and memory reverts to commodity pricing. These are real risks, which is why I'm sizing this at 5% of portfolio instead of 15-20%. But the base case (60% probability) is that we're in early innings of a multi-year upcycle, and multiples should normalize to 12-15x at minimum, with 18-20x possible at peak euphoria.
+
+#### DRAM Revenue Mix: Does It Matter?
+
+A smart question: SK hynix and Micron don't just sell HBM. Standard DRAM represents 60% and 53% of their revenue respectively (2025 estimates). What happens if HBM explodes but standard DRAM collapses?
+
+The good news: DRAM is NOT collapsing. Here's why both should grow together. First, AI infrastructure needs both HBM and standard DRAM. A typical AI server has 8 H100 GPUs (each with 80GB HBM3) plus 2TB of DDR5 DRAM for the CPU. When hyperscalers deploy 100,000 new AI servers, they buy HBM AND DRAM. Second, the DDR5 transition is driving a separate upgrade cycle. DDR5 modules use 30-40% more DRAM chips than DDR4, so even if unit shipments stay flat, total DRAM content grows. Third, cloud and enterprise server demand remains strong independent of AI (general-purpose computing, databases, analytics).
+
+The revenue math looks like this for SK hynix: HBM grows from $15B (2025) to $60B (2028), a 4x increase. Standard DRAM grows from $30B to $40B, a 1.3x increase driven by DDR5 adoption and data center builds. Total revenue goes from $50B to $106B. More importantly, operating profit grows faster than revenue (3.7x vs 2.1x) because HBM has 60% margins vs DRAM's 40%. As HBM becomes a larger % of the mix, blended margins expand from 30% to 52%.
+
+**What could break this?** If Chinese competitors (CXMT, YMTC) flood the market with cheap DRAM and undercut prices by 30%, standard DRAM revenue could drop 30-40%. If there's a global recession and PC/phone demand craters, DRAM growth stalls. In those scenarios, total revenue growth is more like 1.5x instead of 2.1x, and operating profit growth is 2-2.5x instead of 3.7x. The thesis still works (HBM carries the company), but returns would be lower. I'm monitoring Chinese DRAM production capacity and DDR5 adoption rates quarterly to catch early warning signs.
+
+#### Putting It All Together: Returns Under Base Case Assumptions
+
+These projections aren't price forecasts. I'm not predicting what the stock will do. What I'm showing is: **if the HBM supply shortage plays out as expected, and if memory cycles behave like they historically have, here's what the math suggests.**
+
+The base case (60% probability) assumes:
+
+- HBM market grows from $35B (2025) → $100B (2028) as forecasted by industry analysts
+- SK hynix maintains 60-70% market share
+- Operating profit grows 3.7x as HBM becomes larger % of revenue mix
+- P/E multiples normalize from trough levels (8x) to cycle-average levels (12-15x), with potential for 18-20x at peak
+- Standard DRAM revenue grows modestly (1.3x) from DDR5 adoption and data center builds
+
+Under those assumptions, the math works out to:
+
+- SK hynix: ~19% CAGR 
+- Micron: ~13% CAGR
+- 60/40 blend: ~16% CAGR
+
+Over 5 years, that implies $10,000 becomes roughly $21,000 (111% total return).
+
+**But here's what matters more than the specific number:** I'm buying a market-leading business (62% share, 90% of NVIDIA supply) at 8x forward earnings, during a period when supply is sold out through 2027 and barriers to entry are massive. Even if P/E stays flat at 8x, I get earnings growth. If P/E expands to historical cycle averages (12-15x), I get multiple expansion on top. The downside is protected by valuation; the upside is driven by a structural supply shortage that I believe is real and lasting.
+
+That's why I'm comfortable putting 5% of my portfolio here, but not 15%. The range of outcomes is wide.
+
 
 ---
 
