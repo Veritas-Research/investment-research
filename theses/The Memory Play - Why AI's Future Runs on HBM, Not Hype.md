@@ -88,6 +88,11 @@
 - [Rebalancing Plan](#rebalancing-plan)
 - [Conviction Level](#conviction-level)
 
+### Closing
+
+- [Why I'm Sharing This](#closing-why-im-sharing-this)
+- [Citations and Sources](#citations-and-sources)
+
 ---
 
 ## Part 1: The Journey
@@ -901,7 +906,6 @@ Either way, I'm committed to updating this publicly as events unfold.
 
 ---
 
-**Next review:** February 28, 2026 (monthly performance check)  
 **Critical milestone:** April 14, 2026 (USTR semiconductor tariff report)
 
 ---
