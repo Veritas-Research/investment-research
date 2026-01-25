@@ -11,21 +11,28 @@
 
 **Expected Returns:** +16.3% CAGR blended over 5 years
 
-SK hynix: +19.0% CAGR (market leader, cheaper valuation)
-
-Micron: +12.9% CAGR (CHIPS Act subsidy, political protection)
+- SK hynix: +19.0% CAGR (market leader, cheaper valuation)
+- Micron: +12.9% CAGR (CHIPS Act subsidy, political protection)
 
 **Why This Works:**
 
-HBM supply is sold out through 2027. Only 3 global suppliers exist (SK hynix 62%, Micron 21%, Samsung 17%). Barriers to entry are massive (10+ year development cycles, $15-20B per fab). Every AI paradigm needs memory, whether it's neural networks, symbolic systems, hybrid models, or world models. Test-time compute scaling multiplies inference memory demand.
+- HBM supply is sold out through 2027
+- Only 3 global suppliers exist (SK hynix 62%, Micron 21%, Samsung 17%)
+- Barriers to entry are massive (10+ year development cycles, $15-20B per fab)
+- Every AI paradigm needs memory, whether it's neural networks, symbolic systems, hybrid models, or world models
+- Test-time compute scaling multiplies inference memory demand
 
 **Key Risks:** 
 
-Tariffs on Korean chips (10/60/20/10% probability distribution across severity levels). AI winter and demand collapse. Energy constraints limiting deployment. Memory cycle peaking earlier than expected (2027 vs 2028).
+- Tariffs on Korean chips (10/60/20/10% probability distribution across severity levels)
+- AI winter and demand collapse
+- Energy constraints limiting deployment
+- Memory cycle peaking earlier than expected (2027 vs 2028)
 
 **Next Milestone:** April 14, 2026 USTR report clarifies semiconductor tariff policy
 
 ---
+
 **Quick Navigation:**
 
 [Skip to The Thesis →](#the-contrarian-insight)
@@ -42,62 +49,44 @@ Tariffs on Korean chips (10/60/20/10% probability distribution across severity l
 
 ### Part 1: The Journey (Skippable)
 
-[How I Got Here](#how-i-got-here)
-
-[The Contrarian Question](#the-contrarian-question)
+- [How I Got Here](#how-i-got-here)
+- [The Contrarian Question](#the-contrarian-question)
 
 ### Part 2: Technical Deep Dive (Skippable)
 
-[Gary Marcus: The Skeptic Worth Listening To](#gary-marcus-the-skeptic-worth-listening-to)
-
-[Inference vs Training: The Shift](#inference-vs-training-the-shift)
-
-[Test-Time Compute Scaling](#test-time-compute-scaling)
-
-[World Models: Yann LeCun's Bet](#world-models-yann-lecuns-bet)
-
-[Symbolic AI and Neuro-Symbolic Hybrids](#symbolic-ai-and-neuro-symbolic-hybrids)
-
-[Why Memory Wins All Scenarios](#why-memory-wins-all-scenarios)
+- [Gary Marcus: The Skeptic Worth Listening To](#gary-marcus-the-skeptic-worth-listening-to)
+- [Inference vs Training: The Shift](#inference-vs-training-the-shift)
+- [Test-Time Compute Scaling](#test-time-compute-scaling)
+- [World Models: Yann LeCun's Bet](#world-models-yann-lecuns-bet)
+- [Symbolic AI and Neuro-Symbolic Hybrids](#symbolic-ai-and-neuro-symbolic-hybrids)
+- [Why Memory Wins All Scenarios](#why-memory-wins-all-scenarios)
 
 ### Part 3: The Thesis (Essential)
 
-[The Contrarian Insight](#the-contrarian-insight)
-
-[Memory Across All Futures](#memory-across-all-futures)
-
-[The NPU Uncertainty Problem](#the-npu-uncertainty-problem)
-
-[Supply Constraint Reality](#supply-constraint-reality)
+- [The Contrarian Insight](#the-contrarian-insight)
+- [Memory Across All Futures](#memory-across-all-futures)
+- [The NPU Uncertainty Problem](#the-npu-uncertainty-problem)
+- [Supply Constraint Reality](#supply-constraint-reality)
 
 ### Part 4: Stock Analysis (Essential)
 
-[The Graham/Buffett Framework](#the-grahambuffett-framework)
-
-[SK hynix Deep Dive](#sk-hynix-deep-dive)
-
-[Micron Deep Dive](#micron-deep-dive)
-
-[Why Not Samsung?](#why-not-samsung)
-
-[Comparison Table](#comparison-table)
+- [The Graham/Buffett Framework](#the-grahambuffett-framework)
+- [SK hynix Deep Dive](#sk-hynix-deep-dive)
+- [Micron Deep Dive](#micron-deep-dive)
+- [Why Not Samsung?](#why-not-samsung)
+- [Comparison Table](#comparison-table)
 
 ### Part 5: Allocation & Math (Essential)
 
-[Tariff Probability Analysis](#tariff-probability-analysis)
-
-[Expected Returns Methodology](#expected-returns-methodology)
-
-[Kelly Criterion & Position Sizing](#kelly-criterion--position-sizing)
+- [Tariff Probability Analysis](#tariff-probability-analysis)
+- [Expected Returns Methodology](#expected-returns-methodology)
+- [Kelly Criterion & Position Sizing](#kelly-criterion--position-sizing)
 
 ### Part 6: Risks and Monitoring (Essential)
 
-[What Could Prove Me Wrong](#what-could-prove-me-wrong)
-
-[Rebalancing Plan](#rebalancing-plan)
-
-[Conviction Level](#conviction-level)
-
+- [What Could Prove Me Wrong](#what-could-prove-me-wrong)
+- [Rebalancing Plan](#rebalancing-plan)
+- [Conviction Level](#conviction-level)
 
 ---
 
@@ -131,7 +120,7 @@ That's when things got interesting.
 
 ## Part 2: Technical Deep Dive
 
-(Note: This section is comprehensive but skippable. If you want to jump straight to the investment thesis, go to [Part 3](#part-3-the-thesis).)
+(Note: This section is comprehensive but skippable. If you want to jump straight to the investment thesis, go to [Part 3](#the-contrarian-insight).)
 
 ### Gary Marcus: The Skeptic Worth Listening To
 
@@ -141,9 +130,8 @@ When GPT-3 launched and everyone declared victory for deep learning, Marcus wrot
 
 Here's why I paid attention: Marcus isn't saying AI doesn't work. He's saying current AI (LLMs) is fundamentally limited to pattern matching and can't do genuine reasoning. His framework breaks it down using Daniel Kahneman's Thinking Fast and Slow:
 
-System 1 (Fast Thinking): Automatic, statistical, reflexive. This is what neural networks excel at. Pattern recognition, autocomplete, association.
-
-System 2 (Slow Thinking): Deliberative, logical, reasoning-based. This is what humans do when we think carefully about cause and effect, build mental models, and apply abstract rules.
+- **System 1 (Fast Thinking):** Automatic, statistical, reflexive. This is what neural networks excel at. Pattern recognition, autocomplete, association.
+- **System 2 (Slow Thinking):** Deliberative, logical, reasoning-based. This is what humans do when we think carefully about cause and effect, build mental models, and apply abstract rules.
 
 Marcus's argument: LLMs are pure System 1. They're autocomplete on steroids. They work surprisingly well because they've memorized the entire internet, so for most questions, they can statistically reconstruct an answer that looks right. But they don't understand anything, which is why they hallucinate, fail at novel reasoning, and can't explain their logic.
 
@@ -161,13 +149,10 @@ This isn't a bug that gets fixed with more scale. It's architectural.
 
 If Marcus is right (and I think he's directionally correct), then the AI industry will need to evolve beyond pure LLMs. That doesn't mean AI fails. It means we're entering a new phase where different architectures emerge:
 
-Test-time compute scaling (reasoning at inference time, not just training time)
-
-World models (systems that understand physics and causality, not just language)
-
-Symbolic AI (explicit rules and logic, not just pattern matching)
-
-Neuro-symbolic hybrids (combining neural networks with symbolic reasoning)
+- Test-time compute scaling (reasoning at inference time, not just training time)
+- World models (systems that understand physics and causality, not just language)
+- Symbolic AI (explicit rules and logic, not just pattern matching)
+- Neuro-symbolic hybrids (combining neural networks with symbolic reasoning)
 
 Each of these approaches solves different problems. And here's the kicker: every single one of them needs memory. Some need even more memory than current LLMs.
 
@@ -179,15 +164,14 @@ That's the insight that changed how I think about AI investing.
 
 Let me clarify a concept that's critical to understanding the thesis: training vs inference.
 
-Training is the "learning" phase. You take a neural network and expose it to massive amounts of data (say, the entire internet). The network adjusts its internal weights over weeks or months of computation. This happens once (or periodically when updating the model). Training is compute-intensive and expensive. GPT-4 reportedly cost $100 million to train.
+**Training** is the "learning" phase. You take a neural network and expose it to massive amounts of data (say, the entire internet). The network adjusts its internal weights over weeks or months of computation. This happens once (or periodically when updating the model). Training is compute-intensive and expensive. GPT-4 reportedly cost $100 million to train.
 
-Inference is the "using" phase. Once the model is trained, its weights are frozen. When you type a question into ChatGPT, the model generates an answer using those frozen weights. This happens billions of times per day, every time someone uses the system.
+**Inference** is the "using" phase. Once the model is trained, its weights are frozen. When you type a question into ChatGPT, the model generates an answer using those frozen weights. This happens billions of times per day, every time someone uses the system.
 
 Here's the key distinction:
 
-Training scales with model size. Bigger models need more GPUs, more power, more time.
-
-Inference scales with usage. More users equals more inference operations, even if the model stays the same size.
+- Training scales with model size. Bigger models need more GPUs, more power, more time.
+- Inference scales with usage. More users equals more inference operations, even if the model stays the same size.
 
 For the last two years, everyone focused on training. NVIDIA's H100 GPUs sold out because hyperscalers were building massive training clusters. But now, the frontier models (GPT-4, Gemini, Claude) are already trained. The next question is: can we get better results without making models bigger?
 
@@ -199,11 +183,17 @@ Enter test-time compute scaling.
 
 Test-time compute (also called inference-time compute) is the idea that instead of making the model bigger during training, you use more compute per query to get better answers.
 
-How it works:
+**How it works:**
 
-Traditional approach: Ask GPT-4 a question, get one answer, that's it.
+Traditional approach:
+- Ask GPT-4 a question
+- Get one answer
+- That's it
 
-Test-time compute approach: Ask the model to generate 100 different candidate answers, use a "verifier" model to score each one, select the best answer (or use chain-of-thought reasoning to iteratively refine).
+Test-time compute approach:
+- Ask the model to generate 100 different candidate answers
+- Use a "verifier" model to score each one
+- Select the best answer (or use chain-of-thought reasoning to iteratively refine)
 
 This uses 100x more compute per query, but the answer is significantly better. OpenAI's o1 and o3 "reasoning models" work this way. They "think longer" on hard problems, using more inference compute to improve accuracy.
 
@@ -211,11 +201,9 @@ This uses 100x more compute per query, but the answer is significantly better. O
 
 If test-time compute becomes the standard way to improve AI, then:
 
-Training demand plateaus (you're not making models bigger)
-
-Inference demand explodes (you're using 10-100x more compute per query)
-
-Memory becomes the bottleneck (not compute)
+- Training demand plateaus (you're not making models bigger)
+- Inference demand explodes (you're using 10-100x more compute per query)
+- Memory becomes the bottleneck (not compute)
 
 Why memory? Because generating 100 candidate answers means holding all that intermediate state in memory, shuttling data back and forth between the model and the verifier. The memory bandwidth requirement multiplies.
 
@@ -229,15 +217,14 @@ Yann LeCun is one of the "godfathers of deep learning," a Turing Award winner, a
 
 His thesis: LLMs are too limiting. The future of AI is world models.
 
-What are world models?
+**What are world models?**
 
 World models are AI systems that build internal simulations of how the physical world works. Instead of just predicting the next word in a sequence, they understand causality, physics, spatial relationships, and temporal dynamics.
 
 Think of it like this:
 
-LLMs predict: "What word typically comes next?"
-
-World models predict: "If I push this object, physics says it will fall."
+- LLMs predict: "What word typically comes next?"
+- World models predict: "If I push this object, physics says it will fall."
 
 LeCun's vision is that AI agents need to understand the world well enough to plan sequences of actions and predict outcomes. This is critical for robotics, autonomous systems, industrial processes, and any application where the AI needs to interact with physical reality, not just generate text.
 
@@ -253,11 +240,10 @@ If world models become the dominant paradigm (and LeCun is betting €500M that 
 
 Symbolic AI is the original approach to AI from the 1950s-1980s. It uses explicit rules, logic, and knowledge representations (like IF-THEN statements, knowledge graphs, formal logic).
 
-Neural networks: Learn patterns from data, great at handling messy real-world inputs, but black-box and prone to errors.
+- **Neural networks:** Learn patterns from data, great at handling messy real-world inputs, but black-box and prone to errors.
+- **Symbolic AI:** Uses explicit logic, explainable and provably correct, but brittle and requires manual programming.
 
-Symbolic AI: Uses explicit logic, explainable and provably correct, but brittle and requires manual programming.
-
-Neuro-symbolic hybrids combine both. Neural networks handle perception (vision, speech, pattern recognition). Symbolic systems handle reasoning (applying rules, logical consistency).
+**Neuro-symbolic hybrids** combine both. Neural networks handle perception (vision, speech, pattern recognition). Symbolic systems handle reasoning (applying rules, logical consistency).
 
 Here's what caught my attention: in January 2026, Yann LeCun (a longtime critic of symbolic AI) made a major shift toward hybrid neural/symbolic systems. Gary Marcus called this "breaking news vindicating neurosymbolic AI."
 
@@ -267,13 +253,10 @@ When a deep learning pioneer starts embracing symbolic approaches, it's a signal
 
 Symbolic reasoning requires:
 
-Knowledge graphs (large databases of facts and relationships)
-
-Rule databases (thousands or millions of IF-THEN rules)
-
-Constant memory lookups (traversing graphs, checking conditions, verifying logic)
-
-Irregular memory access patterns (not the dense matrix multiplication GPUs are optimized for)
+- Knowledge graphs (large databases of facts and relationships)
+- Rule databases (thousands or millions of IF-THEN rules)
+- Constant memory lookups (traversing graphs, checking conditions, verifying logic)
+- Irregular memory access patterns (not the dense matrix multiplication GPUs are optimized for)
 
 This is a memory-bound workload, not a compute-bound one. Researchers at KU Leuven are specifically studying "Efficient Hardware Architectures for Neuro-Symbolic AI" because current GPUs are severely inefficient for these operations, achieving less than 10% utilization on graph traversal and logic tasks.
 
@@ -298,7 +281,7 @@ The pattern is clear: No matter which paradigm wins, memory demand stays flat at
 
 Even in the "efficiency gains" scenario where models get smaller through compression and quantization, usage growth outpaces efficiency (Jevons paradox). More users, more edge devices, more distributed inference equals more aggregate memory demand.
 
-Memory is the one infrastructure component that wins across all futures.
+**Memory is the one infrastructure component that wins across all futures.**
 
 ---
 
@@ -320,33 +303,53 @@ Let me walk through why memory wins in each scenario:
 
 #### Scenario 1: LLM Scaling Continues (Status Quo)
 
-Even if pure scaling continues, models get bigger, which means more parameters and more memory per GPU. Inference volume grows with more queries per second, requiring more memory bandwidth. NVIDIA's H200 has 141GB HBM3E (vs H100's 80GB) because memory is the bottleneck.
+Even if pure scaling continues:
 
-Memory demand: High and growing
+- Models get bigger, which means more parameters and more memory per GPU
+- Inference volume grows with more queries per second, requiring more memory bandwidth
+- NVIDIA's H200 has 141GB HBM3E (vs H100's 80GB) because memory is the bottleneck
+
+**Memory demand: High and growing**
 
 #### Scenario 2: Test-Time Compute Becomes Standard
 
-If Ilya Sutskever and OpenAI are right that test-time compute is the new frontier, each query uses 10-100x more compute to generate and verify multiple answers. You must hold 100+ candidate solutions in memory simultaneously. Memory bandwidth becomes the critical constraint (not GPU cores).
+If Ilya Sutskever and OpenAI are right that test-time compute is the new frontier:
 
-Memory demand: Multiplies 10-100x per query
+- Each query uses 10-100x more compute to generate and verify multiple answers
+- You must hold 100+ candidate solutions in memory simultaneously
+- Memory bandwidth becomes the critical constraint (not GPU cores)
+
+**Memory demand: Multiplies 10-100x per query**
 
 #### Scenario 3: World Models Dominate
 
-If Yann LeCun's AMI Labs proves that world models are superior, processing video and 3D data requires 128GB+ RAM per system. Real-time simulation needs to hold entire world states in memory. Temporal coherence means storing sequences, not just single frames.
+If Yann LeCun's AMI Labs proves that world models are superior:
 
-Memory demand: Much higher than current LLMs
+- Processing video and 3D data requires 128GB+ RAM per system
+- Real-time simulation needs to hold entire world states in memory
+- Temporal coherence means storing sequences, not just single frames
+
+**Memory demand: Much higher than current LLMs**
 
 #### Scenario 4: Neuro-Symbolic Hybrids Win
 
-If neuro-symbolic becomes the standard (Marcus's preferred outcome), the neural layer needs memory for model weights (same as today). The symbolic layer needs memory for knowledge graphs and rule databases. Constant lookups make this a memory-bound workload.
+If neuro-symbolic becomes the standard (Marcus's preferred outcome):
 
-Memory demand: Higher than pure neural, because you need both
+- Neural layer needs memory for model weights (same as today)
+- Symbolic layer needs memory for knowledge graphs and rule databases
+- Constant lookups make this a memory-bound workload
+
+**Memory demand: Higher than pure neural, because you need both**
 
 #### Scenario 5: Edge Inference Proliferates
 
-If inference moves to devices (phones, cars, IoT) for latency and privacy, every device needs local memory for model weights. Edge deployment means distributed memory everywhere. Aggregate memory demand grows even if data center demand plateaus.
+If inference moves to devices (phones, cars, IoT) for latency and privacy:
 
-Memory demand: Distributed, but total volume increases
+- Every device needs local memory for model weights
+- Edge deployment means distributed memory everywhere
+- Aggregate memory demand grows even if data center demand plateaus
+
+**Memory demand: Distributed, but total volume increases**
 
 ### The Key Insight
 
@@ -364,21 +367,17 @@ One reason I'm avoiding a direct GPU play: NPU (Neural Processing Unit) uncertai
 
 If AI shifts from training-heavy (GPUs) to inference-heavy (NPUs), then we need to ask: which NPU architecture wins?
 
-The problem:
+**The problem:**
 
-Google TPUs are proprietary, locked to Google Cloud, optimized for TensorFlow.
-
-Apple Neural Engine is optimized for mobile, locked to Apple devices.
-
-Qualcomm Hexagon handles mobile edge inference, competing with Apple.
-
-Intel Gaudi and AMD MI300 compete with NVIDIA in data centers.
-
-Custom chips from Meta, Amazon, and Microsoft are all being developed in-house.
+- Google TPUs are proprietary, locked to Google Cloud, optimized for TensorFlow
+- Apple Neural Engine is optimized for mobile, locked to Apple devices
+- Qualcomm Hexagon handles mobile edge inference, competing with Apple
+- Intel Gaudi and AMD MI300 compete with NVIDIA in data centers
+- Custom chips from Meta, Amazon, and Microsoft are all being developed in-house
 
 There's no clear standard. Different models might run better on different hardware. The ecosystem is fragmenting.
 
-In contrast, HBM is architecture-agnostic. Every AI accelerator (GPU, TPU, NPU, custom chip) needs high-bandwidth memory. Whether NVIDIA wins, Google wins, or someone else wins, they all buy HBM from the same three suppliers.
+**In contrast, HBM is architecture-agnostic.** Every AI accelerator (GPU, TPU, NPU, custom chip) needs high-bandwidth memory. Whether NVIDIA wins, Google wins, or someone else wins, they all buy HBM from the same three suppliers.
 
 That's why memory is the safer infrastructure play. You're not betting on which processor architecture wins. You're betting on the component that all of them need.
 
@@ -388,41 +387,32 @@ That's why memory is the safer infrastructure play. You're not betting on which 
 
 Here's the supply and demand reality that makes this thesis urgent:
 
-Global HBM Supply:
+**Global HBM Supply:**
 
-SK hynix: 62-70% market share
-
-Micron: 21% market share
-
-Samsung: 17% market share
+- SK hynix: 62-70% market share
+- Micron: 21% market share
+- Samsung: 17% market share
 
 That's it. Three companies control over 95% of global HBM supply.
 
-Barriers to entry:
+**Barriers to entry:**
 
-Technical complexity: Through-Silicon Via (TSV) technology, 12-16 layer stacking, hybrid bonding at nanometer precision. Samsung failed NVIDIA qualification in 2024 despite being a semiconductor giant.
+- **Technical complexity:** Through-Silicon Via (TSV) technology, 12-16 layer stacking, hybrid bonding at nanometer precision. Samsung failed NVIDIA qualification in 2024 despite being a semiconductor giant.
+- **Capital requirements:** $10-20 billion per fab, plus $2-5 billion for advanced packaging facilities.
+- **Time to market:** 3-5 year development cycles. Even if someone started today, they're not producing until 2028-2029.
+- **Ecosystem lock-in:** SK hynix has worked with NVIDIA for 8+ years. Custom HBM4E designs require deep co-development. Switching costs are enormous.
+- **Packaging bottlenecks:** Multi-layer bonders have 12-month backlogs. You can't just buy capacity.
 
-Capital requirements: $10-20 billion per fab, plus $2-5 billion for advanced packaging facilities.
+**Supply situation:**
 
-Time to market: 3-5 year development cycles. Even if someone started today, they're not producing until 2028-2029.
+- Sold out through 2027. All three suppliers are capacity-constrained.
+- Demand exceeds supply. OpenAI's Stargate project alone needs 900,000 HBM wafers per month; global capacity is 350,000 per month.
+- Pricing power. DRAM prices up 60% in 2025, HBM even higher.
 
-Ecosystem lock-in: SK hynix has worked with NVIDIA for 8+ years. Custom HBM4E designs require deep co-development. Switching costs are enormous.
+**Market growth:**
 
-Packaging bottlenecks: Multi-layer bonders have 12-month backlogs. You can't just buy capacity.
-
-Supply situation:
-
-Sold out through 2027. All three suppliers are capacity-constrained.
-
-Demand exceeds supply. OpenAI's Stargate project alone needs 900,000 HBM wafers per month; global capacity is 350,000 per month.
-
-Pricing power. DRAM prices up 60% in 2025, HBM even higher.
-
-Market growth:
-
-Narrow HBM market: $7.27B (2025) to $9.18B (2026) to $54.6B (2028-2030)
-
-Broad AI memory TAM: $35B (2025) to $54.6B (2026) to $100B (2028)
+- Narrow HBM market: $7.27B (2025) → $9.18B (2026) → $54.6B (2028-2030)
+- Broad AI memory TAM: $35B (2025) → $54.6B (2026) → $100B (2028)
 
 This is a classic supply-constrained market where demand massively exceeds supply for years. The only question is which supplier captures the value.
 
@@ -434,99 +424,90 @@ This is a classic supply-constrained market where demand massively exceeds suppl
 
 When analyzing these companies, I went back to first principles from Benjamin Graham and Warren Buffett:
 
-Graham's principles:
+**Graham's principles:**
 
-Don't overpay. Price matters. A great company at the wrong price is a bad investment.
+- Don't overpay. Price matters. A great company at the wrong price is a bad investment.
+- Margin of safety. Buy when there's a gap between intrinsic value and market price.
+- Quality matters. Focus on businesses with durable competitive advantages.
 
-Margin of safety. Buy when there's a gap between intrinsic value and market price.
+**Buffett's addition:** "It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price."
 
-Quality matters. Focus on businesses with durable competitive advantages.
+**Applied to memory:**
 
-Buffett's addition: "It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price."
-
-Applied to memory:
-
-Don't overpay. Compare forward P/E ratios, not just trailing. Memory is cyclical, so you need to value at cycle midpoint.
-
-Quality. Market leadership, technical superiority, customer relationships equal moat.
-
-Fair price. SK hynix at 7.5-8x forward P/E vs Micron at 12.3x. Is the gap justified?
+- Don't overpay. Compare forward P/E ratios, not just trailing. Memory is cyclical, so you need to value at cycle midpoint.
+- Quality. Market leadership, technical superiority, customer relationships equal moat.
+- Fair price. SK hynix at 7.5-8x forward P/E vs Micron at 12.3x. Is the gap justified?
 
 ---
 
 ### SK hynix Deep Dive
 
-Ticker: 000660.KS (Korea Stock Exchange)
-
-Price: ₩765,000 (~$618 USD) as of January 24, 2026
-
-Market Cap: ~$380-395 billion
+**Ticker:** 000660.KS (Korea Stock Exchange)  
+**Price:** ₩765,000 (~$618 USD) as of January 24, 2026  
+**Market Cap:** ~$380-395 billion  
 
 #### The Business
 
 SK hynix is a pure-play memory company. When HBM wins, SK hynix wins directly. There's no dilution from other business units.
 
-Market Position:
+**Market Position:**
 
-62-70% HBM market share (and UBS predicts 70% for HBM4 in 2026)
+- 62-70% HBM market share (and UBS predicts 70% for HBM4 in 2026)
+- 90% of NVIDIA's HBM supply comes from SK hynix
+- First to market with HBM4 (samples shipped March-June 2025, mass production Q3 2025)
+- Technical leader (Samsung couldn't even pass NVIDIA's HBM3E qualification, but SK hynix did)
 
-90% of NVIDIA's HBM supply comes from SK hynix
+**Financial Snapshot:**
 
-First to market with HBM4 (samples shipped March-June 2025, mass production Q3 2025)
+- Revenue (TTM): ~$50 billion (84 trillion KRW)
+- 2026 operating profit forecast: 55-81 trillion won ($41-60 billion)
+- This would be 5.0-5.5x higher than the 2018 memory cycle peak
 
-Technical leader (Samsung couldn't even pass NVIDIA's HBM3E qualification, but SK hynix did)
+**Valuation:**
 
-Financial Snapshot:
-
-Revenue (TTM): ~$50 billion (84 trillion KRW)
-
-2026 operating profit forecast: 55-81 trillion won ($41-60 billion)
-
-This would be 5.0-5.5x higher than the 2018 memory cycle peak
-
-Valuation:
-
-Trailing P/E: ~15x
-
-Forward P/E: 7.5-8.04x (this is the key metric)
-
-10-year average P/E: 10.1x
+- Trailing P/E: ~15x
+- **Forward P/E: 7.5-8.04x** (this is the key metric)
+- 10-year average P/E: 10.1x
 
 Why forward P/E matters: Memory is cyclical. You need to value it based on where earnings are going, not where they've been. At 7.5-8x forward earnings with operating profit expected to grow 5x from the previous cycle peak, this is cheap.
 
 #### The Moats
 
-Technical leadership. First to HBM4, best yields, NVIDIA's choice for 90% of supply.
-
-Relationship lock-in. 8+ years working with NVIDIA, custom designs require deep co-development.
-
-Scale advantages. 62-70% market share gives pricing power and R&D leverage.
-
-Barriers to entry. See above. Nobody can replicate this in under 5 years.
+- **Technical leadership.** First to HBM4, best yields, NVIDIA's choice for 90% of supply.
+- **Relationship lock-in.** 8+ years working with NVIDIA, custom designs require deep co-development.
+- **Scale advantages.** 62-70% market share gives pricing power and R&D leverage.
+- **Barriers to entry.** See above. Nobody can replicate this in under 5 years.
 
 #### The Bull Case
 
-If the memory super-cycle plays out (HBM market $35B to $100B by 2028), SK hynix captures 60-70% of that growth as market leader. Operating margins expand as supply stays tight. P/E multiple re-rates from 8x to 15-20x (still cheap vs tech stocks at 25-30x). Stock could double or triple over 3-5 years.
+If the memory super-cycle plays out (HBM market $35B → $100B by 2028):
+
+- SK hynix captures 60-70% of that growth as market leader
+- Operating margins expand as supply stays tight
+- P/E multiple re-rates from 8x to 15-20x (still cheap vs tech stocks at 25-30x)
+- Stock could double or triple over 3-5 years
 
 Analyst targets: Morgan Stanley at ₩840,000 (+9.8% from current)
 
 #### The Bear Case
 
-Tariff risk. This is my biggest concern. In January 2026:
+**Tariff risk.** This is my biggest concern. In January 2026:
 
-Jan 14: Trump imposed 25% tariff on AI chips (H200, MI325X)
-
-Jan 17: Commerce Secretary Lutnick threatened 100% tariffs on memory chips: "They can pay 100% tariff, or they can build in America"
+- Jan 14: Trump imposed 25% tariff on AI chips (H200, MI325X)
+- Jan 17: Commerce Secretary Lutnick threatened 100% tariffs on memory chips: "They can pay 100% tariff, or they can build in America"
 
 This directly targets South Korean chipmakers.
 
-If 100% tariffs are imposed, SK hynix either pays the tariff (destroys margins) or builds a $15B+ U.S. fab (huge capex, years to complete).
+If 100% tariffs are imposed, SK hynix either:
 
-Currency risk. Korean Won volatility vs USD.
+- Pays the tariff (destroys margins)
+- Builds a $15B+ U.S. fab (huge capex, years to complete)
 
-Geopolitical risk. North Korea tensions, regional instability.
+**Other risks:**
 
-Cycle risk. Memory cycle peaks earlier than expected (2027 vs 2028).
+- Currency risk. Korean Won volatility vs USD.
+- Geopolitical risk. North Korea tensions, regional instability.
+- Cycle risk. Memory cycle peaks earlier than expected (2027 vs 2028).
 
 #### My Take
 
@@ -534,77 +515,68 @@ SK hynix is the better business at a cheaper price. Forward P/E of 7.5-8x for th
 
 I think those fears are overblown. The tariff threat is likely a negotiating tactic to force Korean companies to invest in U.S. fabs (which they'll do). The cycle risk is real, but supply won't catch up to demand until 2027-2028 at earliest.
 
-This is the value play.
+**This is the value play.**
 
 ---
 
 ### Micron Deep Dive
 
-Ticker: MU (NASDAQ)
-
-Price: $399 as of January 24, 2026
-
-Market Cap: ~$440 billion
+**Ticker:** MU (NASDAQ)  
+**Price:** $399 as of January 24, 2026  
+**Market Cap:** ~$440 billion  
 
 #### The Business
 
 Micron is a U.S.-based memory company with diversified products (DRAM, NAND, HBM). Memory is the core business, but they're not as pure-play as SK hynix.
 
-Market Position:
+**Market Position:**
 
-21% HBM market share (overtook Samsung for number 2 in 2025)
+- 21% HBM market share (overtook Samsung for number 2 in 2025)
+- Secondary NVIDIA supplier (diversification for NVIDIA's supply chain)
+- Paired 36GB HBM3E with AMD's MI350 GPU
+- Strong relationships with U.S. hyperscalers (Amazon, Microsoft, Google)
 
-Secondary NVIDIA supplier (diversification for NVIDIA's supply chain)
+**Financial Snapshot:**
 
-Paired 36GB HBM3E with AMD's MI350 GPU
+- Revenue: $37.4 billion (up 48.9% YoY)
+- Q1 revenue up 56.7% YoY (accelerating growth)
+- Net Income: $8.54 billion (up 637% YoY)
+- Net Margin: 22.8%
+- ROE: 15.76% (above cost of capital, creating shareholder value)
 
-Strong relationships with U.S. hyperscalers (Amazon, Microsoft, Google)
+**Valuation:**
 
-Financial Snapshot:
-
-Revenue: $37.4 billion (up 48.9% YoY)
-
-Q1 revenue up 56.7% YoY (accelerating growth)
-
-Net Income: $8.54 billion (up 637% YoY)
-
-Net Margin: 22.8%
-
-ROE: 15.76% (above cost of capital, creating shareholder value)
-
-Valuation:
-
-Trailing P/E: 34x (expensive on backward-looking basis)
-
-Forward P/E: 12.3x (this is the key metric)
-
-10-year average P/E: 19.4x
+- Trailing P/E: 34x (expensive on backward-looking basis)
+- **Forward P/E: 12.3x** (this is the key metric)
+- 10-year average P/E: 19.4x
 
 Why forward P/E matters: Micron trades at 34x trailing earnings because earnings were depressed in the trough of the memory cycle. As earnings explode (up 637% YoY), the forward P/E compresses to 12.3x. That's fair value, not expensive.
 
 #### The Moats
 
-CHIPS Act subsidy. $6.17 billion in grants + $7.5 billion in low-interest loans (total ~$13-14B effective value).
-
-Political protection. U.S. government wants domestic memory production; Micron is the only American HBM supplier.
-
-Strategic supplier status. U.S. companies prefer domestic supply chain for critical infrastructure.
-
-Scale advantages. Number 2 globally, large enough to compete but small enough to grow.
+- **CHIPS Act subsidy.** $6.17 billion in grants + $7.5 billion in low-interest loans (total ~$13-14B effective value).
+- **Political protection.** U.S. government wants domestic memory production; Micron is the only American HBM supplier.
+- **Strategic supplier status.** U.S. companies prefer domestic supply chain for critical infrastructure.
+- **Scale advantages.** Number 2 globally, large enough to compete but small enough to grow.
 
 #### The Bull Case
 
-If the memory super-cycle plays out, Micron grows from 21% to 25-30% market share (taking from Samsung). CHIPS Act subsidy gives competitive advantage ($6B+ capex covered by government). U.S. customers prefer domestic supplier, which means pricing power. Forward P/E stays at 12-15x while earnings double, so stock goes up 50-100%.
+If the memory super-cycle plays out:
+
+- Micron grows from 21% to 25-30% market share (taking from Samsung)
+- CHIPS Act subsidy gives competitive advantage ($6B+ capex covered by government)
+- U.S. customers prefer domestic supplier, which means pricing power
+- Forward P/E stays at 12-15x while earnings double, so stock goes up 50-100%
 
 Analyst targets: $430-450 (+9-13% from current)
 
 #### The Bear Case
 
-Valuation. At 12.3x forward P/E, there's less margin of safety than SK hynix at 8x. If the cycle disappoints, multiple compresses faster.
+**Valuation.** At 12.3x forward P/E, there's less margin of safety than SK hynix at 8x. If the cycle disappoints, multiple compresses faster.
 
-Competition. Samsung is catching up and undercutting on price (30% discounts on HBM3E). If Samsung passes NVIDIA qualification, Micron loses share.
+**Competition.** Samsung is catching up and undercutting on price (30% discounts on HBM3E). If Samsung passes NVIDIA qualification, Micron loses share.
 
-Execution risk. Must successfully deploy CHIPS Act funding and ramp U.S. production. Construction delays or yield issues hurt.
+**Execution risk.** Must successfully deploy CHIPS Act funding and ramp U.S. production. Construction delays or yield issues hurt.
 
 #### My Take
 
@@ -612,15 +584,12 @@ Micron is the political hedge. The CHIPS Act subsidy is real money ($6-14B) that
 
 At 12.3x forward P/E, it's not cheap, but it's fair value. You're paying for:
 
-Protection from tariff risk
+- Protection from tariff risk
+- Government subsidy (worth $6B+)
+- U.S. listing convenience (no currency risk)
+- Domestic supplier preference
 
-Government subsidy (worth $6B+)
-
-U.S. listing convenience (no currency risk)
-
-Domestic supplier preference
-
-This is the insurance policy against the tariff scenario.
+**This is the insurance policy against the tariff scenario.**
 
 ---
 
@@ -628,13 +597,22 @@ This is the insurance policy against the tariff scenario.
 
 Samsung trades at a similar discount to SK hynix (Korean discount applies to both), but I'm avoiding it for one reason: conglomerate dilution.
 
-Samsung Electronics is a massive conglomerate. Semiconductors are one division alongside smartphones (Galaxy), TVs and displays, appliances (refrigerators, washers), and consumer electronics.
+Samsung Electronics is a massive conglomerate. Semiconductors are one division alongside:
+
+- Smartphones (Galaxy)
+- TVs and displays
+- Appliances (refrigerators, washers)
+- Consumer electronics
 
 When you buy Samsung, you're getting exposure to all of that. HBM revenue gets diluted across the broader company. If HBM explodes but smartphone sales struggle, the stock underperforms.
 
 SK hynix and Micron are pure-play memory companies. When HBM wins, they win directly.
 
-Plus, Samsung is behind. Failed NVIDIA HBM3E qualification in 2024, running 3 months behind on HBM4, and currently number 3 in market share (17%).
+**Plus, Samsung is behind:**
+
+- Failed NVIDIA HBM3E qualification in 2024
+- Running 3 months behind on HBM4
+- Currently number 3 in market share (17%)
 
 For a pure-play HBM investment, Samsung doesn't make the cut.
 
@@ -656,7 +634,7 @@ For a pure-play HBM investment, Samsung doesn't make the cut.
 | NVIDIA Supply | 90% | Secondary supplier |
 | Political Risk | Tariffs (Korean) | Protected (U.S. + CHIPS Act) |
 | Subsidy | None | $6.17B grants + $7.5B loans |
-| Moat Strength | Five stars (tech leader, 90% NVIDIA) | Four stars (CHIPS Act, domestic) |
+| Moat Strength | ⭐⭐⭐⭐⭐ (tech leader, 90% NVIDIA) | ⭐⭐⭐⭐ (CHIPS Act, domestic) |
 | Valuation vs Growth | Cheap (8x forward P/E) | Fair (12.3x forward P/E) |
 | Expected Return (CAGR) | +19.0% | +12.9% |
 | Allocation | 60% | 40% |
@@ -671,15 +649,12 @@ This is my biggest uncertainty. I need to be transparent about it.
 
 I used multiple sources to build tariff probabilities:
 
-Polymarket prediction markets
+- Polymarket prediction markets
+- Historical U.S.-Korea trade negotiations (steel, autos, semiconductors)
+- Trump administration statements (Jan 14, Jan 17 tariff actions)
+- Korea's response (downplaying, citing KORUS FTA)
 
-Historical U.S.-Korea trade negotiations (steel, autos, semiconductors)
-
-Trump administration statements (Jan 14, Jan 17 tariff actions)
-
-Korea's response (downplaying, citing KORUS FTA)
-
-My tariff probability distribution:
+**My tariff probability distribution:**
 
 | Tariff Level | Probability | Description |
 |--------------|-------------|-------------|
@@ -688,11 +663,11 @@ My tariff probability distribution:
 | Moderate (25-30%) | 20% | Partial tariffs on specific products |
 | Aggressive (50%+) | 10% | Lutnick's 100% threat is realized |
 
-Key insight: I'm significantly MORE bearish on tariffs than market consensus (~50% no tariff). Market is pricing 50% chance of no tariffs. I think it's only 10%. This means I'm taking tariff risk more seriously than most investors.
+**Key insight:** I'm significantly MORE bearish on tariffs than market consensus (~50% no tariff). Market is pricing 50% chance of no tariffs. I think it's only 10%. This means I'm taking tariff risk more seriously than most investors.
 
 That's why I'm not going 80/20 SK hynix. I'm hedging with 40% Micron.
 
-Rebalancing trigger: April 14, 2026. The USTR report on semiconductor tariffs will clarify policy. That's 79 days away.
+**Rebalancing trigger:** April 14, 2026. The USTR report on semiconductor tariffs will clarify policy. That's 79 days away.
 
 ---
 
@@ -700,17 +675,14 @@ Rebalancing trigger: April 14, 2026. The USTR report on semiconductor tariffs wi
 
 I used scenario-weighted expected value with cycle-based multiple expansion (similar to how professional analysts value cyclical companies).
 
-Assumptions:
+**Assumptions:**
 
-HBM market grows from $35B (2025) to $100B (2028) [verified via SK hynix IR, Micron IR, TrendForce]
+- HBM market grows from $35B (2025) → $100B (2028) [verified via SK hynix IR, Micron IR, TrendForce]
+- Supply stays tight through 2027 (60% demand fulfillment in 2026) [verified]
+- P/E multiples expand as cycle matures (8-12x current → 25-30x at peak)
+- Based on 2016-2018 memory cycle precedent
 
-Supply stays tight through 2027 (60% demand fulfillment in 2026) [verified]
-
-P/E multiples expand as cycle matures (8-12x current to 25-30x at peak)
-
-Based on 2016-2018 memory cycle precedent
-
-Returns by Scenario:
+**Returns by Scenario:**
 
 | Tariff Scenario | Probability | SK hynix Return (CAGR) | Micron Return (CAGR) |
 |-----------------|-------------|------------------------|----------------------|
@@ -719,79 +691,62 @@ Returns by Scenario:
 | Moderate (25-30%) | 20% | +12% | +11% |
 | Aggressive (50%+) | 10% | +5% | +15% |
 
-Expected Value Calculation:
+**Expected Value Calculation:**
 
 SK hynix:
-
-(0.10 × 25%) + (0.60 × 19%) + (0.20 × 12%) + (0.10 × 5%)
-
-= 2.5% + 11.4% + 2.4% + 0.5%
-
-= +19.0% CAGR
+- (0.10 × 25%) + (0.60 × 19%) + (0.20 × 12%) + (0.10 × 5%)
+- = 2.5% + 11.4% + 2.4% + 0.5%
+- = **+19.0% CAGR**
 
 Micron:
-
-(0.10 × 15%) + (0.60 × 13%) + (0.20 × 11%) + (0.10 × 15%)
-
-= 1.5% + 7.8% + 2.2% + 1.5%
-
-= +12.9% CAGR
+- (0.10 × 15%) + (0.60 × 13%) + (0.20 × 11%) + (0.10 × 15%)
+- = 1.5% + 7.8% + 2.2% + 1.5%
+- = **+12.9% CAGR**
 
 Blended Return (60% SK / 40% MU):
+- (0.60 × 19.0%) + (0.40 × 12.9%)
+- = 11.4% + 5.16%
+- = **+16.3% CAGR**
 
-(0.60 × 19.0%) + (0.40 × 12.9%)
-
-= 11.4% + 5.16%
-
-= +16.3% CAGR
-
-Over 5 years: $10,000 becomes $21,154 (111% total return)
+Over 5 years: $10,000 → $21,154 (111% total return)
 
 ---
 
-### Kelly Criterion and Position Sizing
+### Kelly Criterion & Position Sizing
 
 I used Kelly Criterion to determine optimal position sizing. The formula balances expected return against volatility to maximize long-term growth.
 
 Simplified Kelly: f* = (Expected Return − Risk-Free Rate) / Variance
 
-For SK hynix:
+**For SK hynix:**
 
-Expected return: 19.0% CAGR
+- Expected return: 19.0% CAGR
+- Risk-free rate: 4% (10-year Treasury)
+- Standard deviation: ~75% (wide range of outcomes)
+- Kelly % = (19.0% − 4%) / (0.75²) = 15% / 0.56 = **27%**
 
-Risk-free rate: 4% (10-year Treasury)
+**For Micron:**
 
-Standard deviation: ~75% (wide range of outcomes)
+- Expected return: 12.9% CAGR
+- Risk-free rate: 4%
+- Standard deviation: ~60% (narrower range)
+- Kelly % = (12.9% − 4%) / (0.60²) = 8.9% / 0.36 = **25%**
 
-Kelly % = (19.0% − 4%) / (0.75²) = 15% / 0.56 = 27%
+**Total Kelly allocation:** 27% + 25% = 52% of capital
 
-For Micron:
+**Normalized** (to make 100% of your memory allocation):
 
-Expected return: 12.9% CAGR
+- SK hynix: 27 / 52 = 52%
+- Micron: 25 / 52 = 48%
 
-Risk-free rate: 4%
+But I'm not putting 52% of my portfolio into memory. Kelly assumes you can perfectly rebalance and handle volatility. In practice, I'm limiting this to **5% of total portfolio** (roughly one-tenth of Kelly, which is conservative).
 
-Standard deviation: ~60% (narrower range)
+**Within that 5%:**
 
-Kelly % = (12.9% − 4%) / (0.60²) = 8.9% / 0.36 = 25%
+- SK hynix: 52% of memory allocation = 0.52 × 5% = 2.6% of portfolio
+- Micron: 48% of memory allocation = 0.48 × 5% = 2.4% of portfolio
 
-Total Kelly allocation: 27% + 25% = 52% of capital
-
-Normalized (to make 100% of your memory allocation):
-
-SK hynix: 27 / 52 = 52%
-
-Micron: 25 / 52 = 48%
-
-But I'm not putting 52% of my portfolio into memory. Kelly assumes you can perfectly rebalance and handle volatility. In practice, I'm limiting this to 5% of total portfolio (roughly one-tenth of Kelly, which is conservative).
-
-Within that 5%:
-
-SK hynix: 52% of memory allocation = 0.52 × 5% = 2.6% of portfolio
-
-Micron: 48% of memory allocation = 0.48 × 5% = 2.4% of portfolio
-
-Rounded for execution: 60% SK hynix / 40% Micron
+**Rounded for execution: 60% SK hynix / 40% Micron**
 
 This tilts slightly more toward SK hynix to capture the valuation gap (8x vs 12.3x forward P/E) and market leadership (62% share, 90% of NVIDIA).
 
@@ -807,57 +762,50 @@ I'm documenting these risks publicly so I can track which ones materialize and w
 
 If AI fails to deliver ROI for enterprises, spending could collapse. This breaks the entire thesis. Hyperscalers cut capex, inference volume drops, memory demand craters.
 
-My view: 80% confidence this doesn't happen over 5 years. AI is already embedded in critical workflows. Even if hype fades, structural demand stays.
-
-Monitoring: Hyperscaler capex announcements (Microsoft, Amazon, Google, Meta). If two or more cut AI spending by over 25%, reassess.
+- **My view:** 80% confidence this doesn't happen over 5 years. AI is already embedded in critical workflows. Even if hype fades, structural demand stays.
+- **Monitoring:** Hyperscaler capex announcements (Microsoft, Amazon, Google, Meta). If two or more cut AI spending by over 25%, reassess.
 
 **2. Tariffs Worse Than Expected**
 
 If Trump's 100% tariff threat is realized and Korea doesn't secure exemption, SK hynix is severely disadvantaged. Stock could drop 20-30% on the announcement.
 
-My view: 30% probability of worse-than-expected outcome (combining moderate + aggressive scenarios). This is why I'm hedging with 40% Micron.
-
-Monitoring: April 14, 2026 USTR report. Clear rebalancing triggers based on outcome (see below).
+- **My view:** 30% probability of worse-than-expected outcome (combining moderate + aggressive scenarios). This is why I'm hedging with 40% Micron.
+- **Monitoring:** April 14, 2026 USTR report. Clear rebalancing triggers based on outcome (see below).
 
 **3. Energy Constraints Limit Deployment**
 
 Data centers need 1 GW of power (equivalent to San Francisco's entire usage). Grid infrastructure has long permitting delays. If data centers can't get power, they can't deploy AI, even if they have chips and memory.
 
-My view: Real risk, but mitigated by edge inference (distributed, not centralized power), efficiency improvements (AI models get more efficient over time), and nuclear/renewable investment (Microsoft reopening Three Mile Island for AI).
-
-Monitoring: Data center construction announcements. If major projects get cancelled for power reasons, reassess.
+- **My view:** Real risk, but mitigated by edge inference (distributed, not centralized power), efficiency improvements (AI models get more efficient over time), and nuclear/renewable investment (Microsoft reopening Three Mile Island for AI).
+- **Monitoring:** Data center construction announcements. If major projects get cancelled for power reasons, reassess.
 
 **4. Efficiency Gains Outpace Usage Growth**
 
 Model compression (quantization, pruning, distillation) can reduce memory requirements by 80-95% while maintaining accuracy. If efficiency improves faster than usage grows, memory demand could plateau or decline.
 
-My view: Jevons paradox applies. When something gets cheaper or more efficient, usage explodes. Cloud computing got more efficient, but data center capacity grew 10x. Same will happen with AI.
-
-Monitoring: Memory content per GPU trend. If HBM per chip starts declining year-over-year, reassess.
+- **My view:** Jevons paradox applies. When something gets cheaper or more efficient, usage explodes. Cloud computing got more efficient, but data center capacity grew 10x. Same will happen with AI.
+- **Monitoring:** Memory content per GPU trend. If HBM per chip starts declining year-over-year, reassess.
 
 **5. Chinese Competition Accelerates**
 
 CXMT and YMTC are 3-5 years behind on HBM development. If they catch up faster (via IP theft, subsidies, or breakthroughs), they could flood the market with cheaper alternatives.
 
-My view: Low risk through 2027. Export controls restrict their access to advanced equipment. Even if they succeed technically, U.S. and Europe won't buy from them for security reasons.
-
-Monitoring: CXMT/YMTC HBM announcements. If they achieve NVIDIA qualification before 2028, reassess.
+- **My view:** Low risk through 2027. Export controls restrict their access to advanced equipment. Even if they succeed technically, U.S. and Europe won't buy from them for security reasons.
+- **Monitoring:** CXMT/YMTC HBM announcements. If they achieve NVIDIA qualification before 2028, reassess.
 
 **6. Memory Cycle Peaks Earlier (2027 vs 2028)**
 
 Memory is cyclical. If too much capacity comes online in 2027, supply could exceed demand, prices collapse, and margins compress. SK hynix and Micron stocks would crater.
 
-My view: Medium risk. This is the nature of cyclical investing. Supply is constrained through 2027, but 2028 is uncertain.
-
-Monitoring: Fab capacity additions. If three or more new HBM fabs come online 2027-2028, prepare to exit or trim.
+- **My view:** Medium risk. This is the nature of cyclical investing. Supply is constrained through 2027, but 2028 is uncertain.
+- **Monitoring:** Fab capacity additions. If three or more new HBM fabs come online 2027-2028, prepare to exit or trim.
 
 **7. Alternative Architectures Emerge**
 
 If something fundamentally different displaces HBM (for example, chiplet architectures, CXL interconnects, on-chip memory), the entire thesis breaks.
 
-My view: Low risk over 5 years. HBM3/HBM4 is the current standard. Any replacement would take 5-10 years to develop and deploy at scale.
-
-Monitoring: JEDEC standards body announcements. If new memory standard emerges with major industry backing, reassess.
+- **My view:** Low risk over 5 years. HBM3/HBM4 is the current standard. Any replacement would take 5-10 years to develop and deploy at scale.
+- **Monitoring:** JEDEC standards body announcements. If new memory standard emerges with major industry backing, reassess.
 
 ---
 
@@ -867,79 +815,62 @@ Monitoring: JEDEC standards body announcements. If new memory standard emerges w
 
 The USTR report on semiconductor tariffs will clarify policy. This is my main rebalancing trigger.
 
-**If USTR recommends under 5% tariff (Korea exemption):**
+**If USTR recommends <5% tariff (Korea exemption):**
 
-Shift to 65% SK hynix / 35% Micron
-
-Tariff risk eliminated, valuation advantage dominates
-
-Expected return improves to +17.5% CAGR
+- Shift to 65% SK hynix / 35% Micron
+- Tariff risk eliminated, valuation advantage dominates
+- Expected return improves to +17.5% CAGR
 
 **If USTR recommends 5-15% symbolic tariff (matches my base case):**
 
-Keep 60% SK hynix / 40% Micron
-
-No action needed, allocation matches outcome
+- Keep 60% SK hynix / 40% Micron
+- No action needed, allocation matches outcome
 
 **If USTR recommends 15-25% moderate tariff:**
 
-Shift to 45% SK hynix / 55% Micron
+- Shift to 45% SK hynix / 55% Micron
+- Higher tariff drag than modeled, Micron protection more valuable
 
-Higher tariff drag than modeled, Micron protection more valuable
+**If USTR recommends >25% aggressive tariff:**
 
-**If USTR recommends over 25% aggressive tariff:**
-
-Shift to 30% SK hynix / 70% Micron
-
-SK fundamentally disadvantaged, Micron quasi-monopoly in U.S.
+- Shift to 30% SK hynix / 70% Micron
+- SK fundamentally disadvantaged, Micron quasi-monopoly in U.S.
 
 **Quarterly Monitoring:**
 
-HBM supply and demand balance (watch for oversupply signals)
-
-Samsung qualification progress (competitive threat)
-
-Chinese HBM development timeline
-
-AI capex trends (hyperscaler spending sustainability)
+- HBM supply and demand balance (watch for oversupply signals)
+- Samsung qualification progress (competitive threat)
+- Chinese HBM development timeline
+- AI capex trends (hyperscaler spending sustainability)
 
 **Exit Scenarios:**
 
-AI inference demand declines 6+ months consecutively
-
-HBM oversupply emerges (2027-2028)
-
-New memory technology disrupts HBM
+- AI inference demand declines 6+ months consecutively
+- HBM oversupply emerges (2027-2028)
+- New memory technology disrupts HBM
 
 ---
 
 ### Conviction Level
 
-High conviction on the thesis (memory wins across AI paradigms)
+- High conviction on the thesis (memory wins across AI paradigms)
+- Medium conviction on timing (5-year horizon reduces timing risk)
+- Medium conviction on tariff outcome (biggest uncertainty)
 
-Medium conviction on timing (5-year horizon reduces timing risk)
+**Overall: 75% conviction**
 
-Medium conviction on tariff outcome (biggest uncertainty)
+I'm sizing this at **5% of portfolio** (conservative vs Kelly's 52%) because:
 
-Overall: 75% conviction
-
-I'm sizing this at 5% of portfolio (conservative vs Kelly's 52%) because:
-
-Tariff uncertainty is real
-
-Memory is cyclical, so timing matters
-
-I want dry powder for other opportunities
-
-5% is meaningful but not career-ending if I'm wrong
+- Tariff uncertainty is real
+- Memory is cyclical, so timing matters
+- I want dry powder for other opportunities
+- 5% is meaningful but not career-ending if I'm wrong
 
 **What would increase conviction to 90%+:**
 
-April 14 USTR report shows under 10% tariffs (clarity on geopolitical risk)
-
-Q2-Q3 2026 earnings show accelerating HBM revenue (validates demand)
-
-SK hynix or Micron announces major U.S. fab expansion (de-risks tariffs)
+- April 14 USTR report shows <10% tariffs (clarity on geopolitical risk)
+- Q2-Q3 2026 earnings show accelerating HBM revenue (validates demand)
+- SK hynix or Micron announces major U.S. fab expansion (de-risks tariffs)
 
 ---
 
@@ -947,22 +878,95 @@ SK hynix or Micron announces major U.S. fab expansion (de-risks tariffs)
 
 This thesis is imperfect. I'll likely look back in a year and see things I got wrong or should have dug deeper on. But I'm publishing it anyway for three reasons:
 
-Accountability. By timestamping this on GitHub, I can't backfill my analysis or cherry-pick winners. If I'm wrong, I'll document what I missed.
+**1. Accountability.** By timestamping this on GitHub, I can't backfill my analysis or cherry-pick winners. If I'm wrong, I'll document what I missed.
 
-Learning in public. The best way to improve is to put your ideas out there and get feedback. If you see flaws in this analysis, I genuinely want to hear them.
+**2. Learning in public.** The best way to improve is to put your ideas out there and get feedback. If you see flaws in this analysis, I genuinely want to hear them.
 
-Building a process. This is my attempt to build a disciplined, repeatable framework for researching investments: identify macro themes, map technical details, find mispriced opportunities, size positions mathematically, and monitor with clear triggers.
+**3. Building a process.** This is my attempt to build a disciplined, repeatable framework for researching investments: identify macro themes, map technical details, find mispriced opportunities, size positions mathematically, and monitor with clear triggers.
 
-The game here isn't to be right about every detail. It's to:
+**The game here isn't to be right about every detail.** It's to:
 
-Ask better questions than the market
-
-Build a thesis that's resilient across scenarios
-
-Size positions appropriately for uncertainty
-
-Have a plan for what changes my mind
+- Ask better questions than the market
+    
+- Build a thesis that's resilient across scenarios
+    
+- Size positions appropriately for uncertainty
+    
+- Have a plan for what changes my mind
+    
 
 If this thesis works, great. If it doesn't, I'll learn why and get better.
 
-Either way, I'm committed to updating this publicly as
+Either way, I'm committed to updating this publicly as events unfold.
+
+---
+
+**Next review:** February 28, 2026 (monthly performance check)  
+**Critical milestone:** April 14, 2026 (USTR semiconductor tariff report)
+
+---
+
+## Citations and Sources
+
+## Primary Research
+
+- Steve Eisman, "Gary Marcus on the Massive Problems Facing AI & LLM Scaling," _The Real Eisman Playbook_, Episode 42, January 19, 2026. [YouTube](https://www.youtube.com/watch?v=aI7XknJJC5Q)
+    
+- Gary Marcus, "Deep Learning Is Hitting a Wall," 2022
+    
+- Yann LeCun, AMI Labs founding and world models strategy, January 2026
+    
+- MIT Technology Review, "Yann LeCun's new venture is a contrarian bet against large language models," January 22, 2026
+    
+
+## Financial Data
+
+- SK hynix Investor Relations, "2026 Market Outlook: Focus on the HBM-led Memory Supercycle," January 4, 2026
+    
+- Micron Technology Q2 FY2026 earnings report
+    
+- Stock prices via MarketScreener, Stock Analysis, NASDAQ (January 24, 2026)
+    
+- Forward P/E ratios verified via multiple analyst consensus sources
+    
+
+## Market Research
+
+- Mordor Intelligence, "AI Chipsets Market Size & Analysis," January 11, 2026
+    
+- Fortune Business Insights, "AI Inference Market Report," January 21, 2026
+    
+- Precedence Research, "High Bandwidth Memory Market," October 13, 2025
+    
+- TrendForce, HBM supply/demand analysis, 2025-2026
+    
+- Bank of America, AI memory TAM projections, January 2026
+    
+
+## Tariff and Policy
+
+- Reuters, "Trump imposes 25% tariff on imports of some AI chips," January 14, 2026
+    
+- U.S. Commerce Secretary Howard Lutnick, Micron groundbreaking ceremony remarks, January 17, 2026
+    
+- CHIPS and Science Act awards to Micron ($6.17B grants, $7.5B loans), December 2024
+    
+- South Korea trade policy responses, January 2026
+    
+
+## Technical Research
+
+- OpenReview, "Scaling LLM Test-Time Compute Optimally," 2024-2025
+    
+- Nature, "How good old-fashioned AI could spark the field's next revolution," November 24, 2025
+    
+- KU Leuven, "Efficient Hardware Architectures for Neuro-Symbolic AI," ongoing research
+    
+- NVIDIA, "What Is a World Model?" October 27, 2025
+    
+
+---
+
+**Last updated:** January 24, 2026  
+**Version:** 1.0  
+**License:** CC BY 4.0 (Attribution required for reuse)
