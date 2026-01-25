@@ -1,5 +1,5 @@
 **Date:** January 24, 2026  
-**File:** `theses/2026-01-ai-defense-cyber-thesis.md`
+**Author:** Mark Alocilja
 
 ---
 
