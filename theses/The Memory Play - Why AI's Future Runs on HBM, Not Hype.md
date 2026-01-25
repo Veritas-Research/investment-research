@@ -81,7 +81,7 @@
 - [Why Memory Wins All Scenarios](https://www.perplexity.ai/search/pull-the-transcript-from-this-HKx78ZRGS2GUt5AWa0NsQw#why-memory-wins-all-scenarios)
     
 
-## Part 3: The Thesis ★ Essential
+## Part 3: The Thesis 
 
 - [The Contrarian Insight](https://www.perplexity.ai/search/pull-the-transcript-from-this-HKx78ZRGS2GUt5AWa0NsQw#part-3-the-thesis)
     
@@ -92,7 +92,7 @@
 - [Supply Constraint Reality](https://www.perplexity.ai/search/pull-the-transcript-from-this-HKx78ZRGS2GUt5AWa0NsQw#supply-constraint-reality)
     
 
-## Part 4: Stock Analysis ★ Essential
+## Part 4: Stock Analysis 
 
 - [The Graham/Buffett Framework](https://www.perplexity.ai/search/pull-the-transcript-from-this-HKx78ZRGS2GUt5AWa0NsQw#the-grahambuffett-framework)
     
@@ -105,7 +105,7 @@
 - [Comparison Table](https://www.perplexity.ai/search/pull-the-transcript-from-this-HKx78ZRGS2GUt5AWa0NsQw#comparison-table)
     
 
-## Part 5: Allocation & Math ★ Essential
+## Part 5: Allocation & Math 
 
 - [Tariff Probability Analysis](https://www.perplexity.ai/search/pull-the-transcript-from-this-HKx78ZRGS2GUt5AWa0NsQw#tariff-probability-analysis)
     
@@ -114,7 +114,7 @@
 - [Kelly Criterion & Position Sizing](https://www.perplexity.ai/search/pull-the-transcript-from-this-HKx78ZRGS2GUt5AWa0NsQw#kelly-criterion--position-sizing)
     
 
-## Part 6: Risks and Monitoring ★ Essential
+## Part 6: Risks and Monitoring 
 
 - [What Could Prove Me Wrong](https://www.perplexity.ai/search/pull-the-transcript-from-this-HKx78ZRGS2GUt5AWa0NsQw#what-could-prove-me-wrong)
     
