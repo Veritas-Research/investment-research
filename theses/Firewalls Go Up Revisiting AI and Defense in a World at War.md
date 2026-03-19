@@ -46,7 +46,7 @@
 
 # Quick Navigation
 
-[Skip to the Story - Why This Update Exists](#Why-I'm-Revisiting-This)
+[Skip to the Story - Why This Update Exists](#why-i'm-revisiting-this)
 
 [Skip to the Geopolitical Catalyst](#the-geopolitical-catalyst-february-28-2026)
 
