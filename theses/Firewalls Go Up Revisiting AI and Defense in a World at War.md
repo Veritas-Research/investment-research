@@ -46,15 +46,24 @@
 
 # Quick Navigation
 
-[Skip to the Story - Why This Update Exists](#why-im-revisiting-this)
+[Skip to the Story - Why This Update Exists](https://github.com/Veritas-Research/investment-research/blob/main/theses/Firewalls%20Go%20Up%20Revisiting%20AI%20and%20Defense%20in%20a%20World%20at%20War.md)
+
 [Skip to the Geopolitical Catalyst](#the-geopolitical-catalyst-february-28-2026)
+
 [Skip to the Honest Reframing](#the-honest-reframing-what-naman-forced-me-to-confront)
+
 [Skip to the Four Picks](#the-four-picks-deep-dive)
+
 [Skip to Comparison Table](#comparison-table-all-four-stocks-side-by-side)
+
 [Skip to Performance Tracker](#entry-vs-current-performance-tracker)
+
 [Skip to Valuation and Estimates](#forward-estimates-and-valuation)
+
 [Skip to Scenario Analysis](#scenario-analysis-basebullbear)
+
 [Skip to Risks](#what-could-prove-me-wrong)
+
 [Skip to Citations](#citations-and-sources)
 
 ---
