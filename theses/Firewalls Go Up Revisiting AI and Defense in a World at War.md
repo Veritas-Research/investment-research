@@ -50,7 +50,7 @@
 
 [Skip to the Geopolitical Catalyst](#the-geopolitical-catalyst-february-28-2026)
 
-[Skip to the Honest Reframing](#the-honest-reframing-what-naman-forced-me-to-confront)
+[Skip to the Honest Reframing](#the-honest-reframing-what-people-forced-me-to-confront)
 
 [Skip to the Four Picks](#the-four-picks-deep-dive)
 
