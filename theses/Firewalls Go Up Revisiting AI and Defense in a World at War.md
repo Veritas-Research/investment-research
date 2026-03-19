@@ -46,11 +46,11 @@
 
 # Quick Navigation
 
-[Skip to the Story - Why This Update Exists](#why-i'm-revisiting-this)
+[Skip to the Story - Why This Update Exists](#why-im-revisiting-this)
 
 [Skip to the Geopolitical Catalyst](#the-geopolitical-catalyst-february-28-2026)
 
-[Skip to the Honest Reframing](#the-honest-reframing-what-people-forced-me-to-confront)
+[Skip to the Honest Reframing](#the-honest-reframing-what-others-forced-me-to-confront)
 
 [Skip to the Four Picks](#the-four-picks-deep-dive)
 
@@ -139,7 +139,7 @@ This is not a one-country, one-cycle story. This is a structural rearmament acro
 
 ---
 
-# The Honest Reframing: What others Forced Me to Confront
+# The Honest Reframing: What Others Forced Me to Confront
 
 Here is what the original thesis got right, what it overstated, and how the framing needs to change.
 
