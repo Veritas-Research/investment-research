@@ -46,7 +46,7 @@
 
 # Quick Navigation
 
-[Skip to the Story - Why This Update Exists](https://github.com/Veritas-Research/investment-research/blob/main/theses/Firewalls%20Go%20Up%20Revisiting%20AI%20and%20Defense%20in%20a%20World%20at%20War.md)
+[Skip to the Story - Why This Update Exists](#Why-I'm-Revisiting-This)
 
 [Skip to the Geopolitical Catalyst](#the-geopolitical-catalyst-february-28-2026)
 
