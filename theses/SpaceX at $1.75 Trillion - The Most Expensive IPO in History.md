@@ -1,8 +1,8 @@
 # SpaceX at $1.75 Trillion: The Most Expensive IPO in History, and Why I'm Not Buying
 
-**Author:** Mark A, Veritas Research
-**Published:** June 9, 2026
-**Series:** Standalone valuation note (companion to The Memory Play series)
+**Author:** Mark A, Veritas Research<br>
+**Published:** June 9, 2026<br>
+**Series:** Standalone valuation note (companion to The Memory Play series)<br>
 **Repository:** github.com/Veritas-Research/investment-research
 
 *One-line orientation: the most hyped Initial Public Offering (IPO) of our lifetime is also the most expensive ever sold, and once you do the simple math, passing on it is not caution, it is arithmetic.*
