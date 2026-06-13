@@ -39,7 +39,7 @@ Conventional wisdom holds that an EROI above roughly 7 to 10 is the floor needed
 
 When someone says solar is the cheapest electricity in history, they are quoting something close to the unbuffered case: the panel at the moment the sun is shining. That is real, and it is genuinely cheap. But a grid does not run on "when the sun is shining." It runs on demand, at night, in winter, during a windless week. Firming intermittent power requires storage, overbuild, transmission, and balancing, and the energy cost of all of that is what drags solar from 3.9 to 1.6.
 
-How is that buffered number actually built? Weissbach used **pumped-hydro storage as the baseline buffer**: you pump water uphill into a reservoir when the panels are overproducing and let it run back down through turbines when they are not, which converts intermittent solar into power you can dispatch on demand, just like a coal plant. But building that reservoir, running it, and eating the round-trip energy losses (you never get back all the energy you used pumping the water up) all cost energy, and that energy is subtracted from what the source returns. That subtraction is the entire gap between 3.9 and 1.6. The buffered number is simply the honest number once you insist the source actually be reliable.
+How is that buffered number actually built? Weissbach used **pumped-hydro storage as the baseline buffer**: you pump water uphill into a reservoir when the panels are overproducing and let it run back down through turbines when they are not, which converts intermittent solar into power you can dispatch on demand, just like a coal plant. But building that reservoir, running it, and eating the round-trip energy losses all cost energy (pumped hydro returns only about 70 to 80% of the energy it stores, it is geographically limited to sites with the right terrain, and it discharges for hours, not days), and that energy is subtracted from what the source returns. That subtraction is the entire gap between 3.9 and 1.6. The buffered number is simply the honest number once you insist the source actually be reliable.
 
 Levelized Cost of Energy (LCOE), the headline metric everyone cites, mostly ignores these system costs. The buffered EROI does not let you ignore them. That is why it is the policy-relevant and investment-relevant number.
 
@@ -56,15 +56,25 @@ China owns solar end to end: roughly 1,000 gigawatts (GW) of annual manufacturin
 
 The country flooding the world with panels is quietly reserving reliable, dispatchable power for its own industrial grid. That is the tell.
 
-### 4. Two explanations, both partly right
+### 4. The China-specific evidence: the panels barely run, and they are in the wrong place
+
+Zoom in on China and the system-cost problem stops being abstract. Three hard points, the first one verified against the 2024 Statistical Review of World Energy:
+
+- **The fleet barely runs.** In 2024 China's solar generated 839 terawatt-hours from about 888 GW of installed capacity, a capacity factor of roughly 11%. Spain, by comparison, ran at about 17%. Both figures use end-of-year capacity; because China added a huge slug of panels through 2024, a fairer average-capacity basis lifts China to roughly 13% and Spain to roughly 18%. Either way, a Chinese panel does meaningfully less work than a Spanish one. That gap is the buffered-EROI problem showing up directly in output: low utilization on top of rising curtailment.
+- **The good sun is where nobody lives.** China's genuinely strong solar resource sits on the Tibetan plateau and the western deserts. The population, and the heavy industry, sit south and east of Beijing, where the resource is comparable to or worse than Germany's. As a rule of thumb, a site at or below about 1,200 kilowatt-hours per kilowatt-peak per year is "Germany-equivalent," meaning you install close to double the panels for the same output. A 2013 Siemens study cited by Smil estimated Europe wasted roughly 60 billion dollars building solar and wind in the wrong locations. China faces the same trap, compounded by land scarcity, because it guards farmland for food security.
+- **The economy is the wrong shape for solar.** China makes the world's heavy materials (Smil's four pillars: steel, cement, ammonia, plastics), which demand high, uninterrupted power density (in the hundreds of watts per square meter) and in most cases cannot be made without fossil fuels at all. That is a fundamental mismatch with low-density, intermittent solar, and it is a large part of why China keeps building coal: not as a hedge, but because its industrial base physically needs dispatchable power.
+
+The throughline: even the country that makes solar cheapest cannot make the geography, the utilization, or its own industrial demand fit what solar actually provides.
+
+### 5. Two explanations, both partly right
 
 There is an honest debate about why China's solar collapsed, and a research note should hold both sides.
 
 The physics camp (Doomberg is the sharpest voice) says this is the buffered number made visible: once intermittent share swamps the dispatchable capacity that balances it, curtailment spikes and the returns on the next panel collapse. The policy camp (named analysts at the Lantau Group, Ember, and the Centre for Research on Energy and Clean Air) says the collapse was triggered by a specific pricing reform (China's Document 136, which ended fixed feed-in tariffs in June 2025) plus a 2025 rush to install before the deadline, and that curtailment reflects grid inflexibility, not a hard physical ceiling.
 
-My read: they are describing the same wall from opposite sides. China hit a real integration limit, which vindicates the narrow engineering point that intermittent share cannot grow indefinitely without massive and expensive firming. But this is a managed deceleration, not the death of solar. China still targets roughly 3,600 GW of wind and solar by 2035. The truth is "more measured," not "dead end."
+My read: they are describing the same wall from opposite sides. China hit a real integration limit, which vindicates the narrow engineering point that intermittent share cannot grow indefinitely without massive and expensive firming. There is a physical ceiling. We just cannot name the exact number, because it shifts by country and even by region within a country: an island with a residential, services economy can absorb a high intermittent share, while a dense, industrial grid like China's or Japan's cannot, for reasons of climate, geography, population density, and economy. That is more accurate than either "no ceiling" or "one fixed ceiling." But this is a managed deceleration, not the death of solar. China still targets roughly 3,600 GW of wind and solar by 2035. The truth is "more measured," not "dead end."
 
-### 5. Where this points for the broader market
+### 6. Where this points for the broader market
 
 If the system cost of intermittency is real and underpriced, the value is not in the panel. It is in everything that makes a variable grid actually work, and in the dispatchable sources whose EROI does not collapse when you ask them to be reliable.
 
@@ -75,7 +85,7 @@ If the system cost of intermittency is real and underpriced, the value is not in
 
 This is commentary, not a buy list. But the direction of travel is that the market pays up for "cheap" intermittent generation and underpays for the dispatchable and firming layer that the buffered number says is doing the real work.
 
-### 6. Where the view could be wrong
+### 7. Where the view could be wrong
 
 I am not calling renewables a dead end, and I am not predicting a crash in solar. Three honest counterpoints:
 
@@ -89,4 +99,4 @@ The market keeps quoting solar's best number and pretending the grid runs on sun
 
 ## Notes
 
-Independent research and commentary, not investment advice. Sources: Vaclav Smil, *Energy Transitions* (Figure 8.3, after Weissbach et al. 2013); cross-validated deep research on Doomberg's "Awkward Truths" (China solar 2026); IEA, BloombergNEF, Carbon Brief, Ember, and CREA for the China figures. Companion to the SpaceX valuation note and the Memory Play series. License: CC BY 4.0.
+Independent research and commentary, not investment advice. Sources: Vaclav Smil, *Energy Transitions* (Figure 8.3, after Weissbach et al. 2013) and *Power Density*; the Energy Institute Statistical Review of World Energy 2024 (China and Spain solar generation and capacity, used to compute capacity factors); Mills and Wiser (Lawrence Berkeley National Laboratory, 2012) on solar capacity credit; cross-validated deep research on Doomberg's "Awkward Truths" (China solar 2026); IEA, BloombergNEF, Carbon Brief, Ember, and CREA for the China figures. Companion to the SpaceX valuation note and the Memory Play series. License: CC BY 4.0.
