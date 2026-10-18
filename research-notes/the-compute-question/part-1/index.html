@@ -1,0 +1,307 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chinese AI models are cheaper. But what does "cheaper" mean?</title>
+<meta name="description" content="You have probably heard that Chinese open models cost a fifth of the price of American frontier models, or less. But what does &quot;cheaper&quot; mean?">
+<meta property="og:title" content="Chinese AI models are cheaper. But what does &quot;cheaper&quot; mean?">
+<meta property="og:description" content="You have probably heard that Chinese open models cost a fifth of the price of American frontier models, or less. But what does &quot;cheaper&quot; mean?">
+<meta property="og:type" content="article">
+<script>try{var s=localStorage.getItem("vr-theme");if(s==="dark"||s==="light")document.documentElement.setAttribute("data-theme",s)}catch(e){}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Direction B, Data desk. One content column 1120px wide; every block shares the same right edge. */
+:root{--bg:#EDF0EF;--panel:#FFFFFF;--ink:#111A1C;--ink2:#2B3739;--mute:#55646A;--line:#D2D9DA;--soft:#E3E9E8;--us:#2B5797;--cn:#E9A23B;--focus:#2B5797;
+--display:"Schibsted Grotesk","Trebuchet MS",sans-serif;--body:"Atkinson Hyperlegible",Verdana,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1213;--panel:#151C1E;--ink:#E7EEEE;--ink2:#C6D1D2;--mute:#95A6A9;--line:#273335;--soft:#1D282A;--us:#8CB6F0;--cn:#B9771D;--focus:#E9A23B;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0D1213;--panel:#151C1E;--ink:#E7EEEE;--ink2:#C6D1D2;--mute:#95A6A9;--line:#273335;--soft:#1D282A;--us:#8CB6F0;--cn:#B9771D;--focus:#E9A23B;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 var(--body);font-variant-numeric:tabular-nums}
+a{color:var(--ink);text-decoration-color:var(--mute);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+/* top bar */
+.topbar{border-bottom:1px solid var(--line)}
+.tb-in{max-width:1120px;margin:0 auto;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;gap:12px 16px;flex-wrap:wrap}
+.brand{font:800 17px var(--display);letter-spacing:-.01em}
+.tb-r{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.series{font:500 13px var(--display);padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink2);background:var(--panel)}
+.switch{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 4px;background:transparent;border:0;cursor:pointer;color:var(--ink2);font:500 13px var(--display)}
+.switch .trk{position:relative;display:inline-block;width:40px;height:24px;border-radius:999px;background:var(--soft);border:1px solid var(--line)}
+.switch .knob{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:var(--mute);transition:left .15s}
+.switch[aria-checked="true"] .trk{background:var(--ink)}
+.switch[aria-checked="true"] .knob{left:18px;background:var(--panel)}
+@media (prefers-reduced-motion:reduce){.switch .knob{transition:none}}
+/* page */
+.wrap{max-width:1120px;margin:0 auto;padding:72px 40px 104px;display:flex;flex-direction:column;gap:72px}
+.wrap>header{display:flex;flex-direction:column;gap:22px}
+h1{font:800 62px/1.02 var(--display);letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+h2{font:700 32px/1.15 var(--display);letter-spacing:-.015em;margin:0;text-wrap:balance}
+p{margin:0;color:var(--ink2)}
+p b,p strong{color:var(--ink)}
+.lede{font-size:20px}
+.note{margin-top:14px;padding:16px 20px;background:var(--soft);border-radius:10px;font-size:14px;color:var(--mute)}
+section{display:flex;flex-direction:column;gap:20px}
+.small{font-size:14px;color:var(--mute)}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.tag{align-self:flex-start;font:700 12px var(--display);letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--soft);color:var(--ink2)}
+.tag.inv{background:var(--ink);color:var(--panel)}
+/* quotes */
+.qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.q{padding:20px;gap:14px}
+.q p{font-size:18px;line-height:1.5;color:var(--ink)}
+.q>span{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:13px;line-height:1.5;color:var(--mute)}
+.q>span a{font-weight:700;text-decoration-color:var(--line)}
+/* taxi cards */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.three .box{padding:20px;gap:8px}
+.three b{font:700 19px var(--display);letter-spacing:-.01em}
+.three span{font-size:15px;line-height:1.55;color:var(--mute)}
+/* charts */
+.key{display:flex;gap:8px 20px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--mute)}
+.key span:has(.sw){display:inline-flex;align-items:center;gap:8px;color:var(--ink)}
+.sw{display:inline-block;width:14px;height:14px;border-radius:3px}
+.sw.us,.f{background:var(--us)}.sw.cn,.f.cn{background:var(--cn)}
+.chart{display:flex;flex-direction:column;gap:10px}
+.bar{display:grid;grid-template-columns:240px minmax(0,1fr) 76px;gap:14px;align-items:center;font-size:14px;color:var(--ink)}
+.bar .t{height:18px;background:var(--soft);border-radius:4px;overflow:hidden}
+.bar .f{height:100%;border-radius:4px}
+.bar .v{text-align:right;font-weight:700}
+.axis{display:grid;grid-template-columns:240px minmax(0,1fr) 76px;gap:14px;font-size:12px;color:var(--mute)}
+.axis span:nth-child(2){border-top:1px solid var(--line);padding-top:8px}
+.cache .f{background:var(--mute)}.cache .f.k{background:var(--ink)}
+/* controls */
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btns button{min-height:44px;padding:10px 16px;border-radius:999px;font:15px var(--body);cursor:pointer;background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btns button.on{background:var(--ink);color:var(--panel);border-color:var(--ink);font-weight:700}
+.btns button.match{border:2px solid var(--ink);padding:9px 15px;font-weight:700}
+.btns button.dim{background:transparent;color:var(--mute);border:1px dashed var(--line)}
+.cols .btns{gap:6px}.cols .btns button{padding:8px 12px;font-size:14px}.cols .btns button.match{padding:7px 11px}
+label{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--mute);margin-top:6px}
+label b{color:var(--ink);white-space:nowrap}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;margin:16px 0 8px;cursor:pointer;background:var(--line)}
+input[type=range]::-webkit-slider-runnable-track{height:6px;background:transparent;border-radius:3px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;margin-top:-8px;background:var(--panel);border:2px solid var(--ink)}
+input[type=range]::-moz-range-track{height:6px;background:transparent}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--panel);border:2px solid var(--ink)}
+.chk{display:flex;flex-wrap:wrap;gap:0 28px}
+.chk label{justify-content:flex-start;align-items:center;gap:10px;min-height:44px;margin:0;color:var(--ink);cursor:pointer}
+.chk input{width:18px;height:18px;margin:0;accent-color:var(--ink)}
+details{border-top:1px solid var(--line);padding-top:8px}
+details.box{border-top:1px solid var(--line);padding-top:24px}
+summary{display:inline-flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;font:700 15px var(--display);color:var(--ink);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"";width:7px;height:7px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(-45deg);transition:transform .15s}
+details[open]>summary::before{transform:rotate(45deg)}
+.out{font:800 24px/1.3 var(--display);letter-spacing:-.01em;color:var(--ink)}
+#uc_o{font:500 22px/1.35 var(--display);color:var(--ink2)}
+#uc_o .big{font-size:44px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.box>p.small:last-child{border-top:1px solid var(--line);padding-top:16px;font-size:13px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.verdict{background:var(--soft);border-radius:12px;padding:20px 24px;font-size:17px;line-height:1.65;color:var(--ink2)}
+.verdict b{color:var(--ink)}
+/* tables */
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.55}
+th{text-align:left;font:700 12px var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--ink2)}
+.tconc{background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.tconc table{min-width:720px}
+.tconc th{background:var(--soft);padding:12px 20px}
+.tconc td{padding:16px 20px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+.tconc td:first-child{font:700 16px var(--display);color:var(--ink)}
+.tconc td:last-child{font-size:14px;color:var(--mute)}
+.tlined{border-top:1px solid var(--line)}
+.tlined table{min-width:640px;font-size:14px}
+.tlined th{padding:12px 16px 12px 0;color:var(--mute)}
+.tlined td{padding:12px 16px 12px 0;border-top:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+.tlined td:first-child{color:var(--mute)}
+.tlined td a{font-weight:700}
+/* phone */
+@media (max-width:760px){
+.tb-in{padding:12px 20px}
+.wrap{padding:36px 20px 64px;gap:48px}
+h1{font-size:38px;line-height:1.05}
+h2{font-size:26px}
+.lede{font-size:18px}
+.qs,.three,.cols{grid-template-columns:1fr}
+.box{padding:18px}
+.bar{grid-template-columns:minmax(0,1fr) 64px;row-gap:4px}
+.bar>span:first-child{grid-column:1/-1}
+.axis{grid-template-columns:minmax(0,1fr) 64px}.axis span:first-child{display:none}
+#uc_o .big{font-size:36px}
+}
+</style>
+</head><body><header class="topbar"><div class="tb-in"><span class="brand">Veritas Research</span><div class="tb-r"><span class="series">The Compute Question · Part 1 of 2</span><button type="button" class="switch" id="themeSw" role="switch" aria-checked="false"><span class="trk" aria-hidden="true"><span class="knob"></span></span>Dark mode</button></div></div></header>
+<main class="wrap">
+<header>
+<h1>Chinese AI models are cheaper. But what does "cheaper" mean?</h1>
+<p class="lede">You have probably heard that Chinese open models cost a fifth of the price of American frontier models, or less. When DeepSeek launched in January 2025, shares in US power companies fell 20% or more in a day, on the idea that the world would need fewer data centers.</p>
+<p class="lede">But what does "cheaper" mean? Cheaper to buy? Less electricity? Less computing power? Those are three different questions, and they have three different answers. This guide breaks them down.</p>
+<p class="note"><strong>Note:</strong> A lot of research has gone into checking and referencing the facts in this guide, but it is not perfect and some assumptions have been made. Please treat it as an illustration and do your own research to confirm. I did my best to show how the token counts are measured and where they come from. I also added the calculation method and figures from published lab measurements, good for the right ballpark but not for the last decimal. The method and every source are at the bottom. The views are my own and do not reflect my employer's views or stance.</p></header>
+
+<section><h2>What people say</h2>
+<div class="qs">
+<div class="box q"><div class="tag">It is cheaper</div><p>"Chinese LLMs typically cost around one-fifth of their foreign counterparts."</p><span><a href="https://www.thewirechina.com/2025/11/09/cheap-and-open-source-chinese-ai-models-are-taking-off/">The Wire China</a>, November 2025, citing a SuperCLUE report</span></div>
+<div class="box q"><div class="tag">It is cheaper</div><p>"Somewhere between a fifth and a seventh of what Claude Opus or GPT-5.5 cost per output token."</p><span><a href="https://thenextweb.com/news/a-cheap-chinese-ai-model-is-closing-in-on-anthropic-and-openai/">The Next Web</a>, July 2026, on Z.ai's GLM-5.2, citing several outlets</span></div>
+<div class="box q"><div class="tag">So we need less power</div><p>Models like DeepSeek's "could result in less electricity demand overall."</p><span><a href="https://www.itiger.com/hans/news/2506531581">Reuters</a>, January 2025, citing analysts and economists</span></div>
+<div class="box q"><div class="tag">So we need less power</div><p>"Raising doubts about the high expectations for cloud capex, chip growth and power requirements."</p><span><a href="https://nbcsandiego.com/news/business/money-report/power-stocks-plunge-as-ai-energy-needs-called-into-question-because-of-new-china-ai-lab/3735450">Bank of America</a>, January 2025, via CNBC</span></div>
+<div class="box q"><div class="tag inv">Or the opposite</div><p>"Jevons paradox strikes again! As AI gets more efficient and accessible, we will see its use skyrocket, turning it into a commodity we just can't get enough of."</p><span><a href="https://www.geekwire.com/2025/microsoft-ceo-says-ai-use-will-skyrocket-with-more-efficiency-amid-craze-over-deepseek/">Satya Nadella</a>, Microsoft chief executive, January 2025</span></div>
+<div class="box q"><div class="tag inv">Or the opposite</div><p>"The amount of computation we need as a result of agentic AI, as a result of reasoning, is easily 100 times more than we thought we needed this time last year."</p><span><a href="https://fortune.com/2025/03/19/nvidia-ceo-jensen-huang-ai-will-need-more-computing-power">Jensen Huang</a>, Nvidia chief executive, March 2025</span></div>
+</div>
+<p class="small"><strong>Fun fact:</strong> By May 2026 Chinese open models were about 61% of all tokens on OpenRouter, one of the largest AI routing services, which lets developers reach many AI models through one account (<a href="https://www.wing.vc/content/chinas-open-weight-takeover">Wing Venture Capital</a>).</p></section>
+
+
+<section><h2>What models cost: think of a taxi ride</h2>
+<div class="three">
+<div class="box"><b>1. The fare per kilometre</b><span>Price per token. What the company charges you. It can be set low on purpose, like a taxi firm losing money to win customers.</span></div>
+<div class="box"><b>2. Fuel per kilometre</b><span>Energy per token. How much electricity the chip burns to produce one token. This is physics.</span></div>
+<div class="box"><b>3. Kilometres to get there</b><span>Tokens per task. A driver who takes the long way round uses more fuel even in an efficient car.</span></div>
+</div>
+<p>Remember: A token is a chunk of a word, about three quarters of one. The power plant only feels <b>fuel per kilometre times kilometres driven</b>. It never sees the fare.</p></section>
+
+<section><h2>Some models take the long way</h2>
+<p>Using the taxi analogy above, we can compare how far different models travel to reach the same destination: the right answer. For this I use a study called OckBench (<a href="https://arxiv.org/abs/2511.05722v3">Du, Kang, Han, Krishna and Zhu, "OckBench: Measuring the Efficiency of LLM Reasoning", arXiv 2511.05722, version 3, June 2026</a>). The researchers gave models the same 200 math, coding and science problems, checked which ones each model got right, and counted the tokens each one wrote to get there. Much of it is hidden "thinking out loud". Because every model faced the same problems, models with about the same score can be compared fairly: same destination, different distance.</p>
+<div class="box"><div class="key"><span><i class="sw us"></i>US models</span><span><i class="sw cn"></i>Chinese open models</span><span>Number in brackets, such as (83%): share of problems solved</span></div><div id="ock" class="chart"></div><div class="axis" aria-hidden="true"><span></span><span>Tokens per problem</span><span></span></div></div>
+<p class="small"><b>Takeaways:</b> DeepSeek V4 Flash solved about as many problems as GPT-5.4 and wrote 26 times more tokens. That is the widest gap in the test: DeepSeek ran on maximum thinking and GPT-5.4 on medium. Against Claude Opus 4.7 the gap is 11 times.</p>
+<p class="small"><b>Two caveats to keep in mind:</b> The study picked its problems on purpose as the ones where models differ most, so these gaps are the wide end. And not every US model is lean: Claude Opus 4.6 wrote more than Qwen.</p>
+<p>The same thing happens inside one model when you turn its thinking dial up.</p>
+<div class="box"><div class="tag">GPT-5.5, same problems, five thinking settings</div><div id="eff" class="chart"></div><div class="axis" aria-hidden="true"><span></span><span>Tokens per problem</span><span></span></div></div>
+<p class="small"><b>Takeaways:</b> On "low" GPT-5.5 got 75 of every 100 problems right and wrote about 1,600 tokens each. On "extra high" it got 90 right and wrote about 13,300. Fifteen more right answers cost 8 times the tokens.</p>
+<p>Even with some of the newest models, the story is mixed.</p>
+<div class="box"><div class="tag">Newest results, same test, read 6 October 2026</div><div class="key"><span><i class="sw us"></i>US models</span><span><i class="sw cn"></i>Chinese open models</span></div><div id="new" class="chart"></div><div class="axis" aria-hidden="true"><span></span><span>Tokens per problem</span><span></span></div></div>
+<p class="small"><b>Takeaways:</b> Kimi K3 closed most of the gap. It wrote 1.2 times as many tokens as GPT-5.5 on high for about the same score, where the earlier Kimi wrote 13 to 26 times more than its US matches. Interestingly, DeepSeek has not closed it: even turned down from maximum to high, it wrote about 6 times more than Claude Opus 4.7 for the same score.</p>
+<p class="small">So what we are seeing: certain models and settings use far more tokens (they take the long route), but some newer models are closing the gap. Note: GPT-6, Gemini 3.8 and Claude Opus 5.5 are not in the test yet, and the paper does not say which thinking setting Claude and Gemini ran at.</p></section>
+
+<section><h2>Fuel: it depends on how much of the model wakes up</h2>
+<p>A model is a giant grid of numbers called parameters. Bigger grid, more electricity per token. But not in a straight line: one study found 70 times more parameters cost about 7 times more energy per token.</p>
+<p>Many models use a trick here. Picture a school with 1,000 teachers. An older design makes every teacher read your question. A "mixture of experts" model sends it to only the 30 who know the subject. Measured saving: about 3.6 times less energy per token against an older design of the same total size, and less when the model is very large.</p>
+<p>This is not a Chinese trick. OpenAI's open model (gpt-oss) uses it, so does France's Mixtral, and so do DeepSeek, Qwen and Kimi. The closed labs do not publish their designs, so nobody outside knows how much of GPT, Claude, Gemini or Grok wakes up per token. Kimi, Qwen and DeepSeek publish it. Kimi K2 has 1 trillion parameters and wakes about 32 billion. The newer Kimi K3 has 2.8 trillion and wakes about 104 billion.</p>
+<p><b>What does that mean for everyday use?</b> Use the interactive calculator below: choose a task by clicking one of its buttons.</p>
+<div class="box"><div class="btns" id="uc"></div>
+<p class="out" id="uc_o" style="margin-top:12px"></p><p class="small" id="uc_n"></p>
+<details><summary>Show the dials behind this</summary>
+<label for="ap">Parameters awake per token (billions) <b id="apv"></b></label><input type="range" id="ap" min="1" max="400" value="32">
+<label for="tk">Tokens of real work (output plus weighted input) <b id="tkv"></b></label><input type="range" id="tk" min="100" max="200000" step="100" value="500">
+<div class="chk" style="margin-top:8px"><label><input type="checkbox" id="k_r"> Long reasoning answers (1.5 to 2 times per token)</label><label><input type="checkbox" id="k_f" checked> Real data center overhead (about 2 times)</label><label><input type="checkbox" id="k_n"> One chip generation newer (1.5 times better)</label></div>
+<p class="small" id="jt"></p></details>
+<p class="small">Methodology: 0.15 joules per token for a 32 billion parameter model on a busy chip, scaling with parameters to the power 0.47, my own line through two points in one paper. Sizes of closed models are guesses (10 billion awake for a fast model, 100 billion for a top model). Treat every figure here as a sketch. For scale: Google reported 0.24 watt hours for its median Gemini prompt. This method gives about 0.04 for a short chat answer, so the chat presets run about 6 times low. Treat them as a floor.</p></div></section>
+
+<section><h2>Put them together: cheap fare, long route</h2>
+<p>To see this in action, use the interactive comparison below. Start by picking a model in the Model A box. The closest match from the other country (a model that solved a similar share of the same problems) is chosen for you in Model B, and other close matches are highlighted. You can pick a different Model B at any time.</p>
+<div class="cols">
+<div class="box"><div class="tag">Model A</div><div class="btns" id="pa"></div>
+<label for="a_p">Price per million output tokens ($) <b id="a_pv"></b></label><input type="range" id="a_p" min="0.1" max="50" step="0.1" value="25">
+<label for="a_t">Tokens per problem <b id="a_tv"></b></label><input type="range" id="a_t" min="1000" max="100000" step="1" value="7481">
+<label for="a_a">Parameters awake (billions) <b id="a_av"></b></label><input type="range" id="a_a" min="1" max="1000" value="100">
+<p class="out" id="a_o"></p><p class="small" id="a_n"></p></div>
+<div class="box"><div class="tag">Model B</div><div class="btns" id="pb"></div>
+<label for="b_p">Price per million output tokens ($) <b id="b_pv"></b></label><input type="range" id="b_p" min="0.1" max="50" step="0.1" value="1.2">
+<label for="b_t">Tokens per problem <b id="b_tv"></b></label><input type="range" id="b_t" min="1000" max="100000" step="1" value="83585">
+<label for="b_a">Parameters awake (billions) <b id="b_av"></b></label><input type="range" id="b_a" min="1" max="1000" value="13">
+<p class="out" id="b_o"></p><p class="small" id="b_n"></p></div></div>
+<div class="verdict" id="cmp"></div>
+<details class="box"><summary>Test the biggest assumption: how much more electricity does a bigger model use?</summary><label for="ex">Left: a little more. Right: in step with its size <b id="exv"></b></label><input type="range" id="ex" min="0.47" max="1" step="0.01" value="0.47"><p class="small">Nobody has measured this for the largest models. At the left end a model 10 times bigger uses about 3 times the electricity per token (one study). At the right end it uses 10 times (simple theory). A second study landed near the right end. This page starts at the left. Slide it and watch the energy line above: the gap shrinks, and for some fair matches it flips.</p></details>
+<p class="small">Tokens and scores: OckBench. Prices: lab price pages, October 2026 (DeepSeek at peak rates; off peak is half). "Awake" is published for Kimi, Qwen and DeepSeek (Kimi K3: 104 billion) and is a guess for every US model. Every slider can be moved.</p><p>The default comparison above opens on one example: Claude Opus 4.7 as Model A and DeepSeek V4 Flash (max) as Model B. They solve about the same share of problems (83% and 82.5%). DeepSeek costs about half as much per problem at its peak list price (about a quarter off peak), and writes 11 times more tokens to get there. The price gap comes from what each company charges per token, not from the machine doing less work. Whether DeepSeek also uses more energy depends on how much of Claude wakes up, which Anthropic does not publish. DeepSeek uses more unless Claude wakes more than about 145 billion parameters (if energy rises in step with size) or about 2.2 trillion (if it rises slowly).</p></section>
+
+<section><h2>Caching: why token counts overstate the load</h2>
+<p>Picture one server and two workers. The first asks a question and the server does the full work. The second asks the same thing a moment later and the server hands back a saved copy. The token counter records two requests' worth of tokens. The electricity meter records barely more than one.</p>
+<p>This is called caching, and coding agents lean on it constantly. At every step an agent resends the whole conversation so far: the files it has read, the plan, the results. Almost all of that was already processed a moment ago, so the server reuses its saved work instead of redoing it. It is the difference between rereading your notes and writing new ones.</p>
+<p>The effect on the numbers is large. Company token counts, the ones quoted in headlines, add up every token, saved copies included. So as people move from chat to agents, token counts grow much faster than the real work the chips are doing.</p>
+<div class="box"><div class="btns" id="cu"></div><p class="small" id="cu_n" style="margin-top:10px"></p>
+<label for="c_c">Share of tokens that are saved copies (cache reads) <b id="c_cv"></b></label><input type="range" id="c_c" min="0" max="98" value="70">
+<label for="c_o">Share that is brand new output <b id="c_ov"></b></label><input type="range" id="c_o" min="1" max="60" value="5">
+<p class="small" id="c_f"></p>
+<div class="chart cache"><div class="bar"><span>Tokens counted</span><div class="t"><div class="f" style="width:100%"></div></div><span class="v">100</span></div><div class="bar"><span>Rough compute, price as a guide</span><div class="t"><div class="f k" id="c_bar"></div></div><span class="v" id="c_bv"></span></div></div>
+</div>
+<p class="small">Pick a kind of work, or move the sliders. Out of every 100 tokens counted, the lower bar is roughly how many tokens of real work the chips did. Weights come from what the labs charge: new output 1, fresh input 0.2, saved copy 0.02. Price is used as a rough guide to compute. No lab publishes the true ratio.</p>
+<p>Measured on real coding tasks: an agent used about 4.17 million tokens per task against 3,400 for a back and forth coding chat. That is 1,200 times the tokens but only about 80 times the cost (my division of the paper's $1.86 and $0.023 per task). The gap is saved copies. In one company's data (Jellyfish), 96% of coding agent tokens were cache reads. A second data set (Requesty) puts cache reads at 46% to 92% of input tokens, depending on the tool.</p><p class="small">Caching is not free. A long saved context still occupies chip memory, and writing each new token gets slower as the context behind it grows.</p></section>
+
+<section><h2>So what does "cheaper" mean?</h2>
+<div class="tw tconc"><table><tr><th>Meaning of "cheaper"</th><th>Do the cheaper open models win?</th><th>Evidence</th></tr>
+<tr><td>Fare (price per token)</td><td><b>Mostly.</b> 3 to 25 times cheaper per token at list price for the models tested. The newest, Kimi K3, is priced at $15 per million output tokens, in US model territory</td><td>List prices, read October 2026</td></tr>
+<tr><td>Fuel (energy per token)</td><td><b>It depends on the design, not the country.</b> A model that wakes only a small part of itself can save about 3.6 times. The saving shrinks or reverses when the model is so large it needs extra chips to hold it. US labs use the same trick</td><td>Two measured studies</td></tr>
+<tr><td>Route (tokens per task)</td><td><b>Usually not.</b> On hard problems, 1.2 to 26 times more tokens for the same job. 26 is DeepSeek on maximum thinking against GPT-5.4 on medium. 1.2 is the newest Kimi. Some US models are just as wordy</td><td>One benchmark measured it directly. Artificial Analysis data points the same way for most pairs, not all</td></tr>
+<tr><td>What the data center feels</td><td><b>On hard reasoning work: no clear saving.</b> The extra distance is real and large. Whether it outweighs the fuel saving depends on how big the US models are, which their makers do not publish. On short everyday answers: not measured</td><td>The two rows above multiplied. An estimate</td></tr></table></div>
+<p><b>So when we talk about "cheaper", it is really a claim about price.</b> A cheaper price per token sometimes lowers the customer's bill and sometimes does not: in this test Kimi K2.6 cost 3.5 times more per problem than GPT-5.5 on low, at the same score. On hard problems it does not clearly lower the work the data center has to do: the cheaper models tested reach the same answer by writing far more tokens, and how big the US models are is unknown.</p>
+<p><b>So why is it so much cheaper?</b> Because price per token is a business decision. It reflects competition, what a company is willing to lose to win users, and how hard it packs its servers. A chip rental company estimated that renting chips to run Kimi yourself costs about $3.10 to $5.20 per million tokens, while its maker charged about $1.56 (a blend of its input and output prices). A lab running its own chips at full load pays far less, so this does not show the maker loses money. It shows the price of a token reflects strategy and scale. It does not tell you how much electricity the token used.</p>
+<p><b>So what are the implications?</b> If the world switched to cheaper models wherever they do the job well enough, it might save money, and on the evidence so far it would not clearly save computing power on hard reasoning work. Short everyday answers have not been measured. Cheaper tokens also tend to get used more, so cheaper models are unlikely to shrink the need for chips, data centers and electricity. The pressure lands on the companies selling tokens, whose prices fall, and not on the demand for compute.</p>
+<p><b>Where I am going with this next.</b> Whichever models the world picks, American or Chinese, the data centers still have to be built. I wanted to lay this foundation first by explaining what "cheaper" means. In Part 2 of this series, I ask how much compute we have, and whether we are building too much or not enough.</p></section>
+
+<section><h2>Methodology: how the energy figures are built</h2>
+<p class="small">Disputes are welcome. Here is every step, so you can check it or swap in your own numbers with the dials.</p>
+<div class="tw tlined"><table><tr><th>Step</th><th>What was used</th><th>Where it comes from</th></tr>
+<tr><td>1. A measured anchor</td><td>0.151 joules per token for a 32 billion parameter model (Qwen 3 32B), chat, with the chip packed as full as it will go (best case). At a lighter load the same model measured 0.209</td><td>Chung et al., arXiv 2601.22076. Chip energy only</td></tr>
+<tr><td>2. Scale with model size</td><td>Energy per token grows with parameters to the power 0.47. 70 times more parameters measured 7.3 times more energy. A second study (arXiv 2512.01644, one A100 chip, models of 0.5 to 14 billion parameters) measured a power of 0.91. The dial under the comparison lets you move between them</td><td>TokenPowerBench, arXiv 2512.03024. The exponent is my fit to its two end points</td></tr>
+<tr><td>3. Count awake parameters</td><td>For mixture of experts models, use the parameters active per token. A 30 billion model with 3 billion awake measured 3.56 times less energy than a dense 32 billion model. This is a floor for very large models: in the same study a 235 billion model with 22 billion awake used more energy than the dense 32 billion one</td><td>Chung et al.</td></tr>
+<tr><td>4. Thinking mode</td><td>Times 1.5 to 2 per token. Long reasoning answers fill chip memory, so fewer requests fit at once. Measured 0.312 against 0.209 joules at the same load, and against 0.151 with the chip packed full</td><td>Chung et al.</td></tr>
+<tr><td>5. Real data center</td><td>Times 2. Google's live fleet used 0.24 watt hours per prompt of which the busy AI chips used 0.14. Processors and memory (0.06), idle spare machines (0.02) and cooling (0.02) made up the rest. That is 1.7 times the chips alone, rounded here to 2</td><td>Google, arXiv 2508.15734</td></tr>
+<tr><td>6. Newer chip</td><td>Divide by 1.5. Median 35% less energy from one chip generation to the next (H100 to B200, the one step measured)</td><td>Chung et al.</td></tr>
+<tr><td>7. Tokens per task</td><td>Measured output tokens per problem, by model and setting</td><td>OckBench, arXiv 2511.05722</td></tr>
+<tr><td>8. Agent tasks</td><td>4.17 million raw tokens per coding task, about 150 input tokens per output token. Weighted: output 1, fresh input 0.2, cached input 0.02</td><td>Bai et al., arXiv 2604.22750. The weights are taken from lab price ratios and are a rough guide, not a measurement</td></tr></table></div>
+<p class="small"><b>Formula:</b> energy per task = 0.15 x (awake parameters in billions / 32)^0.47 x multipliers x tokens. The power 0.47 can be moved up to 1 with the dial under the comparison.</p>
+<p class="small"><b>One sanity check and two figures for scale.</b> The method gives about 1.3 watt hours for a top model on medium thinking; the same lab study that supplies the starting number measured an average of about 1.3 watt hours (4,625 joules, chips only) per reasoning answer, averaged across all the models it tested. That is a sanity check, not an independent one. Microsoft researchers estimated a median 0.31 watt hours per ordinary query on frontier models (over 200 billion parameters) (arXiv 2509.20241); Google reports 0.24.</p>
+<p class="small"><b>Known weak points.</b> The size rule rests on two measured points from one model family, covers 1 to 70 billion parameters only, and is the low end: another study measured a power of 0.91. Counting only awake parameters is a best case, because the whole model still sits in chip memory. Closed labs do not publish model sizes, so "100 billion awake" for a top model and "10 billion" for a fast one are placeholders. Every token count comes from one benchmark of 200 math, coding and science problems. Its authors picked the problems where models differ most in how much they write, so the gaps here are the wide end, not the average. Each model answered once at a fixed setting; the paper reports no repeat runs. Agent work and everyday chat were not tested. Papers on arXiv are preprints and not peer reviewed unless noted. Each number was reopened at its source by a second checker, and each still rests on a single source.</p>
+<h2>Sources</h2>
+<div class="tw tlined"><table><tr><th>Source</th><th>What it gave</th></tr>
+<tr><td><a href="https://arxiv.org/abs/2511.05722v3">OckBench, arXiv 2511.05722</a> (version 3, June 2026)</td><td>Tokens per problem and share solved, by model and thinking setting. The 26 times figure is in the paper's own summary, its main results table (Table 1) and its body. The arXiv listing page still says 5 times, left over from version 1</td></tr>
+<tr><td><a href="https://ockbench.github.io/">OckBench live leaderboard</a>, read 6 October 2026</td><td>Newest results: Claude Opus 5, Claude Opus 4.8, Kimi K3, DeepSeek V4 on high. Its DeepSeek maximum rows differ from the paper (Flash slightly; Pro scores 84% with 81,408 tokens, against 80% with 72,626 in the paper). Neither source explains why</td></tr>
+<tr><td><a href="https://api-docs.deepseek.com/quick_start/pricing">DeepSeek price page</a> and model cards, read 6 October 2026</td><td>$1.20 and $3.96 per million output tokens at peak, half off peak; 13 and 49 billion awake parameters. The price page now serves V4.1 Flash at the same price</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2603.23971">Price reversal study, arXiv 2603.23971</a></td><td>The cheaper list price cost more in 32% of comparisons between pairs of models (8 models, 12 tasks)</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2512.03024">TokenPowerBench, arXiv 2512.03024</a> (peer reviewed, Association for the Advancement of Artificial Intelligence (AAAI) conference, 2026)</td><td>Energy against model size</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2601.22076">Chung et al., arXiv 2601.22076</a></td><td>Joules per token, mixture of experts saving, thinking mode, chip generations</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2604.22750">Bai et al., arXiv 2604.22750</a></td><td>Coding agent 4.17 million tokens per task, 1,200 times chat, 80 times the cost</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2508.15734">Google, arXiv 2508.15734</a></td><td>0.24 watt hours per Gemini prompt on a live fleet</td></tr>
+<tr><td><a href="https://arxiv.org/abs/2509.20241">Oviedo et al. (Microsoft), arXiv 2509.20241</a></td><td>0.31 watt hours median per query (an estimate, frontier models)</td></tr><tr><td><a href="https://arxiv.org/abs/2512.01644">A Systematic Characterization of LLM Inference on GPUs, arXiv 2512.01644</a></td><td>Energy grows with model size to the power 0.91 (one A100 chip)</td></tr><tr><td><a href="https://www.spheron.network/blog/kimi-api-pricing-vs-self-hosted-llms-cost-privacy-2026/">Spheron, Kimi API pricing against self hosted chips, August 2026</a></td><td>$3.10 to $5.20 per million tokens to rent chips for Kimi; $1.56 blended price from its maker</td></tr><tr><td><a href="https://arxiv.org/abs/2405.01470">WildChat, arXiv 2405.01470</a></td><td>Answer tokens per chat turn (about 6 in 10)</td></tr>
+<tr><td><a href="https://artificialanalysis.ai/articles/kimi-k3-achieves-3-in-the-artificial-analysis-intelligence-index-comparable-to-opus-4-8-and-gpt-5-5">Artificial Analysis, July 2026</a></td><td>Kimi K3 and K2.6 token use and prices</td></tr>
+<tr><td><a href="https://jellyfish.co/state-of-ai-software-engineering/">Jellyfish, State of AI in Software Engineering, first half 2026</a></td><td>96% of coding agent tokens are cache reads (by count)</td></tr><tr><td><a href="https://requesty.ai/data/coding-agent-cache-hit-rate-apr-2026">Requesty, prompt cache hit rate by coding agent, April 2026</a></td><td>Cache reads at 46% to 92% of input tokens, depending on the tool</td></tr>
+<tr><td>Anthropic, OpenAI, Google and Kimi price pages, read October 2026</td><td>Prices; cached input at 10% of fresh input for most models (about 17% for Kimi K2.6); output 4 to 6 times input</td></tr></table></div>
+<p class="small">Veritas Research. Version 0.11, 18 October 2026. Not investment advice. Licensed under Creative Commons Attribution 4.0 (CC BY 4.0).</p></section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+function paintAll(){document.querySelectorAll('input[type=range]').forEach(el=>{const p=((el.value-el.min)/(el.max-el.min)*100).toFixed(1);el.style.background=`linear-gradient(to right,var(--ink) 0 ${p}%,var(--line) ${p}% 100%)`;});}
+(function(){const sw=document.getElementById("themeSw"),root=document.documentElement,mq=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;
+const isDark=()=>{const a=root.getAttribute("data-theme");return a?a==="dark":!!(mq&&mq.matches);};
+const sync=()=>sw.setAttribute("aria-checked",isDark()?"true":"false");
+sw.addEventListener("click",()=>{const d=!isDark();root.setAttribute("data-theme",d?"dark":"light");try{localStorage.setItem("vr-theme",d?"dark":"light")}catch(e){}sync();});
+if(mq&&mq.addEventListener)mq.addEventListener("change",sync);sync();})();
+
+const bars=(rows,max)=>rows.map(([n,t,a,c])=>`<div class="bar"><span>${n} (${a}%)</span><div class="t"><div class="f${c?" cn":""}" style="width:${Math.max(1.5,t/max*100)}%"></div></div><span class="v">${t.toLocaleString("en-US")}</span></div>`).join("");
+$("ock").innerHTML=bars([["GPT-5.4, medium",3177,82,0],["Gemini 3.1 Pro",3263,76,0],["GPT-5.5, medium",4692,86,0],["Claude Opus 4.7",7481,83,0],["Claude Opus 4.6",28582,84.5,0],["Qwen3.5 397B",26178,67.5,1],["Kimi K2.6",42243,75,1],["DeepSeek V4 Pro, max",72626,80,1],["DeepSeek V4 Flash, max",83585,82.5,1]],83585);
+$("new").innerHTML=bars([["Claude Opus 5, low",1623,85,0],["Claude Opus 5, medium",4215,85,0],["Claude Opus 5, high",6745,94,0],["Claude Opus 4.8, high",8870,86,0],["GPT-5.5, high",10018,88.5,0],["Kimi K3, high",12250,87.5,1],["DeepSeek V4 Flash, high",40735,78,1],["DeepSeek V4 Pro, high",43652,84,1]],50000);
+$("eff").innerHTML=bars([["Thinking off",260,26,0],["Low",1603,75,0],["Medium",4692,86,0],["High",10018,88.5,0],["Extra high",13271,90,0]],13271);
+let EX=0.47;const jpt=(p,x=EX)=>0.15*Math.pow(p/32,x);
+// use cases: [label, awake(B), work tokens, thinking, note]
+const UC=[["Quick question, fast model",10,400,0,"Like Haiku, Gemini Flash or GPT Luna answering a short question. Size is a guess."],
+["Everyday chat, standard model",32,500,0,"A normal answer of a few paragraphs."],
+["Top model, medium thinking",100,4692,1,"Like GPT-5.5 on medium effort: about 4,700 tokens per hard problem (measured). Model size is a guess."],
+["Top model, maximum thinking",100,13271,1,"Like GPT-5.5 on extra high: about 13,300 tokens per hard problem (measured)."],
+["Question about a 100 page document",100,16000,0,"About 75,000 tokens read once (counted at one fifth weight) plus a 1,000 token answer."],
+["Coding agent finishing one task",100,185000,1,"A measured 4.17 million raw tokens per task, mostly rereads of saved context. Weighted down to about 185,000 tokens of real work. This weighting is my estimate."]];
+let ucSel=1;
+function fmtE(j){const wh=j/3600,led=j/10;const t=led<90?Math.round(led)+" seconds":led<5400?(led/60).toFixed(0)+" minutes":(led/3600).toFixed(1)+" hours";return `<span class="big">${wh<1?wh.toFixed(2):wh.toFixed(1)}</span> watt hours. That runs a 10 watt light bulb for ${t}`+(wh>=5?`, or charges a phone ${(wh/15).toFixed(1)} times.`:".");}
+function fuel(){const p=+$("ap").value,t=+$("tk").value;let j=jpt(p);if($("k_r").checked)j*=2;if($("k_f").checked)j*=2;if($("k_n").checked)j/=1.5;
+ $("apv").textContent=p;$("tkv").textContent=t.toLocaleString();$("uc_o").innerHTML=fmtE(j*t);paintAll();$("jt").textContent=`${j.toFixed(2)} joules per token times ${t.toLocaleString()} tokens.`;}
+function setUC(i){ucSel=i;const u=UC[i];$("ap").value=u[1];$("tk").value=u[2];$("k_r").checked=!!u[3];$("k_f").checked=true;$("k_n").checked=false;$("uc_n").textContent=u[4];
+ [...$("uc").children].forEach((b,k)=>b.classList.toggle("on",k==i));fuel();}
+$("uc").innerHTML=UC.map((u,i)=>`<button type="button" data-i="${i}">${u[0]}</button>`).join("");
+$("uc").addEventListener("click",e=>{if(e.target.dataset.i)setUC(+e.target.dataset.i);});
+// models: name, price out $/M (null = not checked), tokens/problem, accuracy, awake B, awake known?, origin
+const M=[["GPT-5.5 low",30,1603,75,100,0,"US"],["GPT-5.5 medium",30,4692,86,100,0,"US"],["GPT-5.5 high",30,10018,88.5,100,0,"US"],["GPT-5.5 extra high",30,13271,90,100,0,"US"],
+["Claude Opus 4.7 (extra high)",25,7481,83,100,0,"US"],["Claude Opus 4.6",25,28582,84.5,100,0,"US"],["Claude Sonnet 4.6",15,16201,58.5,50,0,"US"],["Gemini 3.1 Pro",12,3263,76,100,0,"US"],
+["DeepSeek V4 Pro (max)",3.96,72626,80,49,1,"China"],["DeepSeek V4 Flash (max)",1.2,83585,82.5,13,1,"China"],["Kimi K2.6",4,42243,75,32,1,"China"],["Qwen3.5 397B",null,26178,67.5,17,1,"China"],
+["Claude Opus 5 high",25,6745,94,100,0,"US"],["Claude Opus 4.8 high",25,8870,86,100,0,"US"],["Kimi K3 high",15,12250,87.5,104,1,"China"],["DeepSeek V4 Pro (high)",3.96,43652,84,49,1,"China"],["DeepSeek V4 Flash (high)",1.2,40735,78,13,1,"China"]];
+const sel={a:4,b:9},unk={a:false,b:false};
+function pick(x,i){sel[x]=i;const m=M[i];unk[x]=m[1]===null;if(m[1]!==null)$(x+"_p").value=m[1];$(x+"_t").value=m[2];$(x+"_a").value=m[4];if(x=="a"){let bj=-1,bd=99;M.forEach((n,j)=>{const d=Math.abs(n[3]-m[3]);if(n[6]!=m[6]&&d<bd){bd=d;bj=j;}});if(bj>=0&&bd<=5&&bj!=sel.b){pick("b",bj);return;}}both();}
+function paint(){["a","b"].forEach(x=>{const o=x=="a"?"b":"a";$("p"+x).innerHTML=M.map((m,i)=>{const fair=Math.abs(m[3]-M[sel[o]][3])<=5&&i!=sel[o];
+ return `<button type="button" data-i="${i}" class="${i==sel[x]?"on":x=="b"?(fair?"match":"dim"):""}" title="${m[6]}, solved ${m[3]}%">${m[0]}</button>`;}).join("");});}
+["a","b"].forEach(x=>$("p"+x).addEventListener("click",e=>{if(e.target.dataset.i)pick(x,+e.target.dataset.i);}));
+function side(x){const m=M[sel[x]],p=+$(x+"_p").value,t=+$(x+"_t").value,a=+$(x+"_a").value;$(x+"_pv").textContent=unk[x]?"not checked, slide to set":p;$(x+"_tv").textContent=t.toLocaleString();$(x+"_av").textContent=a+(m[5]?" (published)":" (guess)");
+ const cost=unk[x]?NaN:p*t/1e6,e=jpt(a)*2*t/1000;side[x]=[a,t];$(x+"_o").innerHTML=`${unk[x]?"Price not checked: set it with the slider":"$"+cost.toFixed(3)+" per problem"}<br>${e.toFixed(1)} kilojoules per problem`;
+ $(x+"_n").textContent=`${m[0]}: ${m[6]}, solved ${m[3]}% of the test problems.`;return [cost,e,m];}
+function both(){EX=+$("ex").value;$("exv").textContent="10 times bigger = "+Math.pow(10,EX).toFixed(1)+" times the electricity";paint();const A=side("a"),B=side("b"),c=A[0]/B[0],e=B[1]/A[1],gap=Math.abs(A[2][3]-B[2][3]);
+ paintAll();$("cmp").innerHTML=(isNaN(c)?`<b>You pay:</b> one price is not checked.`:`<b>You pay:</b> Model B is ${c>0.95&&c<1.05?"about the same price":c>=1?c.toFixed(1)+" times cheaper":(1/c).toFixed(1)+" times dearer"} per problem.`)+` <b>Power wise:</b> Model B uses ${e>0.95&&e<1.05?"about the same":e>=1?e.toFixed(1)+" times more":(1/e).toFixed(1)+" times less"} energy per problem`+(()=>{const r=x=>jpt(side.b[0],x)*side.b[1]/(jpt(side.a[0],x)*side.a[1]),lo=Math.min(r(0.47),r(1)),hi=Math.max(r(0.47),r(1)),f=v=>v>0.95&&v<1.05?"about the same":v>=1?v.toFixed(1)+" times more":(1/v).toFixed(1)+" times less";return ` (between ${f(lo)} and ${f(hi)}, depending on the assumption below).`})()+(gap>5?` <b>Not a fair match:</b> their scores are ${gap.toFixed(1)} points apart, so one is simply doing a worse job.`:` Fair match: scores within ${gap.toFixed(1)} points.`);}
+const CU=[["One short question",0,60,"A single chat question. Nothing is saved yet, and about 6 in 10 tokens are the answer (measured in a large public chat data set, WildChat)."],["A long conversation",60,10,"Each new message resends the chat so far, so most of it is a saved copy. My estimate."],["Question about a long document",0,2,"The server reads the whole document fresh, then writes a short answer. My estimate."],["Coding agent",96,1,"Measured in one company's data (Jellyfish): 96% of tokens were saved copies and under 1% was new output. Another data set puts saved copies at 46% to 92% of input, depending on the tool."]];
+function setCU(i){$("c_c").value=CU[i][1];$("c_o").value=CU[i][2];$("cu_n").textContent=CU[i][3];[...$("cu").children].forEach((b,k)=>b.classList.toggle("on",k==i));cache();}
+$("cu").innerHTML=CU.map((u,i)=>`<button type="button" data-i="${i}">${u[0]}</button>`).join("");$("cu").addEventListener("click",e=>{if(e.target.dataset.i)setCU(+e.target.dataset.i);});
+function cache(){let c=+$("c_c").value,o=+$("c_o").value;if(c+o>100){o=100-c;$("c_o").value=o;}const f=100-c-o,w=o*1+f*0.2+c*0.02;
+ $("c_cv").textContent=c+"%";$("c_ov").textContent=o+"%";$("c_f").textContent=`The rest, ${f}%, is fresh input the server reads for the first time.`;$("c_bar").style.width=Math.max(1,w)+"%";paintAll();$("c_bv").textContent=w.toFixed(1);}
+["a","b"].forEach(x=>$(x+"_p").addEventListener("input",()=>{unk[x]=false;}));document.querySelectorAll("input").forEach(i=>i.addEventListener("input",()=>{fuel();both();cache();}));setUC(1);both();setCU(3);
+</script>
+</body></html>
