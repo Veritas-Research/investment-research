@@ -39,7 +39,7 @@ Broader and more exploratory than a thesis. Market commentary, or one idea taken
 |---|---|---|---|
 | June 12, 2026 | [The System Cost of Renewables: EROI and China's Solar Tell](./research-notes/The%20System%20Cost%20of%20Renewables%20-%20EROI%20and%20China's%20Solar%20Tell.md) | Market note | Written note |
 | October 18, 2026 | [The Compute Question, Part 1: Chinese AI models are cheaper. But what does "cheaper" mean?](https://veritas-research.github.io/investment-research/research-notes/the-compute-question/part-1/) | Concept exploration | Interactive page |
-| Coming soon | The Compute Question, Part 2: how much compute do we have, and are we building too much or not enough? | Concept exploration | Interactive page |
+| October 25, 2026 | [The Compute Question, Part 2: how much compute do we have, and are we building too much or not enough?](https://veritas-research.github.io/investment-research/research-notes/the-compute-question/part-2/) | Concept exploration | Interactive page |
 
 EROI is Energy Return on Investment.
 

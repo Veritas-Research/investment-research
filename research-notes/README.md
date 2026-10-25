@@ -13,7 +13,7 @@ This is where I think out loud. Some notes are market commentary on whole sector
 | Note | Kind | Format |
 |---|---|---|
 | [The Compute Question, Part 1: Chinese AI models are cheaper. But what does "cheaper" mean?](https://veritas-research.github.io/investment-research/research-notes/the-compute-question/part-1/) | Concept exploration | Interactive page |
-| The Compute Question, Part 2: how much compute do we have, and are we building too much or not enough? | Concept exploration | Coming soon |
+| [The Compute Question, Part 2: how much compute do we have, and are we building too much or not enough?](https://veritas-research.github.io/investment-research/research-notes/the-compute-question/part-2/) | Concept exploration | Interactive page |
 | [The System Cost of Renewables, EROI and China's Solar Tell](./The%20System%20Cost%20of%20Renewables%20-%20EROI%20and%20China's%20Solar%20Tell.md) | Market note | Written note |
 
 EROI is Energy Return on Investment.
