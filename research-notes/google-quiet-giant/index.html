@@ -1,0 +1,1138 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Google's Quiet Giant">
+<meta property="og:description" content="Google fell 30% from its high. Is Search breaking, or is the market reading the wrong number? A payback model for AI data center spending, with every source checked.">
+<meta property="og:type" content="article">
+<title>Google's Quiet Giant</title>
+<meta name="description" content="Google fell 30% from its high. Is Search breaking, or is the market reading the wrong number? A Veritas Research note with a payback model for AI data center spending.">
+<script>try{var s=localStorage.getItem("vr-theme");if(s==="dark"||s==="light")document.documentElement.setAttribute("data-theme",s)}catch(e){}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: Veritas Research Direction B (one 1120px column, data desk), recoloured in the four product colours of the company it covers. */
+:root{
+  --bg:#F6F8FA;--panel:#FFFFFF;--ink:#1F2328;--ink2:#3C4148;--mute:#5F6670;--line:#D8DDE3;--soft:#EEF1F4;
+  --blue:#1A73E8;--red:#D93025;--yellow:#E8A100;--green:#188038;--grey:#9AA3AD;--grey2:#C9CFD6;
+  --blueT:#E8F0FE;--redT:#FCE8E6;--yellowT:#FEF3D6;--greenT:#E6F4EA;
+  --display:"Schibsted Grotesk","Trebuchet MS",sans-serif;--body:"Atkinson Hyperlegible",Verdana,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1013;--panel:#16191D;--ink:#E8EAED;--ink2:#C5CAD0;--mute:#9AA0A6;--line:#2C3138;--soft:#1E2227;--blue:#8AB4F8;--red:#F28B82;--yellow:#FDD663;--green:#81C995;--grey:#6B737C;--grey2:#454C54;--blueT:#1C2B45;--redT:#3A1F1E;--yellowT:#3A3218;--greenT:#1A3324;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1013;--panel:#16191D;--ink:#E8EAED;--ink2:#C5CAD0;--mute:#9AA0A6;--line:#2C3138;--soft:#1E2227;--blue:#8AB4F8;--red:#F28B82;--yellow:#FDD663;--green:#81C995;--grey:#6B737C;--grey2:#454C54;--blueT:#1C2B45;--redT:#3A1F1E;--yellowT:#3A3218;--greenT:#1A3324;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.62 var(--body);font-variant-numeric:tabular-nums}
+a{color:var(--ink);text-decoration-color:var(--grey);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--blue)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+.stripe{display:grid;grid-template-columns:repeat(4,1fr);height:4px}
+.stripe i:nth-child(1){background:var(--blue)}.stripe i:nth-child(2){background:var(--red)}.stripe i:nth-child(3){background:var(--yellow)}.stripe i:nth-child(4){background:var(--green)}
+.topbar{border-bottom:1px solid var(--line);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.tb-in{max-width:1120px;margin:0 auto;padding-block:12px;display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap}
+.brand{font:800 17px var(--display);letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.tb-r{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.series{text-decoration:none;font:500 13px var(--display);padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink2);background:var(--panel)}
+.switch{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 4px;background:transparent;border:0;cursor:pointer;color:var(--ink2);font:500 13px var(--display)}
+.switch .trk{position:relative;display:inline-block;width:40px;height:24px;border-radius:999px;background:var(--soft);border:1px solid var(--line)}
+.switch .knob{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:var(--mute);transition:left .15s}
+.switch[aria-checked="true"] .trk{background:var(--blue)}
+.switch[aria-checked="true"] .knob{left:18px;background:var(--panel)}
+.wrap{max-width:1120px;margin:0 auto;padding-block:64px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:64px}
+@media (min-width:900px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+.hero{display:flex;flex-direction:column;gap:20px}
+.byline{font:500 14px var(--display);color:var(--mute);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.byline .dots{display:inline-flex;gap:4px}.byline .dots i{width:8px;height:8px;border-radius:50%;display:block}
+h1{font:800 clamp(34px,5.4vw,60px)/1.04 var(--display);letter-spacing:-.025em;margin:0;text-wrap:balance;max-width:20ch}
+.lede{font-size:19px;color:var(--ink2);max-width:62ch;margin:0}
+.disc{padding:16px 20px;background:var(--soft);border-radius:10px;font-size:14px;color:var(--mute);max-width:80ch;margin:0}
+.sec{display:flex;flex-direction:column;gap:18px;min-width:0}
+.sec>p,.sec>ul,.sec>ol,.sec>h3{max-width:72ch}
+h2.part{font:700 clamp(26px,3.2vw,34px)/1.15 var(--display);letter-spacing:-.015em;margin:0;text-wrap:balance;display:flex;flex-direction:column;gap:6px;padding-top:18px;border-top:1px solid var(--line)}
+h2.part .pn{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.sec:nth-of-type(4n+2) h2.part .pn{color:var(--red)}.sec:nth-of-type(4n+3) h2.part .pn{color:var(--yellow)}.sec:nth-of-type(4n) h2.part .pn{color:var(--green)}
+h3{font:700 21px/1.25 var(--display);letter-spacing:-.01em;margin:14px 0 0;text-wrap:balance}
+p{margin:0;color:var(--ink2)}
+p strong,li strong,td strong{color:var(--ink)}
+.orient{font:500 19px/1.45 var(--display);color:var(--ink);font-style:italic}
+ul,ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px;color:var(--ink2)}
+li{padding-left:2px}
+ul.sum{list-style:none;padding:0;gap:0;border:1px solid var(--line);border-radius:12px;background:var(--panel);max-width:none}
+ul.sum li{padding:16px 20px 16px 44px;position:relative;border-top:1px solid var(--line)}
+ul.sum li:first-child{border-top:0}
+ul.sum li::before{content:"";position:absolute;left:20px;top:25px;width:10px;height:10px;border-radius:50%;background:var(--blue)}
+ul.sum li:nth-child(4n+2)::before{background:var(--red)}ul.sum li:nth-child(4n+3)::before{background:var(--yellow)}ul.sum li:nth-child(4n)::before{background:var(--green)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5}
+.tw table{min-width:560px}
+th{text-align:left;font:700 12px var(--display);letter-spacing:.05em;text-transform:uppercase;color:var(--mute);background:var(--soft);padding:11px 16px;vertical-align:bottom}
+td{padding:12px 16px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+td:first-child{color:var(--ink)}
+.lab{display:inline-block;font:600 11px/1.6 var(--mono);letter-spacing:.03em;padding:0 6px;border-radius:4px;white-space:nowrap;vertical-align:1px}
+.lab.v{background:var(--greenT);color:var(--green)}.lab.r{background:var(--blueT);color:var(--blue)}.lab.s{background:var(--yellowT);color:var(--ink2)}.lab.e{background:var(--redT);color:var(--red)}.lab.o{background:var(--soft);color:var(--mute)}
+a.cite{font:600 12px var(--mono);text-decoration:none;color:var(--blue);padding:0 1px;white-space:nowrap}
+a.cite:hover{text-decoration:underline}
+blockquote{margin:0}
+hr{display:none}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card p{font-size:16px;line-height:1.55}
+.card .ic{width:44px;height:44px;border-radius:10px;display:grid;place-items:center}
+.card.blue .ic{background:var(--blueT);color:var(--blue)}.card.green .ic{background:var(--greenT);color:var(--green)}.card.yellow .ic{background:var(--yellowT);color:var(--yellow)}.card.red .ic{background:var(--redT);color:var(--red)}
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.fig .ft{font:700 16px var(--display);color:var(--ink)}
+.fig .fs{font-size:13px;color:var(--mute)}
+.fig svg{display:block;width:100%;height:auto}
+.fig svg text{font-family:var(--mono)}
+.key{display:flex;gap:8px 18px;flex-wrap:wrap;font-size:13px;color:var(--ink2)}
+.key span{display:inline-flex;align-items:center;gap:7px}
+.key i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.pies{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:end}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font:13px/1.4 var(--body);padding:6px 10px;border-radius:6px;z-index:20;opacity:0;transition:opacity .1s;max-width:260px}
+/* calculator */
+.calc .presets{display:flex;flex-wrap:wrap;gap:8px}
+.calc .presets button{min-height:40px;padding:8px 16px;border-radius:999px;font:600 14px var(--display);cursor:pointer;background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.calc .presets button.on{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:24px}
+.ctrls{display:flex;flex-direction:column;gap:6px}
+.ctrl label{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--mute)}
+.ctrl label b{color:var(--ink);font-family:var(--mono);font-weight:600}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;margin:12px 0 14px;cursor:pointer;background:var(--line)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--panel);border:3px solid var(--blue)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--panel);border:3px solid var(--blue)}
+.tog{display:flex;align-items:center;gap:10px;min-height:44px;font-size:14px;color:var(--ink);cursor:pointer}
+.tog input{width:18px;height:18px;accent-color:var(--blue)}
+.outs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.o{padding:12px 14px;border-radius:10px;background:var(--soft);display:flex;flex-direction:column;gap:2px;min-width:0}
+.o span{font-size:12px;color:var(--mute)}
+.o b{font:800 28px/1.1 var(--display);letter-spacing:-.02em;color:var(--ink)}
+.o.good b{color:var(--green)}.o.bad b{color:var(--red)}
+.verdict{font-size:15px;color:var(--ink2)}
+/* sources */
+.srcbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.srcbar input[type=search]{flex:1 1 260px;min-width:0;font:15px var(--body);padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{font:600 12px var(--mono);padding:7px 11px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--mute);cursor:pointer;min-height:34px}
+.chips button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--panel)}
+#srcList{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden;max-height:680px;overflow-y:auto}
+.srow{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--line);scroll-margin:80px}
+.srow:first-child{border-top:0}
+.srow .sn{font:600 14px var(--mono);color:var(--blue)}
+.srow .st{font-size:15px;color:var(--ink);overflow-wrap:anywhere}
+.srow .sm{display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:6px;font:12px var(--mono);color:var(--mute);align-items:center}
+.srow .sm a.sec{font-family:var(--body);font-size:12px;padding:1px 8px;border-radius:999px;background:var(--soft);text-decoration:none;color:var(--ink2)}
+.srow .au{padding:1px 7px;border-radius:4px;font-weight:600}
+.au.ok{background:var(--greenT);color:var(--green)}.au.fix{background:var(--yellowT);color:var(--ink2)}.au.bg{background:var(--soft);color:var(--mute)}
+.srow .an{font-size:13px;color:var(--mute);margin-top:4px}
+.srow.hl{animation:hl 2.2s ease-out}
+@keyframes hl{0%{background:var(--yellowT)}100%{background:transparent}}
+.count{font:12px var(--mono);color:var(--mute)}
+footer{border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--mute);display:flex;flex-direction:column;gap:4px}
+@media (max-width:860px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.cgrid{grid-template-columns:1fr}}
+@media (max-width:560px){body{font-size:17px}.wrap{padding-block:36px 64px;gap:48px}.cards{grid-template-columns:1fr}.pies{grid-template-columns:1fr}.outs{grid-template-columns:1fr 1fr 1fr}.o b{font-size:22px}.srow{grid-template-columns:40px minmax(0,1fr);padding:12px 14px}.fig{padding:16px}}
+</style>
+</head><body>
+
+
+<div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="topbar"><div class="tb-in">
+  <a class="brand" href="https://veritas-research.github.io/investment-research/">Veritas Research</a>
+  <span class="tb-r"><a class="series" href="https://veritas-research.github.io/investment-research/research-notes/">Research notes</a>
+  <button class="switch" id="themeSw" role="switch" aria-checked="false" type="button"><span class="trk"><span class="knob"></span></span>Dark mode</button></span>
+</div></div>
+
+<main class="wrap">
+<header class="hero">
+  <div class="byline"><span class="dots" aria-hidden="true"><i style="background:var(--blue)"></i><i style="background:var(--red)"></i><i style="background:var(--yellow)"></i><i style="background:var(--green)"></i></span>Veritas Research · October 31, 2026</div>
+  <h1>Google fell 30% from its high. Is Search breaking, or is the market reading the wrong number?</h1>
+  <p class="disc">The views and analysis here are my own and have nothing to do with my employer. This is research, not investment advice. I hold broad index funds, and no direct positions in any company named here. Some of the numbers that matter most are not published by Alphabet, so several figures below are estimates, and I label them as estimates. Treat the projections as ranges in the right ballpark, not as forecasts to the decimal.</p>
+</header>
+
+<section class="sec" id="summary-in-two-minutes"><h2 class="part">Summary: in two minutes</h2>
+<ul class="sum">
+<li><strong>The stock had a terrible week.</strong> Alphabet fell 12.6% the day after its third quarter report, to $283.82, and closed the week at $279.84. That is about 30% below its May high of $402.62 (<span class="lab v">Verified</span>) <a class="cite" href="#src-5" data-n="5">[5]</a>.</li>
+<li><strong>The headlines said "miss." Most of the miss was accounting.</strong> Earnings per share came in at $2.12 against about $3.00 expected, but an $8.7 billion loss on investments Alphabet holds did most of that damage. It has nothing to do with how Google's businesses are running (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a>.</li>
+<li><strong>Search is not breaking. It is slowing.</strong> Search revenue still grew 12% to $63.4 billion, down from 19% growth in the first quarter. Google says searches are growing at the fastest pace in five years. One issue Google points to is that AI Mode earns less for now (<span class="lab v">Verified</span> for the revenue figures <a class="cite" href="#src-1" data-n="1">[1]</a>; <span class="lab s">Secondhand</span> for the AI Mode point <a class="cite" href="#src-3" data-n="3">[3]</a>).</li>
+<li><strong>The quiet giant is Cloud.</strong> Google Cloud doubled to $30.7 billion in the quarter, at a 36% operating margin, with $561 billion of signed future business. Compared with a year ago, Cloud added more profit ($7.5 billion) than Search, YouTube and subscriptions combined ($5.6 billion) (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a>. The $561 billion of signed future business comes from the call (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-3" data-n="3">[3]</a>.</li>
+<li><strong>The real problem is cash, not the business.</strong> Alphabet spent $51.4 billion on data centers and chips in the quarter. Its free cash flow (cash left after that spending) was negative for a second quarter in a row. It has raised about $62 billion of new stock (including about $19 billion of preferred shares that convert into common stock) and about $85 billion of new debt this year, and bought back no stock (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a> <a class="cite" href="#src-7" data-n="7">[7]</a>.</li>
+<li><strong>Does all this data center spending pay back?</strong> I built a model of $100 billion of spending over a five year chip life. On rented Nvidia style economics it roughly earns its cost of capital (about 9% a year). On Google's own cheaper chips (TPUs) it earns about 20% a year. A payback in one or two years would need revenue no public source supports (<span class="lab e">Estimate</span>) <a class="cite" href="#src-45" data-n="45">[45]</a>.</li>
+<li><strong>Take away.</strong> The market is pricing a cash crunch as if it were a broken business. Google is not broken. Whether it is cheap depends on two things the next few months will show: how good its own chips really are, and whether 2027 spending can be paid for without more outside money.</li>
+</ul>
+</section>
+<section class="sec" id="the-type-of-evidence-on-this-page"><h2 class="part">The type of evidence on this page</h2>
+<p>Each claim carries one of five labels.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th style="width:16%">Label</th>
+<th style="width:54%">What it means</th>
+<th style="width:30%">How much weight to put on it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Verified</strong></td>
+<td>The original filing, release, or dataset was opened and checked</td>
+<td>Full weight</td>
+</tr>
+<tr>
+<td><strong>Reported</strong></td>
+<td>A named outlet reported it, or a person said it on the record, but I could not see the underlying document</td>
+<td>Take it seriously, with a grain of salt</td>
+</tr>
+<tr>
+<td><strong>Secondhand</strong></td>
+<td>Found only through summaries, call transcripts or aggregators</td>
+<td>Low weight</td>
+</tr>
+<tr>
+<td><strong>Estimate</strong></td>
+<td>An analyst model, or my own arithmetic</td>
+<td>A range, not a fact</td>
+</tr>
+<tr>
+<td><strong>Opinion</strong></td>
+<td>Someone said it without showing a source</td>
+<td>Context only</td>
+</tr>
+</tbody>
+</table></div>
+<p>Note: when a company says demand exceeds supply, it has a reason to say it. I report those statements, but I put more weight on numbers in filings and on prices.</p>
+</section>
+<section class="sec" id="what-is-going-on"><h2 class="part">What is going on</h2>
+<p>In one week, the story on Google flipped from "AI winner" to "AI victim." The argument goes like this: people ask chatbots instead of searching, so Search ads shrink, and meanwhile Google is pouring hundreds of billions into data centers it has to borrow for.</p>
+<p>This is half true. So what does the whole picture look like?</p>
+<p>What I found surprised me a little. The part everyone is worried about (Search) is holding up better than the headlines suggest. The part nobody is talking about (Cloud) is the biggest change in Google's business in a decade. And the part that should worry you (cash) is real, but it is a question of timing and funding, not of a business falling apart.</p>
+</section>
+<section class="sec" id="a-restaurant-analogy"><h2 class="part">A restaurant analogy</h2>
+<p>I love analogies; they help me picture complex subjects. Here's the one I'll use throughout.</p>
+<div class="cards"><div class="card blue"><div class="ic" data-ic="flag"></div><p><strong>Search is the flagship restaurant.</strong> It is still packed. More people walk in every year. But some customers now order the new tasting menu (AI Mode), which right now brings in less per table than the old menu.</p></div><div class="card green"><div class="ic" data-ic="store"></div><p><strong>Cloud is the second location.</strong> It opened recently, it's already full every night, and it has years of reservations booked. It is also expensive to build: new kitchens, new ovens, new staff.</p></div><div class="card yellow"><div class="ic" data-ic="crane"></div><p><strong>Capex is the construction bill.</strong> Capex (capital expenditure) is money spent on long lasting things like buildings and chips. While the second location is being built, the owner's bank account looks scary, even if both restaurants are busy.</p></div><div class="card red"><div class="ic" data-ic="patio"></div><p><strong>YouTube is the patio.</strong> Lots of people sit there. It earns money, but nowhere near what it could if it were run as well as the competitor's patio across the street (Meta).</p></div></div>
+<p>The market looked at the bank account and panicked. This piece looks at the restaurants.</p>
+</section>
+<section class="sec" id="part-1-what-actually-happened-on-october-28"><h2 class="part"><span class="pn">Part 1</span>What actually happened on October 28</h2><p class="orient">The headline numbers looked bad. Most of the bad part was not the business.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>Q3 2025</th>
+<th>Q3 2026</th>
+<th>Change</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total revenue</td>
+<td>$102.3 billion</td>
+<td>$127.6 billion</td>
+<td>+25%</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+<tr>
+<td>Search and other</td>
+<td>$56.6 billion</td>
+<td>$63.4 billion</td>
+<td>+12%</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+<tr>
+<td>YouTube ads</td>
+<td>$10.3 billion</td>
+<td>$11.2 billion</td>
+<td>+9%</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+<tr>
+<td>Subscriptions, platforms and devices</td>
+<td>$12.9 billion</td>
+<td>$14.3 billion</td>
+<td>+11%</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+<tr>
+<td>Google Cloud</td>
+<td>$15.2 billion</td>
+<td>$30.7 billion</td>
+<td><strong>+103%</strong></td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+<tr>
+<td>Operating income</td>
+<td>$31.2 billion</td>
+<td>$40.6 billion</td>
+<td>+30%</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+<tr>
+<td>Earnings per share</td>
+<td></td>
+<td>$2.12 (about $3.00 expected)</td>
+<td></td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a>; estimate <span class="lab r">Reported</span> <a class="cite" href="#src-43" data-n="43">[43]</a></td>
+</tr>
+<tr>
+<td>Capex</td>
+<td>$24.0 billion</td>
+<td>$51.4 billion</td>
+<td>+114%</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+<tr>
+<td>Free cash flow</td>
+<td></td>
+<td><strong>minus $9.1 billion</strong></td>
+<td></td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The miss.</strong> Operating income grew 30%. Earnings per share missed because of an $8.7 billion loss on equity securities: the paper value of stakes Alphabet holds in other companies went down. One outlet attributes it to the SpaceX stake; Alphabet does not name it (<span class="lab v">Verified</span> for the loss; holding Unverified) <a class="cite" href="#src-1" data-n="1">[1]</a>.</p>
+<p><strong>What the market actually reacted to.</strong> The stock fell 12.6% on October 29. Reports that evening pointed to the weak earnings per share and to the cash: negative free cash flow of $9.1 billion, $51.4 billion of capex, and the cost of funding it with new debt and stock (<span class="lab r">Reported</span>) <a class="cite" href="#src-43" data-n="43">[43]</a>. The 12.6% drop itself is from the price data (<span class="lab v">Verified</span>) <a class="cite" href="#src-5" data-n="5">[5]</a>. Microsoft reported the same evening with growing cloud revenue and positive cash flow, and its stock barely moved (<span class="lab v">Verified</span>) <a class="cite" href="#src-5" data-n="5">[5]</a> <a class="cite" href="#src-17" data-n="17">[17]</a>.</p>
+</section>
+<section class="sec" id="part-2-is-search-breaking"><h2 class="part"><span class="pn">Part 2</span>Is Search breaking?</h2><p class="orient">No. It is slowing, and the reason matters.</p>
+<h3>The growth path</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Quarter (2026)</th>
+<th>Search revenue</th>
+<th>Growth</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>$60.4 billion</td>
+<td>19.1%</td>
+<td>Verified <a class="cite" href="#src-4" data-n="4">[4]</a></td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>$63.3 billion</td>
+<td>16.8%</td>
+<td>Verified <a class="cite" href="#src-4" data-n="4">[4]</a></td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>$63.4 billion</td>
+<td><strong>12.0%</strong></td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>Search still added $6.8 billion of revenue compared with a year ago. That is a business still growing, not shrinking. But the growth rate dropped almost five points in one quarter, and that is what spooked people.</p>
+<h3>Why it slowed, according to Google</h3>
+<ul>
+<li><strong>Currency was the biggest factor.</strong> Chief Business Officer Philipp Schindler called it "the single largest driver of Search deceleration relative to Q2" (<span class="lab s">Secondhand</span>, call transcript) <a class="cite" href="#src-3" data-n="3">[3]</a>.</li>
+<li><strong>AI Mode earns less per search, for now.</strong> Management said growth in AI Mode queries weighed on revenue "because of the lower monetization we were seeing in AI Mode," and it is rolling out ads inside AI Mode in more countries (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-3" data-n="3">[3]</a>.</li>
+<li><strong>Other one time factors:</strong> weaker Asia Pacific retail ads after the EU ended a duty exemption on small imports, the end of the World Cup boost, and a tough comparison with late 2025 (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-3" data-n="3">[3]</a>.</li>
+<li><strong>Searches are up, not down.</strong> Sundar Pichai said query growth is "the highest it's been in the last five years." He gave no number (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-3" data-n="3">[3]</a>.</li>
+</ul>
+<p>Nobody has published how much of the slowdown is currency and how much is AI Mode. That is the honest gap.</p>
+<h3>Are people leaving Google for chatbots?</h3>
+<ul>
+<li><strong>Not in the data I could find.</strong> Similarweb found that about 95% of ChatGPT users also use Google, and that Google draws about 3.3 billion monthly visitors against about 655 million for all AI chatbots combined (<span class="lab r">Reported</span>) <a class="cite" href="#src-10" data-n="10">[10]</a>. Their conclusion: AI is layering on top of Google, not replacing it.</li>
+<li><strong>Publishers are the ones getting hurt.</strong> Ahrefs reports that top ranking pages see a 58% lower average click rate when an AI Overview appears (<span class="lab s">Secondhand</span>, company press release) <a class="cite" href="#src-11" data-n="11">[11]</a>. That hurts websites. It is not the same thing as Google's ad revenue falling.</li>
+<li><strong>Ad clicks are still growing.</strong> An advertiser data panel showed Google search ad clicks up 9% and price per click up 4% in the third quarter (<span class="lab s">Secondhand</span>; panel data, not Alphabet's) <a class="cite" href="#src-12" data-n="12">[12]</a>.</li>
+</ul>
+<p><strong>Back to the restaurant:</strong> more customers are walking in than ever. Some of them are ordering the tasting menu, which earns less per table today. The question is whether Google learns to price the tasting menu properly. It has every incentive to.</p>
+</section>
+<section class="sec" id="part-3-the-quiet-giant"><h2 class="part"><span class="pn">Part 3</span>The quiet giant</h2><p class="orient">Cloud is already covering the Search slowdown, in revenue and in profit.</p>
+<h3>How big is Cloud, really?</h3>
+<p>To know whether $15.6 billion of new Cloud revenue is a lot or a little, you need the whole pie. Here is Alphabet's revenue by business, one year apart:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Business</th>
+<th>Q3 2025</th>
+<th>Share of total</th>
+<th>Q3 2026</th>
+<th>Share of total</th>
+<th>Added</th>
+<th>Growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search and other</td>
+<td>$56.6 billion</td>
+<td>55%</td>
+<td>$63.4 billion</td>
+<td>50%</td>
+<td>+$6.8 billion</td>
+<td>12%</td>
+</tr>
+<tr>
+<td>Subscriptions, platforms and devices</td>
+<td>$12.9 billion</td>
+<td>13%</td>
+<td>$14.3 billion</td>
+<td>11%</td>
+<td>+$1.4 billion</td>
+<td>11%</td>
+</tr>
+<tr>
+<td>YouTube ads</td>
+<td>$10.3 billion</td>
+<td>10%</td>
+<td>$11.2 billion</td>
+<td>9%</td>
+<td>+$0.9 billion</td>
+<td>9%</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>$7.4 billion</td>
+<td>7%</td>
+<td>$7.5 billion</td>
+<td>6%</td>
+<td>+$0.1 billion</td>
+<td>1%</td>
+</tr>
+<tr>
+<td><strong>Google Cloud</strong></td>
+<td><strong>$15.2 billion</strong></td>
+<td><strong>15%</strong></td>
+<td><strong>$30.7 billion</strong></td>
+<td><strong>24%</strong></td>
+<td><strong>+$15.6 billion</strong></td>
+<td><strong>103%</strong></td>
+</tr>
+<tr>
+<td>Other Bets</td>
+<td>$0.3 billion</td>
+<td>under 1%</td>
+<td>$0.4 billion</td>
+<td>under 1%</td>
+<td>about $0</td>
+<td>8%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>$102.6 billion</strong></td>
+<td></td>
+<td><strong>$127.4 billion</strong></td>
+<td></td>
+<td><strong>+$24.8 billion</strong></td>
+<td><strong>24%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Verified <a class="cite" href="#src-1" data-n="1">[1]</a>. Shares and totals are my arithmetic; totals are the sum of the businesses, so they differ slightly from Alphabet's reported totals, which include small hedging results.</p>
+<ul>
+<li><strong>A year ago, Cloud was about one dollar in every seven. Now it is about one in four.</strong></li>
+<li><strong>Of every new dollar Alphabet earned, about 63 cents came from Cloud.</strong> Search brought about 27 cents.</li>
+<li><strong>At today's pace, Cloud is a $123 billion a year business,</strong> about half the size of Search ($253 billion a year). A year ago it was running at about $61 billion a year (<span class="lab e">Estimate</span> from <span class="lab v">Verified</span> figures) <a class="cite" href="#src-1" data-n="1">[1]</a>.</li>
+</ul>
+<div class="fig" id="pies"></div>
+<h3>Cloud in numbers</h3>
+<ul>
+<li><strong>Revenue:</strong> $30.7 billion, up 103% (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a>. Growth has accelerated all year: about 63% in the first quarter, 82% in the second (<span class="lab v">Verified</span>) <a class="cite" href="#src-4" data-n="4">[4]</a>.</li>
+<li><strong>Profit:</strong> $11.1 billion of operating income, a 36% margin, up from 24% a year ago (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a>. The rest of Google runs at about 41%, so Cloud is now almost as profitable per dollar.</li>
+<li><strong>Reservations:</strong> $561 billion of signed future business, with just over 55% due within two years (<span class="lab s">Secondhand</span>, call transcript) <a class="cite" href="#src-3" data-n="3">[3]</a>.</li>
+<li><strong>Capacity:</strong> Pichai says Google is working "to bring more capacity online to meet this long term demand," and Cloud chief Thomas Kurian said "we could obviously serve a lot more demand with capacity" (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-3" data-n="3">[3]</a>. The second location is full.</li>
+<li><strong>For comparison:</strong> Microsoft Azure grew 48% and Amazon Web Services 39% in the same quarter (<span class="lab v">Verified</span>) <a class="cite" href="#src-17" data-n="17">[17]</a> <a class="cite" href="#src-18" data-n="18">[18]</a>.</li>
+</ul>
+<h3>The profit swap</h3>
+<p>Same idea for profit. Google as a whole is still growing. One part is slowing, and another part is more than making up for it.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Operating profit</th>
+<th>Q3 2025</th>
+<th>Q3 2026</th>
+<th>Added</th>
+<th>Margin then</th>
+<th>Margin now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Services (Search, YouTube, subscriptions, Network)</td>
+<td>$33.5 billion</td>
+<td>$39.2 billion</td>
+<td>+$5.6 billion</td>
+<td>39%</td>
+<td>41%</td>
+</tr>
+<tr>
+<td><strong>Google Cloud</strong></td>
+<td><strong>$3.6 billion</strong></td>
+<td><strong>$11.1 billion</strong></td>
+<td><strong>+$7.5 billion</strong></td>
+<td><strong>24%</strong></td>
+<td><strong>36%</strong></td>
+</tr>
+<tr>
+<td>Other Bets</td>
+<td>minus $1.4 billion</td>
+<td>minus $2.0 billion</td>
+<td>minus $0.6 billion</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Costs not assigned to a business (mostly AI research)</td>
+<td>minus $4.5 billion</td>
+<td>minus $7.7 billion</td>
+<td>minus $3.2 billion</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total operating profit</strong></td>
+<td><strong>$31.2 billion</strong></td>
+<td><strong>$40.6 billion</strong></td>
+<td><strong>+$9.3 billion</strong></td>
+<td><strong>31%</strong></td>
+<td><strong>32%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Verified <a class="cite" href="#src-1" data-n="1">[1]</a>. Margins are my arithmetic.</p>
+<p>Here's what took me a minute to fully appreciate:</p>
+<ul>
+<li><strong>Cloud went from about 10% of Google's business profit to about 22% in one year.</strong></li>
+<li><strong>Cloud added $7.5 billion of profit, more than all of Google Services combined ($5.6 billion).</strong></li>
+<li><strong>The Search slowdown cost roughly $2.7 billion of revenue and about $1.1 billion of profit</strong> compared with growing at the second quarter's pace (<span class="lab e">Estimate</span>). Cloud's gain covers that about seven times over.</li>
+<li><strong>One honest offset:</strong> the costs Alphabet does not assign to any business, mostly AI research, rose $3.2 billion and ate part of Cloud's gain.</li>
+</ul>
+<div class="fig" id="bridge"></div>
+<h3>What if Search actually starts shrinking?</h3>
+<p>This is what the bears are constantly saying (and have been since AI really took off) so I tested it. Search makes about $103 billion a year of operating profit at the margin of Google's services business (<span class="lab e">Estimate</span>; Alphabet does not report Search profit on its own). Cloud makes about $44 billion a year at today's pace (<span class="lab e">Estimate</span> from <span class="lab v">Verified</span> figures) <a class="cite" href="#src-1" data-n="1">[1]</a>.</p>
+<div class="tw" style="max-width:620px"><table>
+<thead>
+<tr>
+<th>If Search revenue falls by</th>
+<th>Cloud profit has to grow by</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5%</td>
+<td>12%</td>
+<td>Estimate</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>23%</td>
+<td>Estimate</td>
+</tr>
+<tr>
+<td>20%</td>
+<td>46%</td>
+<td>Estimate</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cloud profit grew about 200% in the last year. Even a 20% drop in Search would be covered if Cloud keeps growing at a fraction of today's pace. So on profit, Cloud can make up the shortfall. On cash, it is a different story. That is Part 4.</p>
+<p><strong>Where this is weakest:</strong> a large share of those reservations comes from a few AI labs. Anthropic alone reportedly committed about $200 billion over five years, more than 40% of Google's backlog at the time (<span class="lab r">Reported</span>) <a class="cite" href="#src-19" data-n="19">[19]</a>. UBS reportedly estimates OpenAI and Anthropic at 27% of Cloud revenue in 2026 and more than 48% in 2027, as cited by Ed Zitron on Bloomberg (<span class="lab s">Secondhand</span>, no method published) <a class="cite" href="#src-20" data-n="20">[20]</a>. Google is also an investor in Anthropic, so part of the demand is circular. If one big customer stumbles, the reservation book shrinks.</p>
+<p><strong>The catch:</strong> Cloud only grows this fast because Google keeps building data centers and buying chips. Revenue and profit are the easy half of the story. The harder half is whether all that spending ever pays back. That is Parts 4 and 5.</p>
+</section>
+<section class="sec" id="part-4-the-bill"><h2 class="part"><span class="pn">Part 4</span>The bill</h2><p class="orient">This is what the market is actually punishing.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>Q2 2026</th>
+<th>Q3 2026</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating cash flow</td>
+<td>$39.1 billion</td>
+<td>$42.3 billion</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a> <a class="cite" href="#src-4" data-n="4">[4]</a></td>
+</tr>
+<tr>
+<td>Capex</td>
+<td>$44.9 billion</td>
+<td>$51.4 billion</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a> <a class="cite" href="#src-4" data-n="4">[4]</a></td>
+</tr>
+<tr>
+<td>Free cash flow</td>
+<td><strong>minus $5.9 billion</strong></td>
+<td><strong>minus $9.1 billion</strong></td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a> <a class="cite" href="#src-4" data-n="4">[4]</a></td>
+</tr>
+<tr>
+<td>Stock buybacks</td>
+<td>$0</td>
+<td>$0</td>
+<td>Verified <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>How it's being paid for.</strong> In June, Alphabet announced about $80 billion of new stock: $30 billion sold through banks, a $40 billion program to sell shares gradually, and a $10 billion sale to Berkshire Hathaway at about $350 a share (<span class="lab r">Reported</span>) <a class="cite" href="#src-7" data-n="7">[7]</a>. It actually raised about $50 billion in the second quarter (part of it preferred shares that convert into common stock) and $12.4 billion more in the third. Long term debt went from $46.5 billion to $125.1 billion in nine months, on about $85 billion of new borrowing (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a> <a class="cite" href="#src-4" data-n="4">[4]</a>, including a bond sale of up to $25 billion in August (<span class="lab r">Reported</span>) <a class="cite" href="#src-8" data-n="8">[8]</a>.</li>
+<li><strong>A fair note:</strong> Alphabet says the $40 billion program is "primarily intended to be used to meet tax obligations associated with employee equity grants," not to fund data centers (<span class="lab v">Verified</span>) <a class="cite" href="#src-4" data-n="4">[4]</a>. It still sold $12.4 billion of stock under that program in the third quarter, with $27.6 billion left, while buying none back, so shareholders are being diluted (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a>.</li>
+<li><strong>The balance sheet is still strong.</strong> Alphabet holds $265 billion of cash and investments against $125 billion of long term debt, about $140 billion net (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a>.</li>
+<li><strong>The bill is getting bigger.</strong> The 2026 capex plan is $195 to $205 billion. For 2027, management only said capex will "increase significantly." There is no dollar figure yet; the "above $300 billion" number in headlines does not appear in the call (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-3" data-n="3">[3]</a>.</li>
+<li><strong>Depreciation is catching up.</strong> Depreciation (the yearly cost of wearing out buildings and chips) was $8.4 billion in the third quarter, up 49% from a year ago (<span class="lab v">Verified</span>) <a class="cite" href="#src-1" data-n="1">[1]</a>. That is the construction bill showing up in profit, and it keeps rising.</li>
+</ul>
+<p><strong>Best way to picture this is to go back to the restaurant analogy:</strong> both locations are full. But the owner is paying for construction with a loan and by selling part of the business, and has stopped buying back shares from the existing owners. You can see why the bank manager is nervous, even if dinner service is going great.</p>
+</section>
+<section class="sec" id="part-5-does-100-billion-of-ai-spending-pay-back"><h2 class="part"><span class="pn">Part 5</span>Does $100 billion of AI spending pay back?</h2><p class="orient">This is the real test and question. And to test this out, I built a model to find out. The short answer: it depends on whose chips.</p>
+<h3>How the model works</h3>
+<p>Imagine spending $100 billion once, today, on chips and data centers. Then:</p>
+<ol>
+<li><strong>The chips earn rent.</strong> Each dollar of spending brings in some amount of revenue a year once it is running. This is the single most important number.</li>
+<li><strong>Rent falls as chips age.</strong> Newer chips come out, so older ones rent for less each year.</li>
+<li><strong>Power and upkeep don't fall.</strong> The electricity bill stays the same even as rent drops.</li>
+<li><strong>After five years the chips retire.</strong> The buildings, power and cooling (about 40% of the spending, by Alphabet's own split (<span class="lab r">Reported</span>) <a class="cite" href="#src-29" data-n="29">[29]</a>) last much longer and can host the next generation of chips.</li>
+</ol>
+<p>I calibrated the base case so the second year margin lands near Google Cloud's real 36% (<span class="lab e">Estimate</span>) <a class="cite" href="#src-45" data-n="45">[45]</a>.</p>
+<h3>How much revenue does a dollar of spending earn?</h3>
+<p>This is the number that decides everything, and nobody publishes it. Here is every estimate I could find:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Revenue per $1 of spending, per year</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A former AWS executive, for a one gigawatt site: $6 to $7 billion of revenue on about $30 billion of spending</td>
+<td>about $0.22</td>
+<td>Opinion <a class="cite" href="#src-27" data-n="27">[27]</a></td>
+</tr>
+<tr>
+<td>H100 chip at the open market rate ($2.63 an hour, 75% busy, $50,000 all in per chip)</td>
+<td>about $0.35</td>
+<td>Estimate from <span class="lab r">Reported</span> prices <a class="cite" href="#src-24" data-n="24">[24]</a> <a class="cite" href="#src-28" data-n="28">[28]</a></td>
+</tr>
+<tr>
+<td>A former Nebius finance chief ($50 billion of revenue over five years on $20 billion of H100 spending; I annualized it)</td>
+<td>about $0.50</td>
+<td>Opinion, my arithmetic <a class="cite" href="#src-27" data-n="27">[27]</a></td>
+</tr>
+<tr>
+<td>B200 chip at the open market rate ($5.62 an hour, 75% busy, about $60,000 per chip, my assumption)</td>
+<td>about $0.62</td>
+<td>Estimate <a class="cite" href="#src-24" data-n="24">[24]</a></td>
+</tr>
+<tr>
+<td>CoreWeave revenue per megawatt ($40 million, on contracts of 3 to 6 months) against Nvidia's cost per megawatt ($50 to $60 million, midpoint $55 million)</td>
+<td>about $0.73</td>
+<td>Estimate <a class="cite" href="#src-25" data-n="25">[25]</a> <a class="cite" href="#src-26" data-n="26">[26]</a></td>
+</tr>
+<tr>
+<td>Google Cloud's added revenue (third quarter gain times four) against half of Alphabet's capex over the last twelve months</td>
+<td>about $0.78</td>
+<td>Estimate (the half is my assumption) <a class="cite" href="#src-1" data-n="1">[1]</a> <a class="cite" href="#src-2" data-n="2">[2]</a></td>
+</tr>
+<tr>
+<td>H100 at the big cloud median price ($6.26 an hour, July to December 2025; 75% busy, $50,000 per chip)</td>
+<td>about $0.82</td>
+<td>Estimate <a class="cite" href="#src-23" data-n="23">[23]</a> <a class="cite" href="#src-28" data-n="28">[28]</a></td>
+</tr>
+<tr>
+<td>CoreWeave revenue against Bernstein's cost per megawatt</td>
+<td>about $1.14</td>
+<td>Estimate; short term contract prices, so a best case <a class="cite" href="#src-25" data-n="25">[25]</a> <a class="cite" href="#src-26" data-n="26">[26]</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The middle of that range is about $0.67. I use $0.60 as my base case.</p>
+<h3>What the model says</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Revenue per $1</th>
+<th>Rent falls per year</th>
+<th>Return per year</th>
+<th>Money back per $1</th>
+<th>Payback</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bear</td>
+<td>$0.35</td>
+<td>25%</td>
+<td><strong>minus 9.6%</strong></td>
+<td>$0.67</td>
+<td>Never</td>
+<td>Estimate</td>
+</tr>
+<tr>
+<td>Base</td>
+<td>$0.60</td>
+<td>15%</td>
+<td><strong>8.6%</strong></td>
+<td>$1.32</td>
+<td>4.4 years</td>
+<td>Estimate</td>
+</tr>
+<tr>
+<td>Google TPU (chips 30% cheaper)</td>
+<td>$0.86</td>
+<td>15%</td>
+<td><strong>19.8%</strong></td>
+<td>$1.77</td>
+<td>3.3 years</td>
+<td>Estimate</td>
+</tr>
+<tr>
+<td>Bull</td>
+<td>$0.85</td>
+<td>5%</td>
+<td><strong>31.7%</strong></td>
+<td>$2.34</td>
+<td>2.6 years</td>
+<td>Estimate</td>
+</tr>
+</tbody>
+</table></div>
+<p>All from my model <a class="cite" href="#src-45" data-n="45">[45]</a>. The cost of capital I compare against is about 9%.</p>
+<p>Three things stood out to me.</p>
+<ol>
+<li><strong>The base case is break even.</strong> 8.6% against a 9% cost of capital. Spending on rented style economics roughly earns what the money costs, no more.</li>
+<li><strong>Google's own chips are the whole story.</strong> Google designs its own AI chips, called TPUs (Tensor Processing Units). SemiAnalysis estimates they cost Google about 44% less than Nvidia's comparable GB200 system, and 30% to 50% less for outside customers (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-21" data-n="21">[21]</a>. On cost per million tokens the edge is narrower: about 19% cheaper than Nvidia's B200 at one speed setting and about 8% at another (<span class="lab r">Reported</span>) <a class="cite" href="#src-22" data-n="22">[22]</a>. My Google TPU case uses a 30% saving, which rests on the older comparison against the GB200 system <a class="cite" href="#src-21" data-n="21">[21]</a>. At that saving, the return goes from break even to about 20% a year. That is the difference between a cash crunch and a good investment.</li>
+<li><strong>A one or two year payback is not realistic.</strong> You would need about $1.50 of revenue a year for every dollar spent. The best figure I found is $1.14, and that one is a short term contract price.</li>
+</ol>
+<h3>The shape of the cash surprised me</h3>
+<p>I expected years four and five to be the best. It's the opposite.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Year</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cash in or out, base case ($ billions)</td>
+<td>minus 100</td>
+<td>+14.9</td>
+<td><strong>+26.2</strong></td>
+<td>+22.1</td>
+<td>+18.6</td>
+<td>+17.3, plus 33 left in buildings</td>
+</tr>
+<tr>
+<td>Running total ($ billions)</td>
+<td>minus 100</td>
+<td>minus 85</td>
+<td>minus 59</td>
+<td>minus 37</td>
+<td>minus 18</td>
+<td><strong>+32</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Estimate <a class="cite" href="#src-45" data-n="45">[45]</a>.</p>
+<p>Year two is the best year, because the chips are fully running and rent has barely fallen. After that rent keeps falling while the power bill doesn't. In the base case, the chips alone only just pay for themselves (about 0.7% a year). The profit comes from the buildings, which keep their value and host the next round of chips.</p>
+<div class="fig calc" id="calc"></div>
+<h3>What it means for Alphabet's cash</h3>
+<p>If capex grows 40% in 2027 and then slows, this kind of spending only starts producing cash on its own in about 2032 in the base case, 2031 with TPU economics, and 2030 in the bull case. In the bear case, not before 2035 (<span class="lab e">Estimate</span>) <a class="cite" href="#src-45" data-n="45">[45]</a>. Until then, Search pays the bill. That is why negative free cash flow can last for years without meaning the business is failing.</p>
+<h3>Is Google stretching the life of its servers?</h3>
+<p>This matters because a longer life means lower yearly depreciation and higher reported profit.</p>
+<ul>
+<li><strong>Google's policy:</strong> "We depreciate servers and network equipment generally over a period of six years" (<span class="lab v">Verified</span>) <a class="cite" href="#src-9" data-n="9">[9]</a>. It moved from four to six years in 2023, which cut 2023 depreciation by about $3.9 billion (<span class="lab r">Reported</span>) <a class="cite" href="#src-30" data-n="30">[30]</a>.</li>
+<li><strong>Peers:</strong> Microsoft and Oracle also use six years, and Meta uses 5.5 (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-46" data-n="46">[46]</a>. Amazon shortened some servers from six to five years in January 2025, citing "an increased pace of technology development, particularly in the area of artificial intelligence and machine learning" (<span class="lab r">Reported</span>) <a class="cite" href="#src-31" data-n="31">[31]</a>.</li>
+<li><strong>What the research papers say:</strong> I found no study showing modern AI chips wearing out within five or six years, but none follows them that long either. Meta's Llama 3 training run saw 466 interruptions in 54 days on up to 16,384 H100 chips, 419 of them unexpected; about 78% of those were confirmed hardware issues, with GPUs the largest category at 58.7% (<span class="lab v">Verified</span>, preprint) <a class="cite" href="#src-32" data-n="32">[32]</a>. A 2.5 year university study of about 1,056 A100 and H100 chips found six replacements (four A100, two H100) and no clear trend in error rates once the systems settled into normal operation, though H100 memory proved less resilient than A100 (<span class="lab v">Verified</span>, preprint) <a class="cite" href="#src-34" data-n="34">[34]</a>. The often quoted "AI chips last one to three years" traces back to one unnamed Google architect, quoted through Tom's Hardware, who gave no failure data; TrendForce itself says it "cannot be considered 100% accurate" (<span class="lab r">Reported</span>) <a class="cite" href="#src-36" data-n="36">[36]</a>. From my own anecdotal use and evidence, I still use older A100 and H100 for my side work and experiments, and they are very much still in demand and constantly not available (but take that with a grain of salt).</li>
+<li><strong>What happens in practice:</strong> Amazon's cloud chief says AWS has "never retired an A100 server," a chip from 2020 (<span class="lab r">Reported</span>) <a class="cite" href="#src-37" data-n="37">[37]</a>. Google's Amin Vahdat says Google's "seven and eight-year-old TPUs have 100 percent utilization" (<span class="lab r">Reported</span>) <a class="cite" href="#src-38" data-n="38">[38]</a>. Both are interested parties, speaking during a shortage.</li>
+<li><strong>The critics:</strong> Michael Burry argues that big tech overstates how long its hardware lasts and understates depreciation by about $176 billion from 2026 to 2028 (<span class="lab o">Opinion</span>) <a class="cite" href="#src-39" data-n="39">[39]</a>. The article does not give his method, and he is betting against AI stocks. My own personal experience (see above) is counter to this; so yes, I am taking a stance against Michael (whom I deeply respect by the way).</li>
+</ul>
+<p><strong>My take:</strong> six years looks reasonable while computing power is scarce, and Google's own TPUs support a longer life than rented Nvidia chips. It is at the long end of peers, and it would look stretched if the shortage ends and rent on older chips falls. In my model, moving from five to six years only adds about one point of return. Rent and revenue per dollar matter far more than the depreciation schedule. And until we have some major shifts in chip architecture, or AI that needs different types of compute, I can see this being the case for at least the near to medium future (3 to 5 years).</p>
+</section>
+<section class="sec" id="part-6-the-youtube-angle"><h2 class="part"><span class="pn">Part 6</span>The YouTube angle</h2><p class="orient">Meta shows what AI can do for ads. Google hasn't shown it yet.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>Meta, Q3 2026</th>
+<th>Google, Q3 2026</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ad revenue growth</td>
+<td><strong>26%</strong></td>
+<td>Search 12%, YouTube 9%, Network about 1%</td>
+<td>Reported <a class="cite" href="#src-15" data-n="15">[15]</a>; <span class="lab v">Verified</span> <a class="cite" href="#src-1" data-n="1">[1]</a></td>
+</tr>
+<tr>
+<td>Price per ad</td>
+<td>+14%</td>
+<td>Not disclosed</td>
+<td>Reported <a class="cite" href="#src-15" data-n="15">[15]</a></td>
+</tr>
+<tr>
+<td>Number of ads shown</td>
+<td>+10%</td>
+<td>Not disclosed</td>
+<td>Reported <a class="cite" href="#src-15" data-n="15">[15]</a></td>
+</tr>
+<tr>
+<td>Proof AI is lifting ads</td>
+<td>Company wide figures on conversions</td>
+<td>Advertiser case studies only</td>
+<td>Reported <a class="cite" href="#src-15" data-n="15">[15]</a>; <span class="lab s">Secondhand</span> <a class="cite" href="#src-3" data-n="3">[3]</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>Meta has two giant feeds where AI decides which ad you see next: Facebook and Instagram. Google doesn't have a social network. YouTube is the closest thing it has to Instagram, and it is a big one:</p>
+<ul>
+<li><strong>YouTube had a record 15.8% of all US TV viewing time in August,</strong> about double Netflix (<span class="lab s">Secondhand</span>, Nielsen) <a class="cite" href="#src-13" data-n="13">[13]</a>. More than a third of YouTube ad revenue now comes from the living room TV (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-3" data-n="3">[3]</a>.</li>
+<li><strong>But YouTube ad growth has slowed:</strong> about 11%, 13% and then 9% across 2026, and WARC Media forecasts about 7% for the full year (<span class="lab v">Verified</span> <a class="cite" href="#src-1" data-n="1">[1]</a> <a class="cite" href="#src-4" data-n="4">[4]</a>; forecast <span class="lab r">Reported</span> <a class="cite" href="#src-14" data-n="14">[14]</a>).</li>
+<li><strong>Subscriptions are growing faster than ads.</strong> YouTube Music and Premium passed 150 million subscribers including trials (<span class="lab v">Verified</span>, company slides) <a class="cite" href="#src-2" data-n="2">[2]</a>.</li>
+</ul>
+<p><strong>What would have to be true for YouTube to become the next channel:</strong></p>
+<ul>
+<li>Google shows a company wide lift in conversions or ad prices from AI, the way Meta does.</li>
+<li>YouTube ad growth gets back above 15%.</li>
+<li>Ads inside AI Mode and Gemini start earning close to classic search.</li>
+</ul>
+<p>None of these has happened yet. I treat YouTube as an option on the upside, not part of my base case. This is my opinion.</p>
+</section>
+<section class="sec" id="part-7-what-the-price-already-assumes"><h2 class="part"><span class="pn">Part 7</span>What the price already assumes</h2><p class="orient">At today's price, the market is not paying for much of this.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>Forward price to earnings ratio</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alphabet today, on calendar 2027 analyst earnings ($14.84 a share; the other rows use the next twelve months)</td>
+<td><strong>about 18.9 times</strong></td>
+<td>Estimate from <span class="lab s">Secondhand</span> consensus <a class="cite" href="#src-6" data-n="6">[6]</a></td>
+</tr>
+<tr>
+<td>Alphabet in April 2026</td>
+<td>about 29 times</td>
+<td>Secondhand <a class="cite" href="#src-41" data-n="41">[41]</a></td>
+</tr>
+<tr>
+<td>Alphabet, late 2022</td>
+<td>about 17.9 times</td>
+<td>Secondhand <a class="cite" href="#src-41" data-n="41">[41]</a></td>
+</tr>
+<tr>
+<td>S&amp;P 500 today</td>
+<td>18.7 times</td>
+<td>Reported <a class="cite" href="#src-40" data-n="40">[40]</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>A price to earnings ratio is how many dollars investors pay for each dollar of yearly profit. Alphabet now trades at roughly the same multiple as the average S&amp;P 500 company, close to where it traded in late 2022, while its cloud business is doubling.</p>
+<p>Note: analysts expect lower earnings per share in 2027 ($14.84) than in 2026 ($19.71), mostly because 2026 includes large paper gains on Alphabet's investments, not because the business shrinks (<span class="lab e">Estimate</span>; my reading of the numbers) <a class="cite" href="#src-6" data-n="6">[6]</a>.</p>
+<h3>Scenarios</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>2027 earnings per share</th>
+<th>Multiple</th>
+<th>Implied price</th>
+<th>vs $279.84</th>
+<th>My weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bear: Search shrinks, 2027 capex needs more outside money</td>
+<td>$13.36 (10% below consensus)</td>
+<td>16 times</td>
+<td>about $214</td>
+<td>minus 24%</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Base: nothing changes</td>
+<td>$14.84</td>
+<td>18.9 times</td>
+<td>about $280</td>
+<td>0%</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>Rerating: cash worries ease</td>
+<td>$14.84</td>
+<td>22 times</td>
+<td>about $326</td>
+<td>+17%</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>Bull: TPU economics and AI ads show up</td>
+<td>$16.32 (10% above consensus)</td>
+<td>25 times</td>
+<td>about $408</td>
+<td>+46%</td>
+<td>15%</td>
+</tr>
+<tr>
+<td><strong>Weighted</strong></td>
+<td></td>
+<td></td>
+<td><strong>about $300</strong></td>
+<td><strong>about +7%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Estimate. These are my own weights.</p>
+<p>Analyst earnings estimates for 2027 barely moved in October (down 0.8%), while the stock fell 19%. The price moved; the expected profit mostly didn't (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-6" data-n="6">[6]</a>.</p>
+</section>
+<section class="sec" id="my-thoughts-going-forward"><h2 class="part">My thoughts going forward</h2>
+<p>So based on all this information, here is what I think.</p>
+<ul>
+<li><strong>Search is slowing, not shrinking.</strong> People haven't left. The open question is whether Google learns to charge properly for AI answers. I think it will, but I can't prove it yet.</li>
+<li><strong>Cloud is the turning point.</strong> It already adds more profit than everything else Google does combined. On profit, it can cover even a sharp Search decline.</li>
+<li><strong>Cash is the real risk, and it's a timing problem.</strong> The spending only pays back on a four to five year view, and only well if Google's own chips are as cheap as estimated. Until then, Search pays the bill and Alphabet keeps raising money.</li>
+<li><strong>The price assumes very little.</strong> At about 19 times next year's earnings, Alphabet is priced like an average company, not like one with a cloud business doubling.</li>
+<li><strong>Where I could be wrong:</strong> if the TPU cost edge is much smaller than estimated, the spending is roughly break even. If 2027 capex comes in far above what cash flow can cover, more dilution follows. If Anthropic or another big customer stumbles, a large part of the Cloud reservation book is at risk.</li>
+<li><strong>What I would not claim:</strong> that Alphabet will hit any particular price, or that Search revenue can't fall. I'm saying the market is reacting to the bank account, and I think it's underweighting the restaurants.</li>
+</ul>
+<h3>What to watch, and what would change this analysis</h3>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>When</th>
+<th>What to watch</th>
+<th>Supports my read</th>
+<th>Weakens it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>November 2026 (timing not confirmed)</td>
+<td>Anthropic IPO</td>
+<td>Prices near its private valuation</td>
+<td>Pulled or priced well below</td>
+</tr>
+<tr>
+<td>About November 17, 2026</td>
+<td>Nvidia results</td>
+<td>Demand still above supply</td>
+<td>Customers slowing orders</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>Chip rental prices (Silicon Data H100 and B200 indexes)</td>
+<td>Steady or rising</td>
+<td>B200 under $5 an hour for two months</td>
+</tr>
+<tr>
+<td>Late January to early February 2027</td>
+<td>Alphabet fourth quarter report</td>
+<td>2027 capex that cash flow can mostly cover; buybacks restart; Search growth steadies</td>
+<td>Capex far above cash flow; more stock or debt; Search under 10%</td>
+</tr>
+<tr>
+<td>Any time</td>
+<td>AI Mode and Gemini ad disclosures</td>
+<td>Revenue per AI search rising</td>
+<td>No disclosure, or falling</td>
+</tr>
+<tr>
+<td>Early to mid 2027 (not scheduled)</td>
+<td>Appeals court ruling on the Search antitrust case</td>
+<td>Remedies stay light</td>
+<td>Default search payments to Apple and Samsung (over $20 billion a year) restricted (<span class="lab s">Secondhand</span>) <a class="cite" href="#src-42" data-n="42">[42]</a></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section class="sec" id="methodology-and-sources"><h2 class="part">Methodology and sources</h2>
+<p>I looked at company filings and earnings releases, call transcripts, financial journals, data vendors and research papers myself. To bring it together I used AI agents to fetch and organise the material, and separate AI assisted verification passes to reopen the key numbers at their source. Twenty nine load bearing figures were rechecked against their original documents; about a third needed a correction or a caveat. Before publishing, every source below was reopened and every claim that cites it was checked again; about forty claims and citations were corrected or reworded. The corrected versions are used above.</p>
+<p>The payback model behind Part 5 is published alongside this piece, so anyone can change an assumption and see what happens <a class="cite" href="#src-45" data-n="45">[45]</a>.</p>
+</section>
+
+<section class="sec" id="sources">
+  <h2 class="part">Sources</h2>
+  <div class="srcbar">
+    <input id="q" type="search" placeholder="Search sources (e.g. Alphabet, arXiv, Silicon Data, 24)" aria-label="Search sources">
+    <span class="count" id="count"></span>
+  </div>
+  <div class="chips" id="catChips" role="group" aria-label="Filter by topic"></div>
+  <div class="chips" id="typeChips" role="group" aria-label="Filter by type"></div>
+  <div id="srcList" aria-live="polite"></div>
+</section>
+
+<footer>
+  <span>Last updated: 2026-10-31 · Version: 1.0 · Previous version: none · License: CC BY 4.0</span>
+  <span>Veritas Research. Not investment advice.</span>
+</footer>
+</main>
+<div class="tip" id="tip" role="status"></div>
+
+<script>
+function cohort(p){
+  const C=100,T=p.T/(1-p.tpu),cf=[-C];
+  for(let t=1;t<=10;t++){
+    if(t>p.N){cf.push(0);continue}
+    const rev=C*T*Math.pow(1-p.d,t-1)*(t===1?p.ramp:1);
+    const ebitda=rev*(1-p.vr)-C*p.fx;
+    const dep=(t<=Math.min(p.N,p.acc)?C*p.srv/p.acc:0)+C*(1-p.srv)/p.fl+(t===p.N&&p.N<p.acc?C*p.srv*(p.acc-p.N)/p.acc:0);
+    let c=ebitda-p.tax*(ebitda-dep);
+    let left=0; if(t===p.N) left=C*p.srv*p.salv+(p.res?C*(1-p.srv)*Math.max(0,1-p.N/p.fl):0);
+    cf.push(c+left);
+  }
+  const npv=r=>cf.reduce((s,c,i)=>s+c/Math.pow(1+r,i),0);
+  let irr=null; if(npv(-0.99)>0&&npv(3)<0){let lo=-0.99,hi=3;for(let i=0;i<200;i++){const m=(lo+hi)/2;if(npv(m)>0)lo=m;else hi=m}irr=(lo+hi)/2}
+  let cum=0,pay=null;const cums=cf.map(c=>cum+=c);
+  for(let t=1;t<cums.length;t++){if(cums[t]>=0){pay=(t-1)+(-cums[t-1])/cf[t];break}}
+  return {cf,irr,mult:cf.slice(1).reduce((a,b)=>a+b,0)/C,pay,npv:npv(p.rate)};
+}
+const BASE={T:.60,d:.15,N:5,tpu:0,ramp:.5,fx:.04,vr:.35,tax:.17,srv:.6,fl:20,acc:6,salv:.05,res:1,rate:.09};
+const PRESETS={Bear:{...BASE,T:.35,d:.25,ramp:.4,fx:.05,vr:.40},Base:{...BASE},"Google TPU":{...BASE,tpu:.30},Bull:{...BASE,T:.85,d:.05,ramp:.6,fx:.035,vr:.30}};
+
+
+const SOURCES=[{"n": 1, "cat": "Alphabet filings and calls", "t": "Alphabet, \"Q3 2026 Earnings Release,\" Oct 28, 2026", "u": ["https://s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf"], "h": "s206.q4cdn.com", "ty": "Primary", "sec": ["Summary: in two minutes", "Part 1: What actually happened on October 28", "Part 2: Is Search breaking?", "Part 3: The quiet giant", "Part 4: The bill", "Part 5: Does $100 billion of AI spending pay back?", "Part 6: The YouTube angle"], "a": "Corrected", "an": "Revenue base, margin, debt and attribution details fixed against the release."}, {"n": 2, "cat": "Alphabet filings and calls", "t": "Alphabet, \"Q3 2026 Earnings Slides,\" Oct 28, 2026", "u": ["https://s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-slides.pdf"], "h": "s206.q4cdn.com", "ty": "Primary", "sec": ["Part 5: Does $100 billion of AI spending pay back?", "Part 6: The YouTube angle"], "a": "Checked", "an": "Supports the 150 million subscriber figure."}, {"n": 3, "cat": "Alphabet filings and calls", "t": "Singju Post, \"Alphabet Q3 2026 earnings call transcript,\" Oct 2026", "u": ["https://singjupost.com/alphabet-googl-q3-2026-earnings-call-transcript/"], "h": "singjupost.com", "ty": "Press and other", "sec": ["Summary: in two minutes", "Part 2: Is Search breaking?", "Part 3: The quiet giant", "Part 4: The bill", "Part 6: The YouTube angle"], "a": "Corrected", "an": "Speaker and AI Mode wording fixed against the transcript."}, {"n": 4, "cat": "Alphabet filings and calls", "t": "Alphabet, \"Q2 2026 Earnings Release\" and \"Q1 2026 Earnings Release,\" 2026", "u": ["https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf", "https://s206.q4cdn.com/479360582/files/doc\\_financials/2026/q1/2026q1-alphabet-earnings-release.pdf"], "h": "s206.q4cdn.com", "ty": "Primary", "sec": ["Part 2: Is Search breaking?", "Part 3: The quiet giant", "Part 4: The bill", "Part 6: The YouTube angle"], "a": "Corrected", "an": "Now cited for the at the market program quote and quarterly growth rates."}, {"n": 5, "cat": "Market data and estimates", "t": "Yahoo Finance, daily price history for GOOGL, MSFT and peers, accessed Oct 31, 2026", "u": ["https://finance.yahoo.com/quote/GOOGL/history/"], "h": "finance.yahoo.com", "ty": "Primary", "sec": ["Summary: in two minutes", "Part 1: What actually happened on October 28"], "a": "Checked", "an": ""}, {"n": 6, "cat": "Market data and estimates", "t": "Yahoo Finance, \"Alphabet Inc. (GOOGL) Analyst Ratings, Estimates & Forecasts,\" accessed Oct 31, 2026 (post Q3 report)", "u": ["https://finance.yahoo.com/quote/GOOGL/analysis/"], "h": "finance.yahoo.com", "ty": "Primary", "sec": ["Part 7: What the price already assumes"], "a": "Corrected", "an": "Title fixed; valuation basis stated."}, {"n": 7, "cat": "Financing", "t": "Reuters via Yahoo Finance, \"Alphabet plans to raise $80 billion for AI goals, Berkshire to invest $10 billion,\" Jun 1, 2026", "u": ["https://finance.yahoo.com/markets/stocks/articles/alphabet-raise-80-billion-equity-211111307.html"], "h": "finance.yahoo.com", "ty": "Press and other", "sec": ["Summary: in two minutes", "Part 4: The bill"], "a": "Corrected", "an": "Title and date fixed."}, {"n": 8, "cat": "Financing", "t": "Reuters via Virginia Business, \"Alphabet looks to raise up to $25B from latest bond sale, source says,\" Aug 6, 2026", "u": ["https://virginiabusiness.com/alphabet-raise-25-billion-us-bond-offering/"], "h": "virginiabusiness.com", "ty": "Press and other", "sec": ["Part 4: The bill"], "a": "Corrected", "an": "Title fixed; now cited for the August bond."}, {"n": 9, "cat": "Alphabet filings and calls", "t": "Alphabet, \"Form 10-K, fiscal year 2025,\" Feb 2026", "u": ["https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/GOOG-10-K-2025.pdf"], "h": "s206.q4cdn.com", "ty": "Primary", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Checked", "an": ""}, {"n": 10, "cat": "Search and advertising", "t": "Search Engine Journal, \"AI Search Isn't Replacing Google, It's Layering On Top: Similarweb Data,\" Jul 30, 2026", "u": ["https://searchenginejournal.com/ai-search-isnt-replacing-google-its-layering-on-top-similarweb-data/583378/"], "h": "searchenginejournal.com", "ty": "Press and other", "sec": ["Part 2: Is Search breaking?"], "a": "Corrected", "an": "Title fixed."}, {"n": 11, "cat": "Search and advertising", "t": "Business Wire via Morningstar, \"New research: Google's AI Overviews now cost websites 58% of their clicks,\" May 2026", "u": ["https://www.morningstar.com/news/business-wire/20260518322756/new-research-googles-ai-overviews-now-cost-websites-58-of-their-clicks"], "h": "morningstar.com", "ty": "Press and other", "sec": ["Part 2: Is Search breaking?"], "a": "Corrected", "an": "Claim reworded to match the release."}, {"n": 12, "cat": "Search and advertising", "t": "Octagon AI, \"Google search paid clicks change in Q3\" (Tinuiti advertiser data via eMarketer and MediaPost; written before Alphabet reported), updated Oct 24, 2026", "u": ["https://www.octagonai.co/markets/financials/companies/google-search-paid-clicks-change-in-q3/"], "h": "octagonai.co", "ty": "Press and other", "sec": ["Part 2: Is Search breaking?"], "a": "Corrected", "an": "Panel data, written before Alphabet reported."}, {"n": 13, "cat": "Search and advertising", "t": "PPC Land, \"YouTube gains record 15.8% of US TV time in Nielsen's August Gauge,\" Oct 2026", "u": ["https://ppc.land/youtube-gains-record-15-8-of-us-tv-time-in-nielsens-august-gauge/"], "h": "ppc.land", "ty": "Press and other", "sec": ["Part 6: The YouTube angle"], "a": "Checked", "an": ""}, {"n": 14, "cat": "Search and advertising", "t": "Advanced Television, \"Report: YouTube worth $40bn to advertisers but growth decelerating\" (WARC Media), Jul 16, 2026", "u": ["https://www.advanced-television.com/2026/07/16/youtube-is-worth-40bn-to-advertisers-but-growth-decelarating/"], "h": "advanced-television.com", "ty": "Press and other", "sec": ["Part 6: The YouTube angle"], "a": "Corrected", "an": "Title fixed."}, {"n": 15, "cat": "Search and advertising", "t": "Exchange4media, \"Meta's ad revenue jumps 26% to $63.1 billion as AI boosts conversions, ad prices,\" Oct 2026", "u": ["https://www.exchange4media.com/digital-news/metas-ad-revenue-jumps-26-to-631-billion-as-ai-boosts-conversions-ad-prices-159351.html"], "h": "exchange4media.com", "ty": "Press and other", "sec": ["Part 6: The YouTube angle"], "a": "Checked", "an": "Figures confirmed against Meta's own results release."}, {"n": 16, "cat": "Peers", "t": "Meta, \"Meta Announces Launch of Offering of Depositary Shares Representing Series A Mandatory Convertible Preferred Stock and Offering of Class A Common Stock,\" Oct 26, 2026", "u": ["https://s21.q4cdn.com/399680738/files/doc_news/Meta-Announces-Launch-of-Offering-of-Depositary-Shares-Representing-Series-A-Mandatory-Convertible-Preferred-Stock-and-Offering-of-Cl-3JYZF.pdf"], "h": "s21.q4cdn.com", "ty": "Primary", "sec": [], "a": "Background", "an": "Background reading; not cited in the text."}, {"n": 17, "cat": "Peers", "t": "Microsoft, \"Microsoft Announces First Quarter Results,\" Oct 28, 2026", "u": ["https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast"], "h": "microsoft.com", "ty": "Primary", "sec": ["Part 1: What actually happened on October 28", "Part 3: The quiet giant"], "a": "Corrected", "an": "Title fixed."}, {"n": 18, "cat": "Peers", "t": "Amazon, \"Amazon.com Announces Third Quarter Results,\" Oct 29, 2026", "u": ["https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx"], "h": "ir.aboutamazon.com", "ty": "Primary", "sec": ["Part 3: The quiet giant"], "a": "Checked", "an": ""}, {"n": 19, "cat": "Cloud customers and chips", "t": "The Decoder, citing The Information, \"Anthropic commits $200 billion to Google Cloud over five years,\" May 6, 2026", "u": ["https://the-decoder.com/anthropic-commits-200-billion-to-google-cloud-over-five-years/"], "h": "the-decoder.com", "ty": "Press and other", "sec": ["Part 3: The quiet giant"], "a": "Checked", "an": ""}, {"n": 20, "cat": "Cloud customers and chips", "t": "PPC Land, \"Google Cloud faces 48% revenue reliance on OpenAI and Anthropic in 2027,\" Aug 2, 2026", "u": ["https://ppc.land/google-cloud-faces-48-revenue-reliance-on-openai-and-anthropic-in-2027/"], "h": "ppc.land", "ty": "Press and other", "sec": ["Part 3: The quiet giant"], "a": "Corrected", "an": "Date added; figure is more than 48%."}, {"n": 21, "cat": "Cloud customers and chips", "t": "The Decoder, \"The mere existence of Google TPUs reportedly saved OpenAI 30% on Nvidia chips,\" Nov 29, 2025", "u": ["https://the-decoder.com/the-mere-existence-of-google-tpus-reportedly-saved-openai-30-on-nvidia-chips/"], "h": "the-decoder.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Checked", "an": "Comparison is against Nvidia's GB200 system."}, {"n": 22, "cat": "Cloud customers and chips", "t": "SemiAnalysis, \"TPU Inference Externalization Full Steam Ahead: InferenceX,\" Sep 7, 2026", "u": ["https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam"], "h": "newsletter.semianalysis.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Title fixed; 8% and 19% are two operating points."}, {"n": 23, "cat": "Chip rents and data center costs", "t": "Silicon Data, \"H100 Rental Price Over Time (2023 to 2025): A Complete Market Analysis,\" Dec 21, 2025", "u": ["https://www.silicondata.com/blog/h100-rental-price-over-time"], "h": "silicondata.com", "ty": "Primary", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Title and date fixed; $6.26 is a median, not a list price."}, {"n": 24, "cat": "Chip rents and data center costs", "t": "Silicon Data, \"B200 Rental Price Update, August 2026: The Quietest Month Yet,\" Sep 24, 2026", "u": ["https://www.silicondata.com/blog/b200-rental-price-august-2026-update"], "h": "silicondata.com", "ty": "Primary", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Title and date fixed; source of the $2.63 H100 price."}, {"n": 25, "cat": "Chip rents and data center costs", "t": "CoreWeave, \"CoreWeave Continues to Contract New Compute Capacity at Higher Prices,\" Sep 17, 2026", "u": ["https://investors.coreweave.com/news/news-details/2026/CoreWeave-Continues-to-Contract-New-Compute-Capacity-at-Higher-Prices/default.aspx"], "h": "investors.coreweave.com", "ty": "Primary", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Checked", "an": "Short dated contracts of 3 to 6 months."}, {"n": 26, "cat": "Chip rents and data center costs", "t": "Investing.com, \"How much does a GW of data center capacity actually cost\" (Bernstein), Nov 1, 2025", "u": ["https://www.investing.com/news/stock-market-news/how-much-does-a-gw-of-data-center-capacity-actually-cost-4314046"], "h": "investing.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Checked", "an": ""}, {"n": 27, "cat": "Chip rents and data center costs", "t": "In Practise, \"AWS, Nebius, & AI Data Center ROIC,\" Aug 27, 2026", "u": ["https://inpractise.com/articles/aws-nebius-and-ai-data-center-roic"], "h": "inpractise.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Title fixed; annual figures are my arithmetic."}, {"n": 28, "cat": "Chip rents and data center costs", "t": "HashrateIndex, \"Neocloud Unit Economics: What Bitcoin Miners Already Know About Running GPU Only Clouds,\" Jul 22, 2026", "u": ["https://hashrateindex.com/blog/neocloud-unit-economics-miners-gpu-only-clouds"], "h": "hashrateindex.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Title fixed; supports the $50,000 and 75% assumptions only."}, {"n": 29, "cat": "Chip rents and data center costs", "t": "Nasdaq (The Motley Fool), \"Alphabet Spends About 60 Cents of Every Technical Infrastructure Dollar on Servers,\" Aug 25, 2026", "u": ["https://www.nasdaq.com/articles/alphabet-spends-about-60-cents-every-technical-infrastructure-dollar-servers-nvidias"], "h": "nasdaq.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Date fixed; now cited for the 60/40 split."}, {"n": 30, "cat": "Server life", "t": "The Register, \"Alphabet just banked $3B by stretching life of its servers,\" Jan 31, 2024", "u": ["https://www.theregister.com/2024/01/31/alphabet_q4_2023/"], "h": "theregister.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Title fixed."}, {"n": 31, "cat": "Server life", "t": "The Register, \"Hardware quality problems and server supply chain kinks slow Amazon's $100 billion AI build,\" Feb 7, 2025", "u": ["https://www.theregister.com/2025/02/07/amazon_q4_fy_2024/"], "h": "theregister.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Title fixed; peers moved to source 46."}, {"n": 32, "cat": "Server life", "t": "Grattafiori et al. (Llama Team, Meta), \"The Llama 3 Herd of Models,\" arXiv 2407.21783, 2024", "u": ["https://arxiv.org/abs/2407.21783"], "h": "arxiv.org", "ty": "Primary", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Author fixed; failure breakdown taken from section 3.3.4."}, {"n": 33, "cat": "Server life", "t": "Kokolis et al., \"Revisiting Reliability in Large Scale Machine Learning Research Clusters,\" arXiv 2410.21680, 2024", "u": ["https://arxiv.org/abs/2410.21680"], "h": "arxiv.org", "ty": "Primary", "sec": [], "a": "Background", "an": "Background reading; not cited in the text."}, {"n": 34, "cat": "Server life", "t": "Cui et al., \"Story of Two GPUs: Characterizing the Resilience of Hopper H100 and Ampere A100 GPUs\" (NCSA Delta), arXiv 2503.11901, 2025", "u": ["https://arxiv.org/abs/2503.11901"], "h": "arxiv.org", "ty": "Primary", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Full title; replacement counts added."}, {"n": 35, "cat": "Server life", "t": "Oak Ridge National Laboratory, \"GPU Lifetimes on Titan Supercomputer: Survival Analysis and Reliability,\" Dec 15, 2020", "u": ["https://www.ornl.gov/research-highlight/gpu-lifetimes-titan-supercomputer-survival-analysis-and-reliability"], "h": "ornl.gov", "ty": "Primary", "sec": [], "a": "Background", "an": "Background reading; not cited in the text."}, {"n": 36, "cat": "Server life", "t": "TrendForce, \"Datacenter GPUs may have an astonishingly short lifespan of only 1 to 3 years,\" Oct 31, 2024", "u": ["https://www.trendforce.com/news/2024/10/31/news-datacenter-gpus-may-have-an-astonishingly-short-lifespan-of-only-1-to-3-years"], "h": "trendforce.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Wording matched to the article."}, {"n": 37, "cat": "Server life", "t": "Datacenter Dynamics, \"AWS has never retired an Nvidia A100 server, CEO Matt Garman claims,\" 2026", "u": ["https://www.datacenterdynamics.com/en/news/aws-has-never-retired-an-nvidia-a100-server-ceo-matt-garman-claims/"], "h": "datacenterdynamics.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Checked", "an": "Quote verified; page carries no date."}, {"n": 38, "cat": "Server life", "t": "Datacenter Dynamics, \"Google says TPU demand is outstripping supply,\" 2025", "u": ["https://datacenterdynamics.com/en/news/google-says-tpu-demand-is-outstripping-supply-claims-8yr-old-hardware-iterations-have-100-utilization"], "h": "datacenterdynamics.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Checked", "an": "Quote verified; page carries no date."}, {"n": 39, "cat": "Server life", "t": "The Motley Fool, \"Understanding Michael Burry's Bet Against AI: Here's What it Really Means for Investors,\" Nov 22, 2025", "u": ["https://www.fool.com/investing/2025/11/22/understand-michael-burry-bet-against-ai-means/"], "h": "fool.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Corrected", "an": "Title added; unsupported details removed."}, {"n": 40, "cat": "Market data and estimates", "t": "FactSet, \"Earnings Insight,\" Oct 30, 2026", "u": ["https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_103026.pdf"], "h": "advantage.factset.com", "ty": "Primary", "sec": ["Part 7: What the price already assumes"], "a": "Checked", "an": ""}, {"n": 41, "cat": "Market data and estimates", "t": "TIKR, \"Alphabet's P/E Ratio: Current Levels, Historical Trends, and Outlook,\" Apr 25, 2026", "u": ["https://www.tikr.com/blog/alphabets-p-e-ratio-current-levels-historical-trends-and-outlook"], "h": "tikr.com", "ty": "Press and other", "sec": ["Part 7: What the price already assumes"], "a": "Corrected", "an": "17.9x is a next twelve month figure, not a low."}, {"n": 42, "cat": "Legal", "t": "Winbuzzer, \"DOJ Appeals Google Antitrust Ruling, Seeks Chrome Divestiture,\" Feb 5, 2026", "u": ["https://winbuzzer.com/2026/02/05/doj-appeals-google-antitrust-ruling-chrome-divestiture-xcxwbn/"], "h": "winbuzzer.com", "ty": "Press and other", "sec": ["What to watch, and what would change this analysis"], "a": "Corrected", "an": "Title fixed; ruling timing is the reporter's estimate."}, {"n": 43, "cat": "Market data and estimates", "t": "XTB, \"Alphabet disappoints Wall Street despite record results,\" Oct 28, 2026", "u": ["https://www.xtb.com/en/market-analysis/news-and-research/alphabet-disappoints-wall-street-despite-record-results-shares-plunge-over-8-and-test-300"], "h": "xtb.com", "ty": "Press and other", "sec": ["Part 1: What actually happened on October 28"], "a": "Corrected", "an": "Claim matched to what the article says."}, {"n": 44, "cat": "Cloud customers and chips", "t": "TIKR, \"Not Good: Google Cloud Is 'Forgoing Short Term Revenues' to Feed Its AI Researchers,\" Oct 26, 2026", "u": ["https://www.tikr.com/blog/not-good-google-cloud-is-forgoing-short-term-revenues-to-feed-its-ai-researchers"], "h": "tikr.com", "ty": "Press and other", "sec": [], "a": "Corrected", "an": "Title fixed."}, {"n": 45, "cat": "Model", "t": "Mark A, Veritas Research, \"Does AI Capex Pay Back? Model v1,\" Oct 31, 2026", "u": ["Does%20AI%20Capex%20Pay%20Back%20-%20Model%20v1.xlsx"], "h": "Spreadsheet in this folder (.xlsx)", "ty": "Model", "sec": ["Summary: in two minutes", "Part 5: Does $100 billion of AI spending pay back?", "Methodology and sources"], "a": "Checked", "an": "Calculator on this page uses the same math."}, {"n": 46, "cat": "Server life", "t": "Global Data Center Hub, \"How Long Does an AI Chip Last (And Why Two of the Biggest Companies Disagree),\" Sep 11, 2026", "u": ["https://www.globaldatacenterhub.com/p/how-long-does-an-ai-chip-last-and"], "h": "globaldatacenterhub.com", "ty": "Press and other", "sec": ["Part 5: Does $100 billion of AI spending pay back?"], "a": "Checked", "an": "Added during the audit."}];
+const $=id=>document.getElementById(id);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+/* theme switch */
+(function(){const sw=$("themeSw"),root=document.documentElement,mq=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;
+const isDark=()=>{const a=root.getAttribute("data-theme");return a?a==="dark":!!(mq&&mq.matches)};
+const sync=()=>sw.setAttribute("aria-checked",isDark()?"true":"false");
+sw.addEventListener("click",()=>{const d=!isDark();root.setAttribute("data-theme",d?"dark":"light");try{localStorage.setItem("vr-theme",d?"dark":"light")}catch(e){}sync()});
+if(mq&&mq.addEventListener)mq.addEventListener("change",sync);sync()})();
+/* tooltip */
+const tip=$("tip");
+function tipOn(e,txt){tip.textContent=txt;tip.style.opacity=1;tip.style.left=Math.min(e.clientX+12,innerWidth-270)+"px";tip.style.top=(e.clientY+14)+"px"}
+function tipOff(){tip.style.opacity=0}
+document.addEventListener("pointermove",e=>{const t=e.target.closest&&e.target.closest("[data-tip]");if(t)tipOn(e,t.getAttribute("data-tip"));else tipOff()});
+/* card icons */
+const ICONS={
+ flag:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18l-2-5H5z"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>',
+ store:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11h12l-1.5-4h-9z"/><path d="M3.5 11v8h9v-8"/><path d="M16 19V8h5v11"/><path d="M18.5 4v4"/><path d="M1 19h22"/></svg>',
+ crane:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4"/><path d="M3 21h8"/><path d="M6 4h14"/><path d="M6 8l4-4"/><path d="M17 4v6"/><rect x="15" y="10" width="4" height="4" rx="1"/></svg>',
+ patio:'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a9 6 0 0 1 18 0z"/><path d="M12 10v11"/><path d="M8 21h8"/><path d="M5 15h4v6"/><path d="M19 15h-4v6"/></svg>'};
+document.querySelectorAll(".card .ic").forEach(el=>el.innerHTML=ICONS[el.dataset.ic]||"");
+
+/* ---------- pies ---------- */
+function pies(){
+  const el=$("pies");if(!el)return;
+  const segs=[["Search and other","--blue",56.567,63.350],["Subscriptions, platforms and devices","--yellow",12.870,14.290],["YouTube ads","--red",10.261,11.207],["Network","--grey",7.354,7.455],["Google Cloud","--green",15.157,30.709],["Other Bets","--grey2",0.344,0.372]];
+  const tot=[0,0];segs.forEach(s=>{tot[0]+=s[2];tot[1]+=s[3]});
+  const R1=118,R0=R1*Math.sqrt(tot[0]/tot[1]);
+  function donut(yi,R){
+    const W=300,H=300,cx=150,cy=150,ir=R*0.56;let a=-Math.PI/2,s="";
+    const arc=(a0,a1,ro,ri,fill,extra,tipT)=>{const L=(a1-a0)>Math.PI?1:0,p=(r,a)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)];const[x0,y0]=p(ro,a0),[x1,y1]=p(ro,a1),[x2,y2]=p(ri,a1),[x3,y3]=p(ri,a0);
+      return `<path d="M${x0} ${y0}A${ro} ${ro} 0 ${L} 1 ${x1} ${y1}L${x2} ${y2}A${ri} ${ri} 0 ${L} 0 ${x3} ${y3}Z" fill="${fill}" stroke="var(--panel)" stroke-width="1.5" ${extra||""} data-tip="${tipT}"/>`};
+    segs.forEach(sg=>{const v=sg[2+yi],da=v/tot[yi]*Math.PI*2,pc=Math.round(v/tot[yi]*100);
+      if(yi===1&&sg[0]==="Google Cloud"){const d0=sg[2]/tot[1]*Math.PI*2;
+        s+=arc(a,a+d0,R,ir,`var(${sg[1]})`,'opacity=".55"',`Google Cloud, Q3 2025 size: $${sg[2].toFixed(1)} billion`);
+        s+=arc(a+d0,a+da,R+8,ir,`var(${sg[1]})`,'',`Google Cloud added: +$${(sg[3]-sg[2]).toFixed(1)} billion`);
+      } else s+=arc(a,a+da,R,ir,`var(${sg[1]})`,'',`${sg[0]}: $${v.toFixed(1)} billion (${pc<1?"under 1":pc}%)`);
+      if(sg[0]==="Google Cloud"){const m=a+da/2,lx=cx+(R+26)*Math.cos(m),ly=cy+(R+26)*Math.sin(m);s+=`<text x="${lx}" y="${ly+4}" font-size="13" font-weight="600" text-anchor="middle" fill="var(--green)">${pc}%</text>`}
+      a+=da});
+    s+=`<text x="${cx}" y="${cy-4}" font-size="13" text-anchor="middle" fill="var(--mute)">Q3 ${yi?2026:2025}</text><text x="${cx}" y="${cy+18}" font-size="19" font-weight="600" text-anchor="middle" fill="var(--ink)">$${tot[yi].toFixed(1)}B</text>`;
+    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Alphabet revenue by business, Q3 ${yi?2026:2025}">${s}</svg>`}
+  el.innerHTML=`<div class="ft">Alphabet revenue by business, one year apart</div>
+  <div class="pies"><div>${donut(0,R0)}</div><div>${donut(1,R1)}</div></div>
+  <div class="key">${segs.map(s=>`<span><i style="background:var(${s[1]})"></i>${s[0]}</span>`).join("")}<span><i style="background:var(--green);opacity:.55"></i>Cloud's Q3 2025 size</span></div>
+  <div class="fs">Circles are sized to total revenue. Hover a slice for its value. Source: Alphabet Q3 2026 earnings release <a class="cite" href="#src-1" data-n="1">[1]</a>.</div>`}
+
+/* ---------- profit bridge ---------- */
+function bridge(){
+  const el=$("bridge");if(!el)return;
+  const rows=[["Q3 2025 operating profit",31.228,"t"],["Google Services",5.630,"--blue"],["Google Cloud",7.527,"--green"],["Other Bets",-0.621,"--red"],["Costs not assigned to a business",-3.188,"--red"],["Q3 2026 operating profit",40.576,"t"]];
+  const narrow=(el.clientWidth||800)<600;
+  const W=narrow?400:760,rowH=narrow?58:44,T=10,L=narrow?8:250,Rp=narrow?64:80,H=T+rows.length*rowH+30,max=45,sx=v=>L+(W-L-Rp)*v/max;
+  let s="",run=0;
+  for(let v=0;v<=40;v+=10){s+=`<line x1="${sx(v)}" x2="${sx(v)}" y1="${T}" y2="${H-24}" stroke="var(--line)"/><text x="${sx(v)}" y="${H-6}" font-size="11" text-anchor="middle" fill="var(--mute)">$${v}B</text>`}
+  rows.forEach((r,i)=>{const h=narrow?18:rowH-16,y=T+i*rowH+(narrow?26:8);let x0,x1,fill;
+    if(r[2]==="t"){x0=sx(0);x1=sx(r[1]);fill="var(--ink)";run=r[1]}else{const a=run,b=run+r[1];x0=sx(Math.min(a,b));x1=sx(Math.max(a,b));fill=`var(${r[2]})`;run=b}
+    s+=narrow?`<text x="${L}" y="${y-8}" font-size="13" fill="var(--ink)" style="font-family:var(--body)">${r[0]}</text>`:`<text x="${L-12}" y="${y+h/2+5}" font-size="13" text-anchor="end" fill="var(--ink)" style="font-family:var(--body)">${r[0]}</text>`;
+    s+=`<rect x="${x0}" y="${y}" width="${Math.max(2,x1-x0)}" height="${h}" rx="3" fill="${fill}" data-tip="${r[0]}: ${r[2]==="t"?"":(r[1]>0?"+":"minus ")}$${Math.abs(r[1]).toFixed(1)} billion"/>`;
+    s+=`<text x="${x1+6}" y="${y+h/2+4}" font-size="12" fill="var(--ink2)">${r[2]==="t"?"$"+r[1].toFixed(1)+"B":(r[1]>0?"+":"−")+"$"+Math.abs(r[1]).toFixed(1)+"B"}</text>`});
+  el.innerHTML=`<div class="ft">From $31.2 billion to $40.6 billion of operating profit</div><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Operating profit bridge, Q3 2025 to Q3 2026">${s}</svg><div class="fs">Source: Alphabet Q3 2026 earnings release <a class="cite" href="#src-1" data-n="1">[1]</a>.</div>`}
+let _bw=0;addEventListener("resize",()=>{const w=($("bridge")||{}).clientWidth||0;if((w<600)!==(_bw<600)){_bw=w;bridge()}});
+
+/* ---------- payback calculator ---------- */
+function calc(){
+  const el=$("calc");if(!el)return;
+  el.innerHTML=`<div class="ft">Payback calculator: $100 billion of AI data center spending</div>
+  <div class="presets" role="group" aria-label="Scenario">${Object.keys(PRESETS).map(k=>`<button type="button" data-p="${k}">${k}</button>`).join("")}</div>
+  <div class="cgrid"><div class="ctrls">
+   <div class="ctrl"><label for="c_T">Revenue per $1 of spending, per year <b id="c_Tv"></b></label><input id="c_T" type="range" min="0.2" max="1.5" step="0.01"></div>
+   <div class="ctrl"><label for="c_d">Rent falls per year <b id="c_dv"></b></label><input id="c_d" type="range" min="0" max="0.35" step="0.01"></div>
+   <div class="ctrl"><label for="c_N">Chip life <b id="c_Nv"></b></label><input id="c_N" type="range" min="3" max="7" step="1"></div>
+   <div class="ctrl"><label for="c_tpu">TPU saving <b id="c_tpuv"></b></label><input id="c_tpu" type="range" min="0" max="0.5" step="0.05"></div>
+   <label class="tog" for="c_res"><input id="c_res" type="checkbox">Count buildings' leftover value</label>
+  </div><div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+   <div class="outs"><div class="o" id="o_irr"><span>Return per year</span><b></b></div><div class="o" id="o_m"><span>Money back per $1</span><b></b></div><div class="o" id="o_p"><span>Payback</span><b></b></div></div>
+   <div id="c_chart"></div>
+   <div class="key"><span><i style="background:var(--green)"></i>Cash in</span><span><i style="background:var(--red)"></i>Cash out</span><span><i style="background:var(--yellow)"></i>Left in buildings</span><span><i style="background:var(--blue);height:3px"></i>Running total</span></div>
+   <div class="verdict" id="c_v"></div>
+  </div></div>
+  <div class="fs">Same math as the published model <a class="cite" href="#src-45" data-n="45">[45]</a>. Revenue per $1 is on rented Nvidia economics; the TPU saving raises it. Cost of capital about 9%.</div>`;
+  let P={...PRESETS.Base};
+  const ids=["T","d","N","tpu"];
+  const fmt={T:v=>"$"+(+v).toFixed(2),d:v=>Math.round(v*100)+"%",N:v=>v+" years",tpu:v=>Math.round(v*100)+"%"};
+  function paint(el){const p=((el.value-el.min)/(el.max-el.min)*100).toFixed(1);el.style.background=`linear-gradient(to right,var(--blue) 0 ${p}%,var(--line) ${p}% 100%)`}
+  function setUI(){ids.forEach(k=>{const i=$("c_"+k);i.value=P[k];$("c_"+k+"v").textContent=fmt[k](P[k]);paint(i)});$("c_res").checked=!!P.res}
+  function draw(){
+    const r=cohort(P),cf=r.cf.slice(0,P.N+1);
+    const left=P.N?(100*P.srv*P.salv+(P.res?100*(1-P.srv)*Math.max(0,1-P.N/P.fl):0)):0;
+    const irr=r.irr==null?null:r.irr;
+    const oI=$("o_irr");oI.className="o "+(irr==null||irr<P.rate?"bad":"good");oI.querySelector("b").textContent=irr==null?"n/a":(irr<0?"−":"")+Math.abs(irr*100).toFixed(1)+"%";
+    $("o_m").querySelector("b").textContent="$"+r.mult.toFixed(2);
+    $("o_p").querySelector("b").textContent=r.pay==null?"Never":r.pay.toFixed(1)+" yrs";
+    const W=560,H=250,L=44,R=12,T=14,B=28,vmax=Math.max(60,...cf.slice(1)),vmin=-100,sy=v=>T+(H-T-B)*(vmax-v)/(vmax-vmin),n=cf.length,bw=(W-L-R)/n*0.56,sx=i=>L+(W-L-R)*(i+0.5)/n;
+    let s="";[-100,-50,0,50].concat(vmax>100?[100]:[]).forEach(v=>{s+=`<line x1="${L}" x2="${W-R}" y1="${sy(v)}" y2="${sy(v)}" stroke="var(--line)"${v===0?' stroke-width="1.5"':""}/><text x="${L-6}" y="${sy(v)+4}" font-size="10" text-anchor="end" fill="var(--mute)">${v<0?"−":""}$${Math.abs(v)}B</text>`});
+    let cum=0,pts=[];
+    cf.forEach((c,i)=>{const lv=i===P.N?left:0,op=c-lv;const x=sx(i)-bw/2;
+      const y0=sy(Math.max(0,op)),y1=sy(Math.min(0,op));
+      s+=`<rect x="${x}" y="${y0}" width="${bw}" height="${Math.max(1,y1-y0)}" rx="2" fill="var(${op<0?"--red":"--green"})" data-tip="Year ${i}: ${op<0?"minus ":"+"}$${Math.abs(op).toFixed(1)} billion"/>`;
+      if(lv>0){const ya=sy(Math.max(0,op)+lv),yb=sy(Math.max(0,op));s+=`<rect x="${x}" y="${ya}" width="${bw}" height="${yb-ya}" rx="2" fill="var(--yellow)" data-tip="Left in buildings and chip resale: $${lv.toFixed(1)} billion"/>`}
+      cum+=c;pts.push([sx(i),sy(cum),cum]);
+      s+=`<text x="${sx(i)}" y="${H-8}" font-size="11" text-anchor="middle" fill="var(--mute)">Yr ${i}</text>`});
+    s+=`<polyline points="${pts.map(p=>p[0]+","+p[1]).join(" ")}" fill="none" stroke="var(--blue)" stroke-width="2.5"/>`;
+    pts.forEach(p=>s+=`<circle cx="${p[0]}" cy="${p[1]}" r="4" fill="var(--blue)" data-tip="Running total: ${p[2]<0?"minus ":"+"}$${Math.abs(p[2]).toFixed(1)} billion"/>`);
+    $("c_chart").innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Yearly cash for the selected scenario">${s}</svg>`;
+    const eff=P.T/(1-P.tpu);
+    $("c_v").innerHTML=`Effective revenue per $1: <strong>$${eff.toFixed(2)}</strong>. `+(irr==null?"The spending never earns back what it cost.":irr<P.rate?`The return is <strong>below</strong> the 9% cost of capital.`:`The return is <strong>above</strong> the 9% cost of capital.`);
+  }
+  el.querySelectorAll(".presets button").forEach(b=>b.addEventListener("click",()=>{P={...PRESETS[b.dataset.p]};el.querySelectorAll(".presets button").forEach(x=>x.classList.toggle("on",x===b));setUI();draw()}));
+  ids.forEach(k=>$("c_"+k).addEventListener("input",e=>{P[k]=+e.target.value;$("c_"+k+"v").textContent=fmt[k](P[k]);paint(e.target);el.querySelectorAll(".presets button").forEach(x=>x.classList.remove("on"));draw()}));
+  $("c_res").addEventListener("change",e=>{P.res=e.target.checked?1:0;draw()});
+  el.querySelector('.presets button[data-p="Base"]').classList.add("on");setUI();draw();
+}
+
+/* ---------- sources explorer ---------- */
+function sources(){
+  const cats=["All",...[...new Set(SOURCES.map(s=>s.cat))]],types=["All types",...[...new Set(SOURCES.map(s=>s.ty))]];
+  let fc="All",ft="All types";
+  const esc=v=>String(v).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const secId=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,48);
+  $("catChips").innerHTML=cats.map(c=>`<button type="button" data-c="${esc(c)}" aria-pressed="${c===fc}">${esc(c)}</button>`).join("");
+  $("typeChips").innerHTML=types.map(c=>`<button type="button" data-t="${esc(c)}" aria-pressed="${c===ft}">${esc(c)}</button>`).join("");
+  function render(){
+    const q=$("q").value.trim().toLowerCase();
+    const rows=SOURCES.filter(s=>(fc==="All"||s.cat===fc)&&(ft==="All types"||s.ty===ft)&&(!q||(s.n+" "+s.t+" "+s.h+" "+s.cat+" "+s.sec.join(" ")).toLowerCase().includes(q)));
+    $("count").textContent=rows.length+" of "+SOURCES.length+" sources";
+    $("srcList").innerHTML=rows.map(s=>{const cls=s.a==="Corrected"?"fix":(s.a==="Background"?"bg":"ok");
+      return `<div class="srow" id="src-${s.n}"><span class="sn">[${s.n}]</span><div><div class="st">${s.u.length?s.u.map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${i?"Q1 release":esc(s.t)}</a>`).join(" · "):esc(s.t)}</div>
+      <div class="sm"><span>${esc(s.h||"")}</span><span>${esc(s.ty)}</span><span class="au ${cls}">${esc(s.a)}</span>${s.sec.map(t=>`<a class="sec" href="#${secId(t)}">${esc(t)}</a>`).join("")}</div>${s.an?`<div class="an">${esc(s.an)}</div>`:""}</div></div>`}).join("")||`<div class="srow"><span></span><div class="st">No source matches that search.</div></div>`}
+  $("q").addEventListener("input",render);
+  $("catChips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;fc=b.dataset.c;$("catChips").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+  $("typeChips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;ft=b.dataset.t;$("typeChips").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+  document.addEventListener("click",e=>{const a=e.target.closest("a.cite");if(!a)return;e.preventDefault();
+    $("q").value="";fc="All";ft="All types";$("catChips").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.c==="All"));$("typeChips").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.t==="All types"));render();
+    const r=$("src-"+a.dataset.n);if(r){$("sources").scrollIntoView({block:"start"});const list=$("srcList");list.scrollTop=r.offsetTop-list.offsetTop-8;r.classList.remove("hl");void r.offsetWidth;r.classList.add("hl")}});
+  render();
+}
+pies();bridge();_bw=($("bridge")||{}).clientWidth||0;calc();sources();
+</script>
+
+</body></html>
